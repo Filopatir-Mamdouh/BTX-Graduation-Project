@@ -16,6 +16,19 @@ class LoginPage_class extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
+        new Container(
+          height: 25,
+          color: Color(0xFF3E6BA9),
+          child: Center(
+              child: Text(
+                  "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white))),
+        )
+      ]),
       body: Container(
         child: Center(
           child: SingleChildScrollView(
@@ -111,20 +124,6 @@ class LoginPage_class extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 195,
-                ),
-                Container(
-                  height: 25,
-                  width: 1800,
-                  color: Color(0xFF3E6BA9),
-                  child: const Center(
-                    child: Text(
-                      "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                )
               ],
             ),
           ),
