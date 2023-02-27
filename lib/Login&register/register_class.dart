@@ -12,6 +12,19 @@ class register_class extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
+          new Container(
+            height: 25,
+            color: Color(0xFF3E6BA9),
+            child: Center(
+                child: Text(
+                    "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white))),
+          )
+        ]),
         body: Container(
           child: SingleChildScrollView(
             child: Center(
@@ -152,20 +165,6 @@ class register_class extends StatelessWidget {
                                 color: Color(0xFF3E6BA9), fontSize: 17)),
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    height: 27,
-                  ),
-                  Container(
-                    height: 25,
-                    width: 2000,
-                    color: Color(0xFF3E6BA9),
-                    child: const Center(
-                      child: Text(
-                        "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
                   ),
                 ],
               ),
