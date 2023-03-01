@@ -11,7 +11,21 @@ class affairs_body_class extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQuery.of(context).size.width >= 650;
     return Scaffold(
+      bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
+        new Container(
+          height: 25,
+          color: Color(0xFF3E6BA9),
+          child: Center(
+              child: Text(
+                  "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white))),
+        )
+      ]),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(children: [
@@ -134,21 +148,6 @@ class affairs_body_class extends StatelessWidget {
             //     ),
             //   ),
             // )
-
-            const SizedBox(
-              height: 185,
-            ),
-            Container(
-              height: 25,
-              width: 1400,
-              color: Color(0xFF3E6BA9),
-              child: const Center(
-                child: Text(
-                  "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            )
           ]),
         ),
       ),
