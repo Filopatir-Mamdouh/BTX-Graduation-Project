@@ -2,19 +2,16 @@
 
 import 'dart:ui';
 
-import 'package:bt_x/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
-import 'package:bt_x/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
-import 'package:bt_x/Study_fees_affairs/Study_fees_Desk_tablet.dart';
-import 'package:bt_x/Study_fees_affairs/study_fees_screen.dart';
-import 'package:bt_x/affairs_main_page/side_menue.dart';
-
-import 'package:bt_x/responsive_page/responsive.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:graduation_project/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
+import 'package:graduation_project/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
+import 'package:graduation_project/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/responsive.dart';
 
 class student_Attendance_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

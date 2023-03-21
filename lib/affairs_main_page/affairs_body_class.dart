@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:bt_x/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:html';
+
+import 'package:graduation_project/constants/constants.dart';
 
 class affairs_body_class extends StatelessWidget {
   const affairs_body_class({super.key});

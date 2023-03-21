@@ -1,5 +1,5 @@
-import 'package:bt_x/core/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/app_colors.dart';
 
 class MaterialsScheduleProvider with ChangeNotifier {
   List<TableRow> tableRows = [

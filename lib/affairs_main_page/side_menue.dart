@@ -1,12 +1,12 @@
 import 'dart:html';
 
-import 'package:bt_x/Documents_Request/Documents_request_page.dart';
-import 'package:bt_x/Exams_table/Exams_table.dart';
-import 'package:bt_x/Study_result_page/study_result.dart';
-import 'package:bt_x/constants/constants.dart';
-import 'package:bt_x/fees_page/fees_page.dart';
-import 'package:bt_x/study_table/stydy_table.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Documents_Request/Documents_request_page.dart';
+import 'package:graduation_project/Exams_table/Exams_table.dart';
+import 'package:graduation_project/Study_result_page/study_result.dart';
+import 'package:graduation_project/constants/constants.dart';
+import 'package:graduation_project/fees_page/fees_page.dart';
+import 'package:graduation_project/study_table/stydy_table.dart';
 
 class sidemenu extends StatelessWidget {
   @override

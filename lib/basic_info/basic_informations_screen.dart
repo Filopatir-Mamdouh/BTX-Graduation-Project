@@ -1,10 +1,10 @@
-import 'package:bt_x/core/app_colors.dart';
-import 'package:bt_x/presentation/provider/basic_informations_provider.dart';
-import 'package:bt_x/presentation/widgets/widgets/contacts_details.dart';
-import 'package:bt_x/presentation/widgets/widgets/master_details.dart';
-import 'package:bt_x/presentation/widgets/widgets/personal_details.dart';
-import 'package:bt_x/presentation/widgets/widgets/previous_qualification.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/app_colors.dart';
+import 'package:graduation_project/presentation/provider/basic_informations_provider.dart';
+import 'package:graduation_project/presentation/widgets/widgets/contacts_details.dart';
+import 'package:graduation_project/presentation/widgets/widgets/master_details.dart';
+import 'package:graduation_project/presentation/widgets/widgets/personal_details.dart';
+import 'package:graduation_project/presentation/widgets/widgets/previous_qualification.dart';
 
 import 'package:provider/provider.dart';
 
@@ -192,10 +192,10 @@ class BasicInformationsScreen extends StatelessWidget {
                                   )
                                 : (basicInformationsIndex == 2
                                     ? const MasterDetails(
-                                        name: "محمود حسن",
+                                        name: "احمد حالد",
                                         nationality: "مصري",
-                                        city: "بنها",
-                                        address: "بنها",
+                                        city: "بني سويف",
+                                        address: "بني سويف",
                                         job: "",
                                         jobPlace: "",
                                         degreeOfKinship: "أب",
@@ -206,7 +206,7 @@ class BasicInformationsScreen extends StatelessWidget {
                                       )
                                     : const PreviousQualification(
                                         qualification: "ثانوي عام رياضة",
-                                        place: "مدرسة محرم بك الرسمية لغات",
+                                        place: "مدرسةبني سويف الرسمية لغات",
                                         graduationYear: "2019",
                                         total: "450",
                                         percentage: "100%",

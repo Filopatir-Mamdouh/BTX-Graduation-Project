@@ -1,6 +1,6 @@
-import 'package:bt_x/core/app_colors.dart';
-import 'package:bt_x/presentation/provider/exam_schadule.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/app_colors.dart';
+import 'package:graduation_project/presentation/provider/exam_schadule.dart';
 
 import 'package:provider/provider.dart';
 

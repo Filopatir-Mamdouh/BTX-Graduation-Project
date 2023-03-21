@@ -1,8 +1,7 @@
-import 'package:bt_x/core/app_colors.dart';
-import 'package:bt_x/presentation/provider/students_data_provider.dart';
-import 'package:bt_x/presentation/widgets/widgets/default_drop_down_button.dart';
-
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/app_colors.dart';
+import 'package:graduation_project/presentation/provider/students_data_provider.dart';
+import 'package:graduation_project/presentation/widgets/widgets/default_drop_down_button.dart';
 
 import 'package:provider/provider.dart';
 

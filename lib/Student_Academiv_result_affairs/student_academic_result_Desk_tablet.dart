@@ -1,15 +1,8 @@
-import 'package:bt_x/Study_fees_affairs/study_fees_screen.dart';
-import 'package:bt_x/presentation/provider/study_fees_provider.dart';
-import 'package:bt_x/core/app_colors.dart';
-import 'package:bt_x/presentation/widgets/widgets/default_drop_down_button.dart';
+import 'package:graduation_project/core/app_colors.dart';
+import 'package:graduation_project/presentation/provider/students_academic_results_provider.dart';
+import 'package:graduation_project/presentation/widgets/widgets/default_drop_down_button.dart';
+
 import 'Student_Academic_Result_Responsive.dart';
-import 'package:bt_x/presentation/provider/basic_informations_provider.dart';
-import 'package:bt_x/presentation/provider/lecturers_attendance_schedule_provider.dart';
-import 'package:bt_x/presentation/provider/lecturers_informations_provider.dart';
-import 'package:bt_x/presentation/provider/students_academic_results_provider.dart';
-import 'package:bt_x/presentation/provider/students_attendance_schedule_provider.dart';
-import 'package:bt_x/presentation/provider/students_data_provider.dart';
-import 'package:bt_x/presentation/provider/study_fees_provider.dart';
 
 import 'package:flutter/material.dart';
 

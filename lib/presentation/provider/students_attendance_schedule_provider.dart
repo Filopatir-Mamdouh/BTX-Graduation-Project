@@ -1,5 +1,5 @@
-import 'package:bt_x/core/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/app_colors.dart';
 
 class StudentsAttendanceScheduleProvider with ChangeNotifier {
   String? level;
@@ -234,7 +234,7 @@ class StudentsAttendanceScheduleProvider with ChangeNotifier {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: Text(
-                  "أحمد محمود",
+                  "أحمدحالد",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: AppColors.grey,

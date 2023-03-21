@@ -2,22 +2,16 @@
 
 import 'dart:ui';
 
-import 'package:bt_x/Data_Screen/Data_Screen_Desk_tablet.dart';
-import 'package:bt_x/Data_Screen/students_data_screen.dart';
-import 'package:bt_x/Student_Academiv_result_affairs/student_academic_result_Desk_tablet.dart';
-import 'package:bt_x/Student_Academiv_result_affairs/students_academic_results.dart';
-import 'package:bt_x/Study_fees_affairs/Study_fees_Desk_tablet.dart';
-import 'package:bt_x/Study_fees_affairs/study_fees_screen.dart';
-import 'package:bt_x/affairs_main_page/side_menue.dart';
-import 'package:bt_x/lecture_info/lecturers_informations_screen.dart';
-
-import 'package:bt_x/responsive_page/responsive.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:graduation_project/Data_Screen/Data_Screen_Desk_tablet.dart';
+import 'package:graduation_project/Data_Screen/students_data_screen.dart';
+import 'package:graduation_project/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/responsive.dart';
 
 class Data_Screen_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

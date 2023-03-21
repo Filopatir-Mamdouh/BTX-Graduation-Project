@@ -1,5 +1,5 @@
-import 'package:bt_x/presentation/widgets/widgets/details_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/presentation/widgets/widgets/details_tile.dart';
 
 class MasterDetails extends StatelessWidget {
   const MasterDetails({
