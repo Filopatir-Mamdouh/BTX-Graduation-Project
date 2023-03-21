@@ -2,20 +2,15 @@
 
 import 'dart:ui';
 
-import 'package:bt_x/Documents_Request/Documents_request_class.dart';
-import 'package:bt_x/Exams_table/Exams_table_class.dart';
-import 'package:bt_x/Study_result_page/study_result_class.dart';
-
-import 'package:bt_x/affairs_main_page/affairs_side_menue.dart';
-import 'package:bt_x/fees_page/fees_class.dart';
-import 'package:bt_x/inquiries_page/inguiries_page_calss.dart';
-import 'package:bt_x/responsive_page/responsive.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:graduation_project/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/inquiries_page/inguiries_page_calss.dart';
+import 'package:graduation_project/responsive.dart';
 
 class affairs_inquiries_page extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -40,6 +35,19 @@ class affairs_inquiries_page extends StatelessWidget {
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
+            bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
+              new Container(
+                height: 25,
+                color: Color(0xFF3E6BA9),
+                child: Center(
+                    child: Text(
+                        "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white))),
+              )
+            ]),
             body: Inquiries_page_Class(),
             appBar: AppBar(
               backgroundColor: Color(0xFF3E6BA9), // Will work
@@ -75,6 +83,19 @@ class affairs_inquiries_page extends StatelessWidget {
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
+            bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
+              new Container(
+                height: 25,
+                color: Color(0xFF3E6BA9),
+                child: Center(
+                    child: Text(
+                        "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white))),
+              )
+            ]),
             body: Row(
               children: [
                 Flexible(
@@ -118,6 +139,19 @@ class affairs_inquiries_page extends StatelessWidget {
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
+            bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
+              new Container(
+                height: 25,
+                color: Color(0xFF3E6BA9),
+                child: Center(
+                    child: Text(
+                        "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white))),
+              )
+            ]),
             body: Row(
               children: [
                 Flexible(

@@ -1,12 +1,9 @@
-import 'package:bt_x/Documents_Request/Documrnts_Drop_down.dart';
-import 'package:bt_x/Study_result_page/Result_drop_down.dart';
-import 'package:bt_x/constants/constants.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:footer/footer.dart';
+import 'package:graduation_project/Documents_Request/Documrnts_Drop_down.dart';
 
 class documents_request_class extends StatefulWidget {
   const documents_request_class({super.key});
@@ -19,19 +16,6 @@ class _testState extends State<documents_request_class> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-        new Container(
-          height: 25,
-          color: Color(0xFF3E6BA9),
-          child: Center(
-              child: Text(
-                  "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
-        )
-      ]),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(

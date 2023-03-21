@@ -1,9 +1,10 @@
-import 'package:bt_x/Login&register/LoginPage_class.dart';
-import 'package:bt_x/Login&register/MyTextField.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Login&register/LoginPage_class.dart';
 import 'dart:html';
+
+import 'package:graduation_project/Login&register/MyTextField.dart';
 
 class register_class extends StatelessWidget {
   const register_class({super.key});
