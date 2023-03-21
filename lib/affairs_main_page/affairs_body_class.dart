@@ -2,7 +2,6 @@
 
 import 'package:bt_x/constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'dart:html';
 
@@ -13,19 +12,6 @@ class affairs_body_class extends StatelessWidget {
   Widget build(BuildContext context) {
     MediaQuery.of(context).size.width >= 650;
     return Scaffold(
-      bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-        new Container(
-          height: 25,
-          color: Color(0xFF3E6BA9),
-          child: Center(
-              child: Text(
-                  "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
-        )
-      ]),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(children: [

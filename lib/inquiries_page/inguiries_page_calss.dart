@@ -12,19 +12,6 @@ class Inquiries_page_Class extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-        new Container(
-          height: 25,
-          color: Color(0xFF3E6BA9),
-          child: Center(
-              child: Text(
-                  "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
-        )
-      ]),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
