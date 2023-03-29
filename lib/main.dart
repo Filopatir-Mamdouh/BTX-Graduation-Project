@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Student_Attendance_Affairs/Student_Attendance_responsive.dart';
+import 'package:graduation_project/Teacher_Basic_Data/Teacher_Basic_Data.dart';
 import 'package:graduation_project/presentation/provider/Taecher_Basic_Data_provider.dart';
 import 'package:graduation_project/presentation/provider/basic_informations_provider.dart';
 import 'package:graduation_project/presentation/provider/exam_schadule.dart';
@@ -86,7 +87,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
         ],
         debugShowCheckedModeBanner: false,
-        home: student_Attendance_responsive(),
+        home: BasicDataScreen(),
       ),
     );
   }
