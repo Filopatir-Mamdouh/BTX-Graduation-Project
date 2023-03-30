@@ -20,6 +20,8 @@ import 'package:graduation_project/TeacherSceduleScreen/TeacherSceduleProvider.d
 import 'package:graduation_project/TeacherSceduleScreen/TeacherSceduleResponsive.dart';
 import 'package:graduation_project/Teacher_Basic_Data/Teacher_Basic_Data.dart';
 import 'package:graduation_project/Teacher_Basic_Data/Teacher_Basic_Data_responsive.dart';
+import 'package:graduation_project/affairs_main_page/affairs_body_class.dart';
+import 'package:graduation_project/affairs_main_page/affairs_main.dart';
 import 'package:graduation_project/basic_info/Basic_info_responsive.dart';
 import 'package:graduation_project/fees_page/fees_page_responsive.dart';
 import 'package:graduation_project/lecture_info/lecture_informationresponsive.dart';
@@ -118,7 +120,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
         ],
         debugShowCheckedModeBanner: false,
-        home: Teacher_Scedule_responsive(),
+        home: affairs_main(),
       ),
     );
   }
