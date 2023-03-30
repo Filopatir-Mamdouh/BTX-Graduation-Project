@@ -13,7 +13,6 @@ class YearResultScreen extends StatelessWidget {
     final yearResultProvider = Provider.of<YearResultProvider>(context);
     String? level = yearResultProvider.level;
     List<String> levels = yearResultProvider.levels;
-    List<TableRow> tableRows = yearResultProvider.tableRows;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -27,7 +26,7 @@ class YearResultScreen extends StatelessWidget {
               Text(
                 "النتيجة الدراسية",
                 style: TextStyle(
-                  color: Colors.grey[900],
+                  color: AppColors.grey,
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,
                 ),
@@ -36,7 +35,7 @@ class YearResultScreen extends StatelessWidget {
                 height: 15.0,
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 100, left: 100),
+                padding: const EdgeInsets.only(right: 60),
                 child: Row(
                   children: [
                     Text(
@@ -48,18 +47,21 @@ class YearResultScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      width: 20.0,
+                      width: 15.0,
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: DefaultDropDownButton(
-                          list: levels,
-                          value: level,
-                          onChanged: (value) {
-                            yearResultProvider.changeLevel(
-                                selectedLevel: value);
-                          },
+                    SizedBox(
+                      width: 250,
+                      child: Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: DefaultDropDownButton(
+                            list: levels,
+                            value: level,
+                            onChanged: (value) {
+                              yearResultProvider.changeLevel(
+                                  selectedLevel: value);
+                            },
+                          ),
                         ),
                       ),
                     ),
@@ -96,7 +98,147 @@ class YearResultScreen extends StatelessWidget {
                               textDirection: TextDirection.rtl,
                               defaultVerticalAlignment:
                                   TableCellVerticalAlignment.middle,
-                              children: tableRows,
+                              children: [
+                                TableRow(
+                                  children: [
+                                    Text(
+                                      "المقرر الدراسي",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.grey,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      "الدرجة",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.grey,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      "التقدير",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.grey,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                TableRow(
+                                  children: [
+                                    SizedBox(
+                                      height: 70.0,
+                                      child: Center(
+                                        child: Text(
+                                          "${YearResultProvider().subject}",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.primary,
+                                            fontSize: 16.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      "${YearResultProvider().degree}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      "${YearResultProvider().grade}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                TableRow(
+                                  children: [
+                                    SizedBox(
+                                      height: 70.0,
+                                      child: Center(
+                                        child: Text(
+                                          "${YearResultProvider().subject}",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.primary,
+                                            fontSize: 16.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      "${YearResultProvider().degree}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      "${YearResultProvider().grade}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                TableRow(
+                                  children: [
+                                    SizedBox(
+                                      height: 70.0,
+                                      child: Center(
+                                        child: Text(
+                                          "${YearResultProvider().subject}",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.primary,
+                                            fontSize: 16.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      "${YearResultProvider().degree}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      "${YearResultProvider().grade}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                        fontSize: 16.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -120,7 +262,7 @@ class YearResultScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "1600",
+                                "${YearResultProvider().total}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -143,7 +285,7 @@ class YearResultScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "جيد جدا",
+                                "${YearResultProvider().total_Grade}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -166,7 +308,7 @@ class YearResultScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "99.99%",
+                                "${YearResultProvider().persantage}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,

@@ -3,10 +3,10 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Documents_Request/Documents_request_page.dart';
 import 'package:graduation_project/Exams_table/Exams_table.dart';
-import 'package:graduation_project/Study_result_page/study_result.dart';
+import 'package:graduation_project/Study_result_page/study_result_responsive.dart';
 import 'package:graduation_project/constants/constants.dart';
-import 'package:graduation_project/fees_page/fees_page.dart';
-import 'package:graduation_project/study_table/stydy_table.dart';
+import 'package:graduation_project/fees_page/fees_page_responsive.dart';
+import 'package:graduation_project/study_table/stydy_table_Responsive.dart';
 
 class sidemenu extends StatelessWidget {
   @override
@@ -123,7 +123,8 @@ class sidemenu extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => Study_table()),
+                  MaterialPageRoute(
+                      builder: (context) => Study_table_Responsive()),
                 );
               },
               child: Text(
@@ -171,7 +172,8 @@ class sidemenu extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => fess_page()),
+                  MaterialPageRoute(
+                      builder: (context) => fess_page_Responsive()),
                 );
               },
               child: Text(
@@ -195,7 +197,8 @@ class sidemenu extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => Study_Result()),
+                  MaterialPageRoute(
+                      builder: (context) => Study_Result_Responsive()),
                 );
               },
               child: Text(

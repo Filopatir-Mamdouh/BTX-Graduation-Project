@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/app_colors.dart';
 import 'package:graduation_project/presentation/provider/lecturers_attendance_schedule_provider.dart';
+import 'package:graduation_project/presentation/widgets/widgets/default_check_box.dart';
 
 import 'package:provider/provider.dart';
 
@@ -13,7 +14,6 @@ class LecturersAttendanceScheduleScreen_Desk_Tablet extends StatelessWidget {
         Provider.of<LecturersAttendanceScheduleProvider>(context);
     int selectedScheduleType =
         lecturersAttendanceScheduleProvider.selectedScheduleType;
-    List<TableRow> tableRows = lecturersAttendanceScheduleProvider.tableRows;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -27,7 +27,7 @@ class LecturersAttendanceScheduleScreen_Desk_Tablet extends StatelessWidget {
               Text(
                 "جدول حضور المحاضرين",
                 style: TextStyle(
-                  color: Colors.grey[900],
+                  color: AppColors.grey,
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,
                 ),
@@ -95,7 +95,334 @@ class LecturersAttendanceScheduleScreen_Desk_Tablet extends StatelessWidget {
                         color: AppColors.primary,
                         width: 2.0,
                       ),
-                      children: tableRows,
+                      children: [
+                        TableRow(
+                          decoration: BoxDecoration(
+                            color: AppColors.primary,
+                          ),
+                          children: const [
+                            Text(
+                              "اليوم",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "المحاضر",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "المادة",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "الفرقة",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "الساعة",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "الحضور",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        TableRow(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "${LecturersAttendanceScheduleProvider().Day}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "${LecturersAttendanceScheduleProvider().Date}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: 70.0,
+                                  child: Center(
+                                    child: Text(
+                                      "${LecturersAttendanceScheduleProvider().Lecturer}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: AppColors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Divider(
+                                  color: AppColors.primary,
+                                  thickness: 2,
+                                ),
+                                SizedBox(
+                                  height: 70.0,
+                                  child: Center(
+                                    child: Text(
+                                      "${LecturersAttendanceScheduleProvider().Lecturer}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: AppColors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Center(
+                                          child: Text(
+                                            "${LecturersAttendanceScheduleProvider().subject}",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: AppColors.grey,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(
+                                        color: AppColors.primary,
+                                        thickness: 2.0,
+                                      ),
+                                      Expanded(
+                                        child: Center(
+                                          child: Text(
+                                            "${LecturersAttendanceScheduleProvider().subject}",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: AppColors.grey,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Divider(
+                                  color: AppColors.primary,
+                                  thickness: 2.0,
+                                ),
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Center(
+                                    child: Text(
+                                      "",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: AppColors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Center(
+                                          child: Text(
+                                            "${LecturersAttendanceScheduleProvider().year}",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: AppColors.grey,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(
+                                        color: AppColors.primary,
+                                        thickness: 2.0,
+                                      ),
+                                      Expanded(
+                                        child: Center(
+                                          child: Text(
+                                            "${LecturersAttendanceScheduleProvider().year}",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: AppColors.grey,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Divider(
+                                  color: AppColors.primary,
+                                  thickness: 2.0,
+                                ),
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Center(
+                                    child: Text(
+                                      "",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: AppColors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Center(
+                                          child: Text(
+                                            "${LecturersAttendanceScheduleProvider().hour}",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: AppColors.grey,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(
+                                        color: AppColors.primary,
+                                        thickness: 2.0,
+                                      ),
+                                      Expanded(
+                                        child: Center(
+                                          child: Text(
+                                            "${LecturersAttendanceScheduleProvider().hour}",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: AppColors.grey,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Divider(
+                                  color: AppColors.primary,
+                                  thickness: 2.0,
+                                ),
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Center(
+                                    child: Text(
+                                      "",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: AppColors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Center(
+                                          child: DefaultCheckBox(
+                                            value: false,
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(
+                                        color: AppColors.primary,
+                                        thickness: 2.0,
+                                      ),
+                                      Expanded(
+                                        child: Center(
+                                          child: DefaultCheckBox(
+                                            value:
+                                                LecturersAttendanceScheduleProvider()
+                                                    .ChecBox,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Divider(
+                                  color: AppColors.primary,
+                                  thickness: 2.0,
+                                ),
+                                SizedBox(
+                                  height: 90.0,
+                                  child: Center(
+                                    child: DefaultCheckBox(
+                                      value:
+                                          LecturersAttendanceScheduleProvider()
+                                              .ChecBox,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

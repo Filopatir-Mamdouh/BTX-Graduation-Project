@@ -18,7 +18,6 @@ class student_Attendance_Desk_tablet extends StatelessWidget {
     List<String> departments = studentsAttendanceScheduleProvider.departments;
     String? division = studentsAttendanceScheduleProvider.division;
     List<String> divisions = studentsAttendanceScheduleProvider.divisions;
-    List<TableRow> tableRows = studentsAttendanceScheduleProvider.tableRows;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -32,7 +31,7 @@ class student_Attendance_Desk_tablet extends StatelessWidget {
               Text(
                 "جدول حضور الطلبة",
                 style: TextStyle(
-                  color: Colors.grey[900],
+                  color: AppColors.grey,
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,
                 ),
@@ -40,78 +39,81 @@ class student_Attendance_Desk_tablet extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              Row(
-                children: [
-                  Text(
-                    "الفرقة",
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+              SizedBox(
+                width: 550,
+                child: Row(
+                  children: [
+                    Text(
+                      "الفرقة",
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5.0,
-                  ),
-                  Expanded(
-                    child: DefaultDropDownButton(
-                      list: levels,
-                      value: level,
-                      onChanged: (value) {
-                        studentsAttendanceScheduleProvider.changeLevel(
-                            selectedLevel: value);
-                      },
+                    const SizedBox(
+                      width: 5.0,
                     ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    "القسم",
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+                    Expanded(
+                      child: DefaultDropDownButton(
+                        list: levels,
+                        value: level,
+                        onChanged: (value) {
+                          studentsAttendanceScheduleProvider.changeLevel(
+                              selectedLevel: value);
+                        },
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5.0,
-                  ),
-                  Expanded(
-                    child: DefaultDropDownButton(
-                      list: departments,
-                      value: department,
-                      onChanged: (value) {
-                        studentsAttendanceScheduleProvider.changeDepartment(
-                            selectedDepartment: value);
-                      },
+                    const SizedBox(
+                      width: 10.0,
                     ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    "الشعبة",
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+                    Text(
+                      "القسم",
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5.0,
-                  ),
-                  Expanded(
-                    child: DefaultDropDownButton(
-                      list: divisions,
-                      value: division,
-                      onChanged: (value) {
-                        studentsAttendanceScheduleProvider.changeDivision(
-                            selectedDivision: value);
-                      },
+                    const SizedBox(
+                      width: 5.0,
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: DefaultDropDownButton(
+                        list: departments,
+                        value: department,
+                        onChanged: (value) {
+                          studentsAttendanceScheduleProvider.changeDepartment(
+                              selectedDepartment: value);
+                        },
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    Text(
+                      "الشعبة",
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 5.0,
+                    ),
+                    Expanded(
+                      child: DefaultDropDownButton(
+                        list: divisions,
+                        value: division,
+                        onChanged: (value) {
+                          studentsAttendanceScheduleProvider.changeDivision(
+                              selectedDivision: value);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 15.0,
@@ -135,7 +137,567 @@ class student_Attendance_Desk_tablet extends StatelessWidget {
                         color: AppColors.primary,
                         width: 2.0,
                       ),
-                      children: tableRows,
+                      children: [
+                        TableRow(
+                          decoration: BoxDecoration(
+                            color: AppColors.primary,
+                          ),
+                          children: [
+                            const Text(
+                              "الكود",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const Text(
+                              "الاسم",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "مادة 1",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: List.generate(
+                                        studentsAttendanceScheduleProvider
+                                            .subjectsAttendance[0].length,
+                                        (index) => Text(
+                                          (++index).toString(),
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "مادة 2",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: List.generate(
+                                        studentsAttendanceScheduleProvider
+                                            .subjectsAttendance[1].length,
+                                        (index) => Text(
+                                          (++index).toString(),
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "مادة 3",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: List.generate(
+                                        studentsAttendanceScheduleProvider
+                                            .subjectsAttendance[2].length,
+                                        (index) => Text(
+                                          (++index).toString(),
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "مادة 4",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: List.generate(
+                                        studentsAttendanceScheduleProvider
+                                            .subjectsAttendance[3].length,
+                                        (index) => Text(
+                                          (++index).toString(),
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "مادة 5",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: List.generate(
+                                        studentsAttendanceScheduleProvider
+                                            .subjectsAttendance[4].length,
+                                        (index) => Text(
+                                          (++index).toString(),
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "مادة 6",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: List.generate(
+                                        studentsAttendanceScheduleProvider
+                                            .subjectsAttendance[5].length,
+                                        (index) => Text(
+                                          (++index).toString(),
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        TableRow(
+                          children: [
+                            Text(
+                              "${StudentsAttendanceScheduleProvider().code}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  "${StudentsAttendanceScheduleProvider().name}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Row(
+                                  children: List.generate(
+                                    studentsAttendanceScheduleProvider
+                                        .subjectsAttendance[0].length,
+                                    (index) =>
+                                        studentsAttendanceScheduleProvider
+                                                        .subjectsAttendance[0]
+                                                    [index] ==
+                                                true
+                                            ? InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 0,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.check,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              )
+                                            : InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 0,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.remove,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Row(
+                                  children: List.generate(
+                                    studentsAttendanceScheduleProvider
+                                        .subjectsAttendance[1].length,
+                                    (index) =>
+                                        studentsAttendanceScheduleProvider
+                                                        .subjectsAttendance[1]
+                                                    [index] ==
+                                                true
+                                            ? InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 1,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.check,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              )
+                                            : InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 1,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.remove,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Row(
+                                  children: List.generate(
+                                    studentsAttendanceScheduleProvider
+                                        .subjectsAttendance[2].length,
+                                    (index) =>
+                                        studentsAttendanceScheduleProvider
+                                                        .subjectsAttendance[2]
+                                                    [index] ==
+                                                true
+                                            ? InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 2,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.check,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              )
+                                            : InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 2,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.remove,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Row(
+                                  children: List.generate(
+                                    studentsAttendanceScheduleProvider
+                                        .subjectsAttendance[3].length,
+                                    (index) =>
+                                        studentsAttendanceScheduleProvider
+                                                        .subjectsAttendance[3]
+                                                    [index] ==
+                                                true
+                                            ? InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 3,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.check,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              )
+                                            : InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 3,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.remove,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Row(
+                                  children: List.generate(
+                                    studentsAttendanceScheduleProvider
+                                        .subjectsAttendance[4].length,
+                                    (index) =>
+                                        studentsAttendanceScheduleProvider
+                                                        .subjectsAttendance[4]
+                                                    [index] ==
+                                                true
+                                            ? InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 4,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.check,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              )
+                                            : InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 4,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.remove,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Row(
+                                  children: List.generate(
+                                    studentsAttendanceScheduleProvider
+                                        .subjectsAttendance[5].length,
+                                    (index) =>
+                                        studentsAttendanceScheduleProvider
+                                                        .subjectsAttendance[5]
+                                                    [index] ==
+                                                true
+                                            ? InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 5,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.check,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              )
+                                            : InkWell(
+                                                onTap: () {
+                                                  studentsAttendanceScheduleProvider
+                                                      .changeSubjectAttendance(
+                                                          firstIndex: 5,
+                                                          secondIndex: index);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color:
+                                                              AppColors.grey)),
+                                                  child: Icon(
+                                                    Icons.remove,
+                                                    color: AppColors.grey,
+                                                  ),
+                                                ),
+                                              ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

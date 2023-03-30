@@ -10,10 +10,12 @@ import 'dart:html';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Data_Screen/Data_Screen_Desk_tablet.dart';
 import 'package:graduation_project/Data_Screen/students_data_screen.dart';
+import 'package:graduation_project/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
+import 'package:graduation_project/Educational%20_Data/Educational_Data_Screen.dart';
 import 'package:graduation_project/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
-class Data_Screen_responsive extends StatelessWidget {
+class StudentsDataScreen_Responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   PageController page = PageController();

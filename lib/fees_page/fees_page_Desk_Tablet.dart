@@ -10,7 +10,6 @@ class StudyFees_Desk_Tablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final studyFeesProvider = Provider.of<StudyFeesPro>(context);
-    List<TableRow> tableRows = studyFeesProvider.tableRows;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -33,24 +32,120 @@ class StudyFees_Desk_Tablet extends StatelessWidget {
                 height: 20.0,
               ),
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 100, left: 100),
-                  child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColors.primary,
-                        width: 12.0,
-                      ),
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: AppColors.primary,
+                      width: 12.0,
                     ),
-                    child: SingleChildScrollView(
-                      child: Table(
-                        textDirection: TextDirection.rtl,
-                        defaultVerticalAlignment:
-                            TableCellVerticalAlignment.middle,
-                        children: tableRows,
-                      ),
+                  ),
+                  child: SingleChildScrollView(
+                    child: Table(
+                      textDirection: TextDirection.rtl,
+                      defaultVerticalAlignment:
+                          TableCellVerticalAlignment.middle,
+                      children: [
+                        TableRow(
+                          children: [
+                            Text(
+                              "رقم الإذن",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.grey,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "تاريخ الإذن",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.grey,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "رقم الإيصال",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.grey,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "تاريخ السداد",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.grey,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "الإجمالي",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.grey,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        TableRow(
+                          children: [
+                            Text(
+                              "${StudyFeesPro().permission_number}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.primary,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "${StudyFeesPro().permission_date}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.primary,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "${StudyFeesPro().recepit_number}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.primary,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "${StudyFeesPro().date_of_payment}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.primary,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            Text(
+                              "${StudyFeesPro().total}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.primary,
+                                fontSize: 16.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

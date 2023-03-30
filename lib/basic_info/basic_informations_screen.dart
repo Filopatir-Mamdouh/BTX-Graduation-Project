@@ -57,97 +57,89 @@ class BasicInformationsScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             Expanded(
-                              child: FittedBox(
-                                child: MaterialButton(
-                                  height: 30.0,
-                                  onPressed: () {
-                                    basicInformationsProvider
-                                        .changeBasicInformationsIndex(index: 0);
-                                  },
-                                  color: basicInformationsIndex == 0
-                                      ? Colors.white
-                                      : AppColors.primary,
-                                  child: Text(
-                                    "الشخصية",
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: basicInformationsIndex == 0
-                                          ? AppColors.primary
-                                          : Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                              child: MaterialButton(
+                                height: 30.0,
+                                onPressed: () {
+                                  basicInformationsProvider
+                                      .changeBasicInformationsIndex(index: 0);
+                                },
+                                color: basicInformationsIndex == 0
+                                    ? Colors.white
+                                    : AppColors.primary,
+                                child: Text(
+                                  "الشخصية",
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: basicInformationsIndex == 0
+                                        ? AppColors.primary
+                                        : Colors.white,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
-                              child: FittedBox(
-                                child: MaterialButton(
-                                  height: 30.0,
-                                  onPressed: () {
-                                    basicInformationsProvider
-                                        .changeBasicInformationsIndex(index: 1);
-                                  },
-                                  color: basicInformationsIndex == 1
-                                      ? Colors.white
-                                      : AppColors.primary,
-                                  child: Text(
-                                    "الإتصال",
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: basicInformationsIndex == 1
-                                          ? AppColors.primary
-                                          : Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                              child: MaterialButton(
+                                height: 30.0,
+                                onPressed: () {
+                                  basicInformationsProvider
+                                      .changeBasicInformationsIndex(index: 1);
+                                },
+                                color: basicInformationsIndex == 1
+                                    ? Colors.white
+                                    : AppColors.primary,
+                                child: Text(
+                                  "الإتصال",
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: basicInformationsIndex == 1
+                                        ? AppColors.primary
+                                        : Colors.white,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
-                              child: FittedBox(
-                                child: MaterialButton(
-                                  height: 30.0,
-                                  onPressed: () {
-                                    basicInformationsProvider
-                                        .changeBasicInformationsIndex(index: 2);
-                                  },
-                                  color: basicInformationsIndex == 2
-                                      ? Colors.white
-                                      : AppColors.primary,
-                                  child: Text(
-                                    "ولي الأمر",
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: basicInformationsIndex == 2
-                                          ? AppColors.primary
-                                          : Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                              child: MaterialButton(
+                                height: 30.0,
+                                onPressed: () {
+                                  basicInformationsProvider
+                                      .changeBasicInformationsIndex(index: 2);
+                                },
+                                color: basicInformationsIndex == 2
+                                    ? Colors.white
+                                    : AppColors.primary,
+                                child: Text(
+                                  "ولي الأمر",
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: basicInformationsIndex == 2
+                                        ? AppColors.primary
+                                        : Colors.white,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
-                              child: FittedBox(
-                                child: MaterialButton(
-                                  height: 40.0,
-                                  onPressed: () {
-                                    basicInformationsProvider
-                                        .changeBasicInformationsIndex(index: 3);
-                                  },
-                                  color: basicInformationsIndex == 3
-                                      ? Colors.white
-                                      : AppColors.primary,
-                                  child: Text(
-                                    "المؤهل السابق",
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: basicInformationsIndex == 3
-                                          ? AppColors.primary
-                                          : Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                              child: MaterialButton(
+                                height: 40.0,
+                                onPressed: () {
+                                  basicInformationsProvider
+                                      .changeBasicInformationsIndex(index: 3);
+                                },
+                                color: basicInformationsIndex == 3
+                                    ? Colors.white
+                                    : AppColors.primary,
+                                child: Text(
+                                  "المؤهل السابق",
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: basicInformationsIndex == 3
+                                        ? AppColors.primary
+                                        : Colors.white,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
@@ -157,59 +149,98 @@ class BasicInformationsScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: basicInformationsIndex == 0
-                            ? const PersonalDetails(
-                                name: "أحمد محمود",
-                                englishName: "Ahmed Mahmoud",
-                                code: "365",
-                                religion: "مسلم",
-                                gender: "ذكر",
-                                nationality: "مصري",
-                                birthDay: "19/05/2001",
-                                birthPlace: "بنها",
-                                socialStatus: "أعزب",
-                                cardType: "بطاقة قومية",
-                                cardNumber: "12345678910112",
-                                publishDate: "",
-                                publishPlace: "بنها",
-                                fatherName: "محمود حسن",
-                                motherName: "",
-                                entryStatus: "مستجد تقدير",
-                                acceptanceType: "محول",
-                                acceptanceYear: "2021-2020",
+                            ? PersonalDetails(
+                                name: "${BasicInformationsProvider().name}",
+                                englishName:
+                                    "${BasicInformationsProvider().englishName}",
+                                code: "${BasicInformationsProvider().code}",
+                                religion:
+                                    "${BasicInformationsProvider().religion}",
+                                gender: "${BasicInformationsProvider().gender}",
+                                nationality:
+                                    "${BasicInformationsProvider().nationality}",
+                                birthDay:
+                                    "${BasicInformationsProvider().birthDay}",
+                                birthPlace:
+                                    "${BasicInformationsProvider().birthPlace}",
+                                socialStatus:
+                                    "${BasicInformationsProvider().socialStatus}",
+                                cardType:
+                                    "${BasicInformationsProvider().cardType}",
+                                cardNumber:
+                                    "${BasicInformationsProvider().cardNumber}",
+                                publishDate:
+                                    "${BasicInformationsProvider().publishDate}",
+                                publishPlace:
+                                    "${BasicInformationsProvider().publishPlace}",
+                                fatherName:
+                                    "${BasicInformationsProvider().fatherName}",
+                                motherName:
+                                    "${BasicInformationsProvider().motherName}",
+                                entryStatus:
+                                    "${BasicInformationsProvider().entryStatus}",
+                                acceptanceType:
+                                    "${BasicInformationsProvider().acceptanceType}",
+                                acceptanceYear:
+                                    "${BasicInformationsProvider().acceptanceYear}",
                               )
                             : (basicInformationsIndex == 1
-                                ? const ContactsDetails(
-                                    city: "بنها",
-                                    address: "بنها",
-                                    homeNumber: "",
-                                    phoneNumber: "01203491221",
-                                    email: "",
-                                    fax: "",
-                                    buildingNumber: "",
-                                    apartmentNumber: "",
-                                    mailBox: "",
-                                    mailCode: "",
+                                ? ContactsDetails(
+                                    city: "${BasicInformationsProvider().city}",
+                                    address:
+                                        "${BasicInformationsProvider().address}",
+                                    homeNumber:
+                                        "${BasicInformationsProvider().homeNumber}",
+                                    phoneNumber:
+                                        "${BasicInformationsProvider().phoneNumber}",
+                                    email:
+                                        "${BasicInformationsProvider().email}",
+                                    fax: "${BasicInformationsProvider().fax}",
+                                    buildingNumber:
+                                        "${BasicInformationsProvider().buildingNumber}",
+                                    apartmentNumber:
+                                        "${BasicInformationsProvider().apartmentNumber}",
+                                    mailBox:
+                                        "${BasicInformationsProvider().mailBox}",
+                                    mailCode:
+                                        "${BasicInformationsProvider().mailCode}",
                                   )
                                 : (basicInformationsIndex == 2
-                                    ? const MasterDetails(
-                                        name: "احمد حالد",
-                                        nationality: "مصري",
-                                        city: "بني سويف",
-                                        address: "بني سويف",
-                                        job: "",
-                                        jobPlace: "",
-                                        degreeOfKinship: "أب",
-                                        homeNumber: "",
-                                        phoneNumber: "",
-                                        email: "",
-                                        fax: "",
+                                    ? MasterDetails(
+                                        name:
+                                            "${BasicInformationsProvider().fatherName}",
+                                        nationality:
+                                            "${BasicInformationsProvider().Father_Nationality}",
+                                        city:
+                                            "${BasicInformationsProvider().Father_City}",
+                                        address:
+                                            "${BasicInformationsProvider().Father_Address}",
+                                        job:
+                                            "${BasicInformationsProvider().Father_Job}",
+                                        jobPlace:
+                                            "${BasicInformationsProvider().Father_Job_Place}",
+                                        degreeOfKinship:
+                                            "${BasicInformationsProvider().degreeOfKinship}",
+                                        homeNumber:
+                                            "${BasicInformationsProvider().homeNumber}",
+                                        phoneNumber:
+                                            "${BasicInformationsProvider().Father_Phone_Number}",
+                                        email:
+                                            "${BasicInformationsProvider().father_Email}",
+                                        fax:
+                                            "${BasicInformationsProvider().father_Fax}",
                                       )
-                                    : const PreviousQualification(
-                                        qualification: "ثانوي عام رياضة",
-                                        place: "مدرسةبني سويف الرسمية لغات",
-                                        graduationYear: "2019",
-                                        total: "450",
-                                        percentage: "100%",
+                                    : PreviousQualification(
+                                        qualification:
+                                            "${BasicInformationsProvider().qualification}",
+                                        place:
+                                            "${BasicInformationsProvider().place}",
+                                        graduationYear:
+                                            "${BasicInformationsProvider().graduationYear}",
+                                        total:
+                                            "${BasicInformationsProvider().total}",
+                                        percentage:
+                                            "${BasicInformationsProvider().percentage}",
                                       ))),
                       ),
                     ],

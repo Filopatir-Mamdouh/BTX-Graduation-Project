@@ -17,7 +17,6 @@ class StudentsDataScreen extends StatelessWidget {
     List<String> departments = studentsDataProvider.departments;
     String? division = studentsDataProvider.division;
     List<String> divisions = studentsDataProvider.divisions;
-    List<TableRow> tableRows = studentsDataProvider.tableRows;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -168,7 +167,131 @@ class StudentsDataScreen extends StatelessWidget {
                           color: AppColors.primary,
                           width: 2.0,
                         ),
-                        children: tableRows,
+                        children: [
+                          TableRow(
+                            decoration: BoxDecoration(
+                              color: AppColors.primary,
+                            ),
+                            children: const [
+                              Text(
+                                "الكود",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "الاسم",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "رقم البطاقة",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "التليفون",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "حالة القيد",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "المؤهل",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text(
+                                "${StudentsDataProvider().code}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: AppColors.grey,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  "${StudentsDataProvider().name}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              FittedBox(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5.0),
+                                  child: Text(
+                                    "${StudentsDataProvider().ID_Number}",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: AppColors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              FittedBox(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5.0),
+                                  child: Text(
+                                    "${StudentsDataProvider().phone_Number}",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: AppColors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "${StudentsDataProvider().Entry_Status}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: AppColors.grey,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "${StudentsDataProvider().Qualification}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: AppColors.grey,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),

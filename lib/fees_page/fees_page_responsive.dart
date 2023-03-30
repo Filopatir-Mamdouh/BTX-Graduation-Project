@@ -8,24 +8,23 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Study_fees_affairs/Study_fees_Desk_tablet.dart';
-import 'package:graduation_project/Study_fees_affairs/study_fees_screen.dart';
 import 'package:graduation_project/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/fees_page/fees_class.dart';
+import 'package:graduation_project/fees_page/fees_page_Desk_Tablet.dart';
 import 'package:graduation_project/responsive.dart';
 
-class Study_Fees_Responsive extends StatelessWidget {
+class fess_page_Responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   PageController page = PageController();
-
   late final String title;
 
   @override
   Widget build(BuildContext context) {
+    Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: Responsive(
         mobile: MaterialApp(
-          title: 'Study Result',
+          title: 'Fees Page',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -50,7 +49,7 @@ class Study_Fees_Responsive extends StatelessWidget {
                             color: Colors.white))),
               )
             ]),
-            body: StudyFeesScreen(),
+            body: StudyFees(),
             appBar: AppBar(
               backgroundColor: Color(0xFF3E6BA9), // Will work
               title: Row(
@@ -73,7 +72,7 @@ class Study_Fees_Responsive extends StatelessWidget {
 
         //desktop view
         desktop: MaterialApp(
-          title: 'Study Fees',
+          title: 'Fees Page',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -107,9 +106,9 @@ class Study_Fees_Responsive extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                  flex: 7,
+                  flex: 6,
                   child: Container(
-                    child: StudyFeesScreen_Dsktop_tablet(),
+                    child: StudyFees_Desk_Tablet(),
                   ),
                 ),
               ],
@@ -129,7 +128,7 @@ class Study_Fees_Responsive extends StatelessWidget {
           ),
         ),
         tablet: MaterialApp(
-          title: 'Study Result',
+          title: 'Fees Page',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -157,7 +156,7 @@ class Study_Fees_Responsive extends StatelessWidget {
             body: Row(
               children: [
                 Flexible(
-                  flex: 3,
+                  flex: 2,
                   child: Container(
                     child: sidemenu(),
                   ),
@@ -165,7 +164,7 @@ class Study_Fees_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 6,
                   child: Container(
-                    child: StudyFeesScreen_Dsktop_tablet(),
+                    child: StudyFees_Desk_Tablet(),
                   ),
                 )
               ],
