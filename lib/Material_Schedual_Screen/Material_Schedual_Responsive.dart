@@ -25,7 +25,7 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
     return Scaffold(
       body: Responsive(
         mobile: MaterialApp(
-          title: 'Student Result',
+          title: 'Material Schedule',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -73,7 +73,7 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
 
         //desktop view
         desktop: MaterialApp(
-          title: 'Study Fees',
+          title: 'Material Schedule',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -129,7 +129,7 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
           ),
         ),
         tablet: MaterialApp(
-          title: 'Study Result',
+          title: 'Material Schedule',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,

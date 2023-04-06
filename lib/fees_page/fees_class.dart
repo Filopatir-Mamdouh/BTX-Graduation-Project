@@ -10,7 +10,6 @@ class StudyFees extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final studyFeesProvider = Provider.of<StudyFeesPro>(context);
-    List<TableRow> tableRows = studyFeesProvider.tableRows;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -49,7 +48,106 @@ class StudyFees extends StatelessWidget {
                         textDirection: TextDirection.rtl,
                         defaultVerticalAlignment:
                             TableCellVerticalAlignment.middle,
-                        children: tableRows,
+                        children: [
+                          TableRow(
+                            children: [
+                              Text(
+                                "رقم الإذن",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "تاريخ الإذن",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "رقم الإيصال",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "تاريخ السداد",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "الإجمالي",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text(
+                                "${StudyFeesPro().permission_number}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "${StudyFeesPro().permission_date}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "${StudyFeesPro().recepit_number}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "${StudyFeesPro().date_of_payment}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Text(
+                                "${StudyFeesPro().total}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),

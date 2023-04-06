@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/app_colors.dart';
 import 'package:graduation_project/presentation/provider/lecture_schadule.dart';
+import 'package:graduation_project/presentation/provider/material_Schedule_provider.dart';
 
 import 'package:provider/provider.dart';
 
@@ -9,9 +10,8 @@ class LecturesScheduleScreen_Desk_Tablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lecturesScheduleProvider =
-        Provider.of<LecturesScheduleProvider>(context);
-    List<TableRow> tableRows = lecturesScheduleProvider.tableRows;
+    final materialsScheduleProvider =
+        Provider.of<MaterialsScheduleProvider>(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -26,7 +26,7 @@ class LecturesScheduleScreen_Desk_Tablet extends StatelessWidget {
                 Text(
                   "الجدول الدراسي",
                   style: TextStyle(
-                    color: Colors.grey[900],
+                    color: AppColors.grey,
                     fontWeight: FontWeight.bold,
                     fontSize: 18.0,
                   ),
@@ -49,54 +49,623 @@ class LecturesScheduleScreen_Desk_Tablet extends StatelessWidget {
                         textDirection: TextDirection.rtl,
                         defaultVerticalAlignment:
                             TableCellVerticalAlignment.middle,
-                        columnWidths: const {
-                          0: FlexColumnWidth(3),
-                          1: FlexColumnWidth(3),
-                          2: FlexColumnWidth(3),
-                          3: FlexColumnWidth(3),
-                          4: FlexColumnWidth(3),
-                          5: FlexColumnWidth(3),
-                          6: FlexColumnWidth(3),
-                          7: FlexColumnWidth(3),
-                          8: FlexColumnWidth(3),
-                          9: FlexColumnWidth(3),
-                        },
-                        children: tableRows,
+                        columnWidths: const {0: FlexColumnWidth(2)},
+                        children: [
+                          TableRow(
+                            children: [
+                              Text(
+                                "الفترة/اليوم",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "8-9",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "9-10",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "10-11",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "11-12",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "12-1",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "1-2",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "2-3",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "3-4",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "4-5",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                "5-6",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              SizedBox(
+                                height: 80,
+                                child: Center(
+                                  child: Text(
+                                    "السبت",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.grey,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "${MaterialsScheduleProvider().Study_Table_Subject}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              SizedBox(
+                                height: 80,
+                                child: Center(
+                                  child: Text(
+                                    "الأحد",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.grey,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "${MaterialsScheduleProvider().Study_Table_Subject}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              SizedBox(
+                                height: 80,
+                                child: Center(
+                                  child: Text(
+                                    "الإثنين",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.grey,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "${MaterialsScheduleProvider().Study_Table_Subject}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              SizedBox(
+                                height: 80,
+                                child: Center(
+                                  child: Text(
+                                    "الأربعاء",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.grey,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "${MaterialsScheduleProvider().Study_Table_Subject}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              SizedBox(
+                                height: 80,
+                                child: Center(
+                                  child: Text(
+                                    "الخميس",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.grey,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "${MaterialsScheduleProvider().Study_Table_Subject}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              Text(
+                                "",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 100, left: 100),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "تحميل الجدول",
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 18.0,
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.bold,
-                          ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "تحميل الجدول",
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 18.0,
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "جدول القاعات",
-                          style: TextStyle(
-                            color: AppColors.primary,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
-                          ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "جدول القاعات",
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),

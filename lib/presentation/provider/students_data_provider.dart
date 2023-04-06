@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/core/app_colors.dart';
 
 class StudentsDataProvider with ChangeNotifier {
   String? level;
@@ -8,130 +7,13 @@ class StudentsDataProvider with ChangeNotifier {
   List<String> departments = ["1", "2", "3", "4"];
   String? division;
   List<String> divisions = ["1", "2", "3", "4"];
-  List<TableRow> tableRows = [
-    TableRow(
-      decoration: BoxDecoration(
-        color: AppColors.primary,
-      ),
-      children: const [
-        Text(
-          "الكود",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          "الاسم",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          "رقم البطاقة",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          "التليفون",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          "حالة القيد",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          "المؤهل",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ],
-    ),
-    TableRow(
-      children: [
-        Text(
-          "45464",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: AppColors.grey,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        FittedBox(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Text(
-              "أحمد محمود",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: AppColors.grey,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        FittedBox(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Text(
-              "12345678910112",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: AppColors.grey,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        FittedBox(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Text(
-              "012345678912",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: AppColors.grey,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        Text(
-          "مستجد تقدير",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: AppColors.grey,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          "ثانوي عام",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: AppColors.grey,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ],
-    ),
-  ];
+
+  int code = 4567;
+  String name = "احمد خالد حسن";
+  int ID_Number = 34242454645656;
+  int phone_Number = 0123134543566;
+  String Entry_Status = "مستجد تقدير";
+  String Qualification = "ثانوي";
   void changeLevel({required String selectedLevel}) {
     level = selectedLevel;
     notifyListeners();

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:graduation_project/Educational%20_Data/Educational_Data_Screen.dart';
+import 'package:graduation_project/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/core/app_colors.dart';
 import 'package:graduation_project/presentation/widgets/widgets/Educational_Data_provider.dart';
 import 'package:graduation_project/presentation/widgets/widgets/default_drop_down_button.dart';
+import 'package:graduation_project/responsive.dart';
 
 import 'package:provider/provider.dart';
 
@@ -14,7 +18,6 @@ class EducationalDataScreen_Desk_Tablet extends StatelessWidget {
         Provider.of<EducationalDataProvider>(context);
     String? department = educationalDataProvider.department;
     List<String> departments = educationalDataProvider.departments;
-    List<TableRow> tableRows = educationalDataProvider.tableRows;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -28,7 +31,7 @@ class EducationalDataScreen_Desk_Tablet extends StatelessWidget {
               Text(
                 "البيانات التعليمية",
                 style: TextStyle(
-                  color: Colors.grey[900],
+                  color: AppColors.grey,
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,
                 ),
@@ -113,8 +116,8 @@ class EducationalDataScreen_Desk_Tablet extends StatelessWidget {
                         0: FlexColumnWidth(1),
                         1: FlexColumnWidth(2),
                         2: FlexColumnWidth(2),
-                        3: FlexColumnWidth(1),
-                        4: FlexColumnWidth(1),
+                        3: FlexColumnWidth(1.5),
+                        4: FlexColumnWidth(2),
                         5: FlexColumnWidth(1),
                         6: FlexColumnWidth(1),
                         7: FlexColumnWidth(1),
@@ -124,7 +127,230 @@ class EducationalDataScreen_Desk_Tablet extends StatelessWidget {
                         color: AppColors.primary,
                         width: 2.0,
                       ),
-                      children: tableRows,
+                      children: [
+                        TableRow(
+                          decoration: BoxDecoration(
+                            color: AppColors.primary,
+                          ),
+                          children: const [
+                            Text(
+                              "الكود",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "المادة",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "    القسم",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Text(
+                                "الفرقة",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Text(
+                                  "المحاضر                    ",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Text(
+                                  "Total     ",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Text(
+                                  "Lab     ",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Text(
+                                  "Tutorial",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Text(
+                                  "Lecture",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Text(
+                                  "Credit   ",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        TableRow(
+                          children: [
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  "${EducationalDataProvider().code}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  "${EducationalDataProvider().subject}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  "${EducationalDataProvider().Section}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "الرابعة",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "${EducationalDataProvider().Lecturer}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "${EducationalDataProvider().total}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "${EducationalDataProvider().lab}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "${EducationalDataProvider().turtual}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "${EducationalDataProvider().lecture}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "${EducationalDataProvider().credit}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -11,7 +11,7 @@ class LecturersInformationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final lecturersInformationsProvider =
         Provider.of<LecturersInformationsProvider>(context);
-    List<TableRow> tableRows = lecturersInformationsProvider.tableRows;
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -25,7 +25,7 @@ class LecturersInformationsScreen extends StatelessWidget {
               Text(
                 "بيانات المحاضرين",
                 style: TextStyle(
-                  color: Colors.grey[900],
+                  color: AppColors.grey,
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,
                 ),
@@ -52,7 +52,141 @@ class LecturersInformationsScreen extends StatelessWidget {
                         color: AppColors.primary,
                         width: 2.0,
                       ),
-                      children: tableRows,
+                      children: [
+                        TableRow(
+                          decoration: BoxDecoration(
+                            color: AppColors.primary,
+                          ),
+                          children: const [
+                            Text(
+                              "الكود",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "الاسم",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "المادة",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "الفرقة",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "التليفون",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        TableRow(
+                          children: [
+                            Text(
+                              " ${LecturersInformationsProvider().code}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 5.0),
+                              child: Text(
+                                " ${LecturersInformationsProvider().name}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: AppColors.grey,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  " ${LecturersInformationsProvider().subject}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Divider(
+                                  color: AppColors.primary,
+                                  thickness: 2.0,
+                                ),
+                                Text(
+                                  " ${LecturersInformationsProvider().subject}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  " ${LecturersInformationsProvider().year}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Divider(
+                                  color: AppColors.primary,
+                                  thickness: 2.0,
+                                ),
+                                Text(
+                                  " ${LecturersInformationsProvider().year}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            FittedBox(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  " ${LecturersInformationsProvider().phone_Number}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

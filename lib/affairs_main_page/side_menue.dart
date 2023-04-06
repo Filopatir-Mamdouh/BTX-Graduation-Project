@@ -3,10 +3,11 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Documents_Request/Documents_request_page.dart';
 import 'package:graduation_project/Exams_table/Exams_table.dart';
-import 'package:graduation_project/Study_result_page/study_result.dart';
+import 'package:graduation_project/Study_result_page/study_result_responsive.dart';
 import 'package:graduation_project/constants/constants.dart';
-import 'package:graduation_project/fees_page/fees_page.dart';
-import 'package:graduation_project/study_table/stydy_table.dart';
+import 'package:graduation_project/fees_page/fees_page_responsive.dart';
+import 'package:graduation_project/presentation/provider/side_Menue_provider.dart';
+import 'package:graduation_project/study_table/stydy_table_Responsive.dart';
 
 class sidemenu extends StatelessWidget {
   @override
@@ -30,19 +31,19 @@ class sidemenu extends StatelessWidget {
                     border: Border.all(width: 0.5, color: grey_text),
                     borderRadius: const BorderRadius.all(Radius.circular(50)),
                   ),
-                  child: Image.asset("logo2.png"),
+                  child: Image.asset("${Side_Menue_provider().Student_Image}"),
                 ),
                 SizedBox(
                   height: 5,
                 ),
                 Column(
                   children: [
-                    Text("احمد ",
+                    Text("${Side_Menue_provider().Student_Name}",
                         style: TextStyle(
                             color: grey_text,
                             fontSize: 18,
                             fontWeight: FontWeight.bold)),
-                    Text("خالد حسن ابو الليل",
+                    Text("${Side_Menue_provider().Father_Name}",
                         style: TextStyle(
                             color: grey_text,
                             fontSize: 18,
@@ -56,13 +57,13 @@ class sidemenu extends StatelessWidget {
             ),
             SizedBox(
               child: Center(
-                child: Text("الفرقة الرابعه",
+                child: Text("${Side_Menue_provider().year}",
                     style: TextStyle(color: grey_text, fontSize: 16)),
               ),
             ),
             SizedBox(
               child: Center(
-                child: Text("S/W development Trak",
+                child: Text("${Side_Menue_provider().Section}",
                     style: TextStyle(
                         color: grey_text,
                         fontSize: 15,
@@ -123,7 +124,8 @@ class sidemenu extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => Study_table()),
+                  MaterialPageRoute(
+                      builder: (context) => Study_table_Responsive()),
                 );
               },
               child: Text(
@@ -171,7 +173,8 @@ class sidemenu extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => fess_page()),
+                  MaterialPageRoute(
+                      builder: (context) => fess_page_Responsive()),
                 );
               },
               child: Text(
@@ -195,7 +198,8 @@ class sidemenu extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => Study_Result()),
+                  MaterialPageRoute(
+                      builder: (context) => Study_Result_Responsive()),
                 );
               },
               child: Text(

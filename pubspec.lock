@@ -237,7 +237,7 @@ packages:
       name: image_picker_android
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.6+5"
+    version: "0.8.6+6"
   image_picker_for_web:
     dependency: transitive
     description:
@@ -385,13 +385,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.7"
-  picker:
-    dependency: "direct main"
-    description:
-      name: picker
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.6"
   picker_whell:
     dependency: "direct main"
     description:
@@ -621,13 +614,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  xfile:
-    dependency: "direct main"
-    description:
-      name: xfile
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0"
 sdks:
   dart: ">=2.18.6 <3.0.0"
   flutter: ">=3.3.0"

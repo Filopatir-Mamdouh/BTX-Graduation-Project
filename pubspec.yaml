@@ -54,8 +54,9 @@ dependencies:
   code_scan: ^0.4.8
   button_navigation_bar: ^0.1.3
   barcode_widget: ^2.0.3
-  picker: ^1.0.6
-  xfile: ^1.1.0
+  
+  
+ 
   max_size_text: ^2.0.12
   picker_whell: ^0.0.3
   max30101: ^1.0.0-RC3

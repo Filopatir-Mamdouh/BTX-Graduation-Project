@@ -8,23 +8,26 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:graduation_project/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
+import 'package:graduation_project/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
+import 'package:graduation_project/Student_information_screen/Student_information_Desk_Tablet.dart';
+import 'package:graduation_project/Student_information_screen/student_information.dart';
 import 'package:graduation_project/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
-import 'package:graduation_project/study_table/Study_Table_Desk_TAblet.dart';
-import 'package:graduation_project/study_table/study_table_class.dart';
 
-class Study_table extends StatelessWidget {
+class student_Information_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   PageController page = PageController();
+
   late final String title;
 
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: Responsive(
         mobile: MaterialApp(
-          title: 'Study Table',
+          title: 'Student Information',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -49,7 +52,7 @@ class Study_table extends StatelessWidget {
                             color: Colors.white))),
               )
             ]),
-            body: LecturesScheduleScreen(),
+            body: StudentsInformationsScreen(),
             appBar: AppBar(
               backgroundColor: Color(0xFF3E6BA9), // Will work
               title: Row(
@@ -72,7 +75,7 @@ class Study_table extends StatelessWidget {
 
         //desktop view
         desktop: MaterialApp(
-          title: 'Study Table',
+          title: 'Student Information',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -106,9 +109,9 @@ class Study_table extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                  flex: 6,
+                  flex: 7,
                   child: Container(
-                    child: LecturesScheduleScreen_Desk_Tablet(),
+                    child: StudentsInformationsScreen_Desk_Tablet(),
                   ),
                 ),
               ],
@@ -128,7 +131,7 @@ class Study_table extends StatelessWidget {
           ),
         ),
         tablet: MaterialApp(
-          title: 'Study Table',
+          title: 'Student Information',
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -164,9 +167,9 @@ class Study_table extends StatelessWidget {
                 Flexible(
                   flex: 6,
                   child: Container(
-                    child: LecturesScheduleScreen_Desk_Tablet(),
+                    child: StudentsInformationsScreen_Desk_Tablet(),
                   ),
-                ),
+                )
               ],
             ),
             appBar: AppBar(

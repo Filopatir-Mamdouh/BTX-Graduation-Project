@@ -31,7 +31,7 @@ class StudentsAcademicResults extends StatelessWidget {
               Text(
                 "النتائج الدراسية للطلبة",
                 style: TextStyle(
-                  color: Colors.grey[900],
+                  color: AppColors.grey,
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,
                 ),
@@ -39,78 +39,81 @@ class StudentsAcademicResults extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              Row(
-                children: [
-                  Text(
-                    "الفرقة",
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+              SizedBox(
+                width: 550,
+                child: Row(
+                  children: [
+                    Text(
+                      "الفرقة",
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5.0,
-                  ),
-                  Expanded(
-                    child: DefaultDropDownButton(
-                      list: levels,
-                      value: level,
-                      onChanged: (value) {
-                        studentsAcademicResultsProvider.changeLevel(
-                            selectedLevel: value);
-                      },
+                    const SizedBox(
+                      width: 5.0,
                     ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    "القسم",
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+                    Expanded(
+                      child: DefaultDropDownButton(
+                        list: levels,
+                        value: level,
+                        onChanged: (value) {
+                          studentsAcademicResultsProvider.changeLevel(
+                              selectedLevel: value);
+                        },
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5.0,
-                  ),
-                  Expanded(
-                    child: DefaultDropDownButton(
-                      list: departments,
-                      value: department,
-                      onChanged: (value) {
-                        studentsAcademicResultsProvider.changeDepartment(
-                            selectedDepartment: value);
-                      },
+                    const SizedBox(
+                      width: 10.0,
                     ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    "الشعبة",
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+                    Text(
+                      "القسم",
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5.0,
-                  ),
-                  Expanded(
-                    child: DefaultDropDownButton(
-                      list: divisions,
-                      value: division,
-                      onChanged: (value) {
-                        studentsAcademicResultsProvider.changeDivision(
-                            selectedDivision: value);
-                      },
+                    const SizedBox(
+                      width: 5.0,
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: DefaultDropDownButton(
+                        list: departments,
+                        value: department,
+                        onChanged: (value) {
+                          studentsAcademicResultsProvider.changeDepartment(
+                              selectedDepartment: value);
+                        },
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    Text(
+                      "الشعبة",
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 5.0,
+                    ),
+                    Expanded(
+                      child: DefaultDropDownButton(
+                        list: divisions,
+                        value: division,
+                        onChanged: (value) {
+                          studentsAcademicResultsProvider.changeDivision(
+                              selectedDivision: value);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 15.0,
@@ -211,7 +214,7 @@ class StudentsAcademicResults extends StatelessWidget {
                           TableRow(
                             children: [
                               Text(
-                                "45464",
+                                "${StudentsAcademicResultsProvider().code}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
@@ -219,7 +222,7 @@ class StudentsAcademicResults extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "أحمد محمود",
+                                "${StudentsAcademicResultsProvider().name}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
@@ -227,7 +230,7 @@ class StudentsAcademicResults extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "150",
+                                "${StudentsAcademicResultsProvider().subject1}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
@@ -235,7 +238,7 @@ class StudentsAcademicResults extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "150",
+                                "${StudentsAcademicResultsProvider().subject2}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
@@ -243,7 +246,7 @@ class StudentsAcademicResults extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "150",
+                                "${StudentsAcademicResultsProvider().subject3}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
@@ -251,7 +254,7 @@ class StudentsAcademicResults extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "150",
+                                "${StudentsAcademicResultsProvider().subject4}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
@@ -259,7 +262,7 @@ class StudentsAcademicResults extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "150",
+                                "${StudentsAcademicResultsProvider().subject5}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
@@ -267,7 +270,7 @@ class StudentsAcademicResults extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "150",
+                                "${StudentsAcademicResultsProvider().subject6}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,

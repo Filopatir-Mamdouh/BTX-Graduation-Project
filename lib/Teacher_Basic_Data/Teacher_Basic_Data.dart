@@ -1,12 +1,12 @@
 // import 'dart:io';
 
-// import 'package:bt_x/core/app_colors.dart';
-// import 'package:bt_x/core/details_tile.dart';
-// import 'package:bt_x/presentation/provider/Taecher_Basic_Data_provider.dart';
 // import 'package:flutter/material.dart';
+// import 'package:graduation_project/core/app_colors.dart';
+// import 'package:graduation_project/presentation/provider/Taecher_Basic_Data_provider.dart';
+// import 'package:graduation_project/presentation/widgets/widgets/details_tile.dart';
+// import 'package:image_picker/image_picker.dart';
 
 // import 'package:provider/provider.dart';
-// import 'package:xfile/xfile.dart';
 
 // class BasicDataScreen extends StatelessWidget {
 //   const BasicDataScreen({super.key});
@@ -14,7 +14,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     final basicDataProvider = Provider.of<BasicDataProvider>(context);
-//     XFile? profileImage = basicDataProvider.profileImage as XFile?;
+//     XFile? profileImage = basicDataProvider.profileImage;
 //     return Directionality(
 //       textDirection: TextDirection.rtl,
 //       child: Scaffold(
@@ -28,7 +28,7 @@
 //               Text(
 //                 "البيانات الأساسية",
 //                 style: TextStyle(
-//                   color: Colors.grey[900],
+//                   color: AppColors.grey,
 //                   fontWeight: FontWeight.bold,
 //                   fontSize: 18.0,
 //                 ),
@@ -101,26 +101,30 @@
 //                           const SizedBox(
 //                             height: 15.0,
 //                           ),
-//                           const DetailsTile(
-//                               detailName: "الكود", detailValue: "555555"),
-//                           const DetailsTile(
-//                               detailName: "الإسم", detailValue: "أحمد محمود"),
-//                           const DetailsTile(
+//                           DetailsTile(
+//                               detailName: "الكود",
+//                               detailValue: "${BasicDataProvider().code}"),
+//                           DetailsTile(
+//                               detailName: "الإسم",
+//                               detailValue: "${BasicDataProvider().name}"),
+//                           DetailsTile(
 //                               detailName: "التليفون",
-//                               detailValue: "012345678911"),
-//                           const DetailsTile(
+//                               detailValue:
+//                                   "${BasicDataProvider().phone_number}"),
+//                           DetailsTile(
 //                               detailName: "البريد الإلكتروني",
-//                               detailValue: "ahmed@gmail.com"),
-//                           const DetailsTile(
+//                               detailValue:
+//                                   "${BasicDataProvider().phone_number}"),
+//                           DetailsTile(
 //                               detailName: "نوع البطاقة",
-//                               detailValue: "بطاقة قومية"),
-//                           const DetailsTile(
+//                               detailValue: "${BasicDataProvider().ID_Type}"),
+//                           DetailsTile(
 //                               detailName: "رقم البطاقة",
-//                               detailValue: "01234567891234"),
-//                           const DetailsTile(
+//                               detailValue: "${BasicDataProvider().ID_Number}"),
+//                           DetailsTile(
 //                             detailName: "العنوان",
-//                             detailValue:
-//                                 "شارع حمو الطيخا متفرع 15 من المكسيكي شرق بني سويف - بني سويف",
+//                             detailValue: "${BasicDataProvider().Address}",
+//                             maxLines: 4,
 //                           ),
 //                         ],
 //                       ),
