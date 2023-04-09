@@ -1,32 +1,31 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/presentation/widgets/widgets/details_tile.dart';
+import 'package:graduation_project/core/details_tile.dart';
 
-class MasterDetails extends StatelessWidget {
-  const MasterDetails({
+class ContactsDetails extends StatelessWidget {
+  const ContactsDetails({
     super.key,
-    this.name = "",
-    this.nationality = "",
     this.city = "",
     this.address = "",
-    this.job = "",
-    this.jobPlace = "",
-    this.degreeOfKinship = "",
     this.homeNumber = "",
     this.phoneNumber = "",
     this.email = "",
     this.fax = "",
+    this.buildingNumber = "",
+    this.apartmentNumber = "",
+    this.mailBox = "",
+    this.mailCode = "",
   });
-  final String name;
-  final String nationality;
   final String city;
   final String address;
-  final String job;
-  final String jobPlace;
-  final String degreeOfKinship;
   final String homeNumber;
   final String phoneNumber;
   final String email;
   final String fax;
+  final String buildingNumber;
+  final String apartmentNumber;
+  final String mailBox;
+  final String mailCode;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,32 +46,12 @@ class MasterDetails extends StatelessWidget {
         child: Column(
           children: [
             DetailsTile(
-              detailName: "الإسم",
-              detailValue: name,
-            ),
-            DetailsTile(
-              detailName: "الجنسية",
-              detailValue: nationality,
-            ),
-            DetailsTile(
               detailName: "المدينة",
               detailValue: city,
             ),
             DetailsTile(
               detailName: "العنوان",
               detailValue: address,
-            ),
-            DetailsTile(
-              detailName: "الوظيفة",
-              detailValue: job,
-            ),
-            DetailsTile(
-              detailName: "جهة العمل",
-              detailValue: jobPlace,
-            ),
-            DetailsTile(
-              detailName: "درجة القرابة",
-              detailValue: degreeOfKinship,
             ),
             DetailsTile(
               detailName: "ت المنزل",
@@ -89,6 +68,22 @@ class MasterDetails extends StatelessWidget {
             DetailsTile(
               detailName: "فاكس",
               detailValue: fax,
+            ),
+            DetailsTile(
+              detailName: "رقم العقار",
+              detailValue: buildingNumber,
+            ),
+            DetailsTile(
+              detailName: "رقم الشقة",
+              detailValue: apartmentNumber,
+            ),
+            DetailsTile(
+              detailName: "صندوق البريد",
+              detailValue: mailBox,
+            ),
+            DetailsTile(
+              detailName: "الكود البريدي",
+              detailValue: mailCode,
             ),
           ],
         ),

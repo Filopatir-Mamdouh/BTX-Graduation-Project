@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/presentation/widgets/widgets/details_tile.dart';
+import 'package:graduation_project/core/details_tile.dart';
 
 class PersonalDetails extends StatelessWidget {
   const PersonalDetails({

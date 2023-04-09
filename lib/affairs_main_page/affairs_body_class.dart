@@ -46,6 +46,25 @@ class affairs_body_class extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               child: Text(
+                "البيانات الدراسية",
+                style: TextStyle(color: grey_text, fontSize: 17),
+              ),
+              style: ElevatedButton.styleFrom(
+                side: const BorderSide(width: 2, color: Colors.black),
+                primary: Color.fromARGB(255, 255, 255, 255),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(
                 'شئون الطلاب',
                 style: TextStyle(color: grey_text, fontSize: 19),
               ),
