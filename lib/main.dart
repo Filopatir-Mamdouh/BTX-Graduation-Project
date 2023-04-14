@@ -23,10 +23,21 @@ import 'package:graduation_project/Teacher_Basic_Data/Teacher_Basic_Data_respons
 import 'package:graduation_project/affairs_main_page/affairs_body_class.dart';
 import 'package:graduation_project/affairs_main_page/affairs_main.dart';
 import 'package:graduation_project/basic_info/Basic_info_responsive.dart';
+import 'package:graduation_project/chat/chat_screen.dart';
+import 'package:graduation_project/Conversations/conversations_responsive.dart';
+import 'package:graduation_project/Conversations/conversations_screen.dart';
+import 'package:graduation_project/chat/other_chat_bubble.dart';
 import 'package:graduation_project/fees_page/fees_page_responsive.dart';
 import 'package:graduation_project/lecture_info/lecture_informationresponsive.dart';
+import 'package:graduation_project/library/available_devices_responsive.dart';
+import 'package:graduation_project/library/books_responsive.dart';
+import 'package:graduation_project/library/books_screen.dart';
 import 'package:graduation_project/presentation/provider/Taecher_Basic_Data_provider.dart';
 import 'package:graduation_project/presentation/provider/basic_informations_provider.dart';
+import 'package:graduation_project/presentation/provider/books_provider.dart';
+import 'package:graduation_project/presentation/provider/chat/chat_provider.dart';
+import 'package:graduation_project/presentation/provider/chat/conversations_provider.dart';
+import 'package:graduation_project/presentation/provider/devices_provider.dart';
 import 'package:graduation_project/presentation/provider/exam_schadule.dart';
 import 'package:graduation_project/presentation/provider/fees_provider.dart';
 import 'package:graduation_project/presentation/provider/lecture_schadule.dart';
@@ -104,10 +115,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<StudentsAttendanceProvider>(
           create: (_) => StudentsAttendanceProvider(),
         ),
-        ChangeNotifierProvider<TeacherScedueScreenProvider>(
-          create: (_) => TeacherScedueScreenProvider(),
+        ChangeNotifierProvider<ChatProvider>(
+          create: (_) => ChatProvider(),
         ),
-        //TeacherScedueScreenProvider
+        ChangeNotifierProvider<ConversationsProvider>(
+          create: (_) => ConversationsProvider(),
+        ),
+        ChangeNotifierProvider<DevicesProvider>(
+          create: (_) => DevicesProvider(),
+        ),
+        ChangeNotifierProvider<BooksProvider>(
+          create: (_) => BooksProvider(),
+        ),
       ],
       child: MaterialApp(
         localizationsDelegates: [
@@ -120,7 +139,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
         ],
         debugShowCheckedModeBanner: false,
-        home: affairs_main(),
+        home: conversations_responsive(),
       ),
     );
   }
