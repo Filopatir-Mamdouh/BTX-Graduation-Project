@@ -1,4 +1,4 @@
-import 'package:btxproject2/Licturers/HomeLecturers/Doctor/Add_Lectures/Main_Screen_Add_Lectures.dart';
+import 'package:btxproject2/students_Affairs/schedule/Main_Screen_Table_Schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: Main_Screen_Add_Lecturers(),
+      home: Main_Screen_Table_Schedule(),
     );
   }
 }

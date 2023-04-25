@@ -1,9 +1,7 @@
 // ignore_for_file: file_names, camel_case_types, non_constant_identifier_names, unused_local_variable, avoid_unnecessary_containers
 
-import 'dart:io';
-
-import 'package:btxproject2/Licturers/HomeLecturers/Doctor/Add_Lectures/all_syllabus.dart';
 import 'package:btxproject2/Provider/Provider.dart';
+import 'package:btxproject2/consatant/Constant.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:expandable/expandable.dart';
 import 'package:file_picker/file_picker.dart';
@@ -15,7 +13,9 @@ class Add_Lectures extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    File file = File("");
+    List<int> num = [1, 2, 3];
+    final Color color1 = HexColor('#3E6BA9');
+    String? fileName;
 
     Size size = MediaQuery.of(context).size;
     return MultiProvider(
@@ -54,14 +54,14 @@ class Add_Lectures extends StatelessWidget {
                             "الفرقة",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: size.width < 500 ? 20 : 30,
+                              fontSize: size.width < 500 ? 18 : 30,
                             ),
                           ),
                           const SizedBox(
                             width: 40,
                           ),
                           Container(
-                              width: size.width < 500 ? 200 : 300,
+                              width: size.width < 400 ? 170 : 300,
                               decoration: BoxDecoration(
                                 border:
                                     Border.all(color: Colors.black87, width: 3),
@@ -117,7 +117,7 @@ class Add_Lectures extends StatelessWidget {
                           Text(
                             "الماده",
                             style: TextStyle(
-                              fontSize: size.width < 500 ? 20 : 30,
+                              fontSize: size.width < 500 ? 18 : 30,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -129,7 +129,7 @@ class Add_Lectures extends StatelessWidget {
                               border:
                                   Border.all(color: Colors.black87, width: 3),
                             ),
-                            width: size.width < 500 ? 200 : 300,
+                            width: size.width < 400 ? 170 : 300,
                             child: Center(child: Expanded(child: Center(child:
                                 Consumer<LecturersProvider>(
                                     builder: (context, model, child) {
@@ -175,24 +175,121 @@ class Add_Lectures extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      Image.file(file),
                       ElevatedButton(
-                          child: const Text('UPLOAD FILE'),
-                          onPressed: () {
-                            PickFile();
-                          }),
+                        child: const Text('UPLOAD FILE'),
+                        onPressed: () async {
+                          var picked = await FilePicker.platform.pickFiles();
+                          fileName = picked.toString();
+                        },
+                      ),
+                      Text("$fileName")
                     ],
                   ),
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const All_Syllabus(),
-                          ));
-                    },
-                    child: const Text("المواد و المحاضرات")),
+                Consumer<LecturersProvider>(
+                  builder: (context, model, child) {
+                    return Column(
+                      children: [
+                        for (int i = 0;
+                            i < model.SubjectExpandablePanelCount;
+                            i++)
+                          Container(
+                            margin: const EdgeInsets.all(1),
+                            width: 600,
+                            decoration: BoxDecoration(
+                                border: Border.all(width: 3, color: color1)),
+                            child: ExpandablePanel(
+                                controller: ExpandableController.of(context),
+                                header: Text(
+                                    "منهج مادة${model.SubjectExpandablePanel[i]["المادة"]}الفرقة ${model.SubjectExpandablePanel[i]["الفرقة"]}"),
+                                collapsed: const SizedBox(
+                                  height: 0,
+                                ),
+                                expanded: Column(
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(0),
+                                      child: Row(
+                                        children: const [
+                                          Expanded(
+                                              flex: 1,
+                                              child: Center(
+                                                  child: Text("المحاضرة"))),
+                                          Expanded(
+                                              flex: 3,
+                                              child:
+                                                  Center(child: Text("الملف")))
+                                        ],
+                                      ),
+                                    ),
+                                    GridView.builder(
+                                      shrinkWrap: true,
+                                      gridDelegate:
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
+                                        mainAxisExtent: 46,
+                                        crossAxisCount: 1,
+                                      ),
+                                      itemCount: model.addLicturecount,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return Column(
+                                          children: [
+                                            const SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                    flex: 1,
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Text(
+                                                            "${model.AddLecture[index]["ID"]}"),
+                                                      ],
+                                                    )),
+                                                Expanded(
+                                                    flex: 3,
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Expanded(
+                                                          child: TextButton(
+                                                              onPressed: () {},
+                                                              child: const Text(
+                                                                  "فتح")),
+                                                        ),
+                                                        Expanded(
+                                                          child: TextButton(
+                                                              onPressed: () {},
+                                                              child: const Text(
+                                                                  "تغيير")),
+                                                        ),
+                                                        Expanded(
+                                                          child: TextButton(
+                                                              onPressed: () {},
+                                                              child: const Text(
+                                                                  "مسح")),
+                                                        )
+                                                      ],
+                                                    ))
+                                              ],
+                                            )
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                )),
+                          ),
+                      ],
+                    );
+                  },
+                )
               ],
             ),
           ),
@@ -200,11 +297,6 @@ class Add_Lectures extends StatelessWidget {
       ),
     );
   }
-}
-
-void PickFile() async {
-  FilePickerResult? result =
-      await FilePicker.platform.pickFiles(type: FileType.any);
 }
 
 class ExpandedPanel_Container_Syllabus extends StatelessWidget {

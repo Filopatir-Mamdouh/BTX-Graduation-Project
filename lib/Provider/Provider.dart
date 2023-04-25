@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, avoid_unnecessary_containers, non_constant_identifier_names, camel_case_types
+// ignore_for_file: file_names, avoid_unnecessary_containers, non_constant_identifier_names, camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:btxproject2/students_Affairs/educationData/Syllabus/Lecture.dart';
 import 'package:btxproject2/students_Affairs/educationData/Syllabus/Syllabus.dart';
@@ -221,29 +221,23 @@ class LecturersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  final List<Map> AddLectureExpandedPanel = List.generate(
-      4,
+  int SubjectExpandablePanelCount = 4;
+  final List<Map> SubjectExpandablePanel = List.generate(
+      4, //when you connect that number wih the num of Subject of Doctor connect it to int SubjectExpandablePanelCount too
       (index) => {
-            "id": index,
-            "الفرقة": "",
-            "الماده": "IT",
+            "ID": index,
+            "الفرقة": "الرابعة",
+            "المادة": "IT",
           }).toList();
 
+  int addLicturecount = 4;
   final List<Map> AddLecture = List.generate(
-      4,
+      4, //when you connect that number wih the num of Licture of Subject connect it to int AddLecture too
       (index) => {
-            "id": index,
+            "ID": index,
             "الفرقة": "",
             "الماده": "IT",
           }).toList();
-  bool check = false;
-  void checkPress() {
-    if (check == false) {
-      check = true;
-    } else if (check == true) {
-      check = false;
-    }
-  }
 }
 
 class LibraryBage extends ChangeNotifier {
@@ -259,4 +253,36 @@ class Library_QR extends ChangeNotifier {
   String Section = "تكنولوجيا المعلومات";
 
   List<String> data = ["Bavly", "الفرقه", "القسم", DateTime.now().toString()];
+}
+
+class Tables extends ChangeNotifier {
+  List<int> Licture_begin = [
+    8,
+    10,
+    14
+  ]; //the time that the lecture or section will begin
+  List<int> periode_Lecture = [
+    2,
+    3,
+    1
+  ]; //the periode that the lecture or section work by hour
+  List<String> Type = ["محاضره", "سكشن", "محاضره"];
+  var dropdownValue;
+  List<String> Team = [
+    "الأولى",
+    "الثانية",
+    "الثالثة",
+    "الرابعة",
+  ];
+  List<String> div = [
+    "الشعبه الاولي",
+    "الشعبه الثانيه",
+  ];
+  List<String> Section = [
+    "تكنولوجيا المعلومات",
+    "ميكاترونيكس",
+    "اطراف صناعيه",
+    "اوتوترونيكس",
+    "طاقه"
+  ];
 }
