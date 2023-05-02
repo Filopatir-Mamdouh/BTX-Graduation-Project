@@ -1,14 +1,16 @@
 // ignore_for_file: file_names, avoid_unnecessary_containers, non_constant_identifier_names, camel_case_types, prefer_typing_uninitialized_variables
 
-import 'package:btxproject2/students_Affairs/educationData/Syllabus/Lecture.dart';
-import 'package:btxproject2/students_Affairs/educationData/Syllabus/Syllabus.dart';
-import 'package:btxproject2/students_Affairs/educationData/TableScaffold.dart';
-import 'package:btxproject2/students_Affairs/educationData/degreeScaffold.dart';
-import 'package:btxproject2/students_Affairs/educationData/studentscaffold.dart';
-import 'package:btxproject2/students_Affairs/essensialData/communicate.dart';
-import 'package:btxproject2/students_Affairs/essensialData/parents.dart';
-import 'package:btxproject2/students_Affairs/essensialData/personality.dart';
-import 'package:btxproject2/students_Affairs/essensialData/previousQualification.dart';
+import 'dart:async';
+
+import 'package:btxproject2/Screens/students_Affairs/educationData/Syllabus/Lecture.dart';
+import 'package:btxproject2/Screens/students_Affairs/educationData/Syllabus/Syllabus.dart';
+import 'package:btxproject2/Screens/students_Affairs/educationData/TableScaffold.dart';
+import 'package:btxproject2/Screens/students_Affairs/educationData/degreeScaffold.dart';
+import 'package:btxproject2/Screens/students_Affairs/educationData/studentscaffold.dart';
+import 'package:btxproject2/Screens/students_Affairs/essensialData/communicate.dart';
+import 'package:btxproject2/Screens/students_Affairs/essensialData/parents.dart';
+import 'package:btxproject2/Screens/students_Affairs/essensialData/personality.dart';
+import 'package:btxproject2/Screens/students_Affairs/essensialData/previousQualification.dart';
 import 'package:flutter/material.dart';
 
 class Semester extends ChangeNotifier {
@@ -285,4 +287,15 @@ class Tables extends ChangeNotifier {
     "اوتوترونيكس",
     "طاقه"
   ];
+}
+
+class Doctor_Attendance extends ChangeNotifier {
+  bool check = false;
+  checking() {
+    check = !check;
+    notifyListeners();
+  }
+
+  String DataQR = TimeOfDay.now().toString();
+  List<String> data = ["الفرقه", "القسم", DateTime.now().toString()];
 }
