@@ -1,6 +1,5 @@
-import 'dart:async';
+import 'dart:math';
 
-import 'package:btxproject2/Screens/HomeLecturers/Doctor/Attendance/doctor.dart';
 import 'package:btxproject2/Provider/Provider.dart';
 import 'package:btxproject2/consatant/Constant.dart';
 import 'package:flutter/material.dart';
@@ -23,14 +22,11 @@ class _QRState extends State<QR> {
     Size size = MediaQuery.of(context).size;
     String qrData = "";
     int counter = 0;
-    String val;
-    String qrstr = "d";
-    bool check = false;
 
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => Doctor_Attendance(),
+          create: (context) => LecturersProvider(),
         )
       ],
       child: Scaffold(
@@ -58,23 +54,27 @@ class _QRState extends State<QR> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Consumer<Doctor_Attendance>(
+            Consumer<LecturersProvider>(
               builder: (context, value, child) {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Center(
-                      child: Container(
+                      child: SizedBox(
                         height: 400,
                         width: 400,
                         child: TimerBuilder.periodic(
-                          Duration(seconds: 5),
+                          const Duration(seconds: 5),
                           builder: (context) {
-                            qrData = generateRandomData(
-                                10); // Generate new data for the QR code
+                            counter++;
+                            counter != 1 ? value.data.removeLast() : null;
+                            qrData = generateRandomData(10);
+                            value.allCodes.add(qrData);
+                            value.data.add(
+                                qrData); // Generate new data for the QR code
                             return QrImage(
-                              data: qrData,
+                              data: value.data.toString(),
                               version: QrVersions.auto,
                               size: 200.0,
                             );
@@ -94,4 +94,16 @@ class _QRState extends State<QR> {
       ),
     );
   }
+}
+
+String generateRandomData(int length) {
+  const chars =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*#";
+  final random = Random();
+  return String.fromCharCodes(
+    Iterable.generate(
+      length,
+      (_) => chars.codeUnitAt(random.nextInt(chars.length)),
+    ),
+  );
 }

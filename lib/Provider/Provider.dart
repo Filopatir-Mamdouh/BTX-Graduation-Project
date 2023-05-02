@@ -1,7 +1,6 @@
 // ignore_for_file: file_names, avoid_unnecessary_containers, non_constant_identifier_names, camel_case_types, prefer_typing_uninitialized_variables
 
-import 'dart:async';
-
+import 'package:btxproject2/Screens/HomeLecturers/Doctor/Attendance/qr.dart';
 import 'package:btxproject2/Screens/students_Affairs/educationData/Syllabus/Lecture.dart';
 import 'package:btxproject2/Screens/students_Affairs/educationData/Syllabus/Syllabus.dart';
 import 'package:btxproject2/Screens/students_Affairs/educationData/TableScaffold.dart';
@@ -135,10 +134,10 @@ class ScaffoldDataEducation extends ChangeNotifier {
 }
 
 class Team extends ChangeNotifier {
-  String Team1 = "الفرقة الأولى";
-  String Team2 = "الفرقة الثانية";
-  String Team3 = "الفرقة الثالثة";
-  String Team4 = "الفرقة الرابعة";
+  String Team1 = " الأولى";
+  String Team2 = " الثانية";
+  String Team3 = " الثالثة";
+  String Team4 = " الرابعة";
 
   String Sub = "المادة";
 }
@@ -192,11 +191,23 @@ class LecturersProvider extends ChangeNotifier {
   String Hint = "hint";
   String DoctorImgPath = "";
   String? Selected_Team;
+  String Name = "Bavly";
+  String TeamQR = "الفرقة الرابعة";
+  String SectionQR = "تكنولوجيا المعلومات";
+  String SubjectsQR = "sadfg";
+  String DataQR = TimeOfDay.now().toString();
+  List<String> data = [
+    "الفرقه",
+    "القسم",
+    "sadfg",
+    DateTime.now().toString(),
+  ];
+  List<String> allCodes = [];
   List<String> Teams = [
-    'الفرقة الأولي',
-    'الفرقة الثانية',
-    'الفرقة الثالثة',
-    'الفرقة الرابعة',
+    ' الأولي',
+    ' الثانية',
+    ' الثالثة',
+    ' الرابعة',
   ];
   String? Selected_Subject;
   List<String> Subjects = [
@@ -287,15 +298,4 @@ class Tables extends ChangeNotifier {
     "اوتوترونيكس",
     "طاقه"
   ];
-}
-
-class Doctor_Attendance extends ChangeNotifier {
-  bool check = false;
-  checking() {
-    check = !check;
-    notifyListeners();
-  }
-
-  String DataQR = TimeOfDay.now().toString();
-  List<String> data = ["الفرقه", "القسم", DateTime.now().toString()];
 }

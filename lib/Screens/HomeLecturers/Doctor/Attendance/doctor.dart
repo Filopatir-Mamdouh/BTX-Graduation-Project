@@ -27,9 +27,6 @@ class Doctor extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => LecturersProvider(),
         ),
-        ChangeNotifierProvider(
-          create: (context) => Doctor_Attendance(),
-        )
       ],
       child: SafeArea(
         child: Scaffold(
@@ -227,27 +224,55 @@ class Doctor extends StatelessWidget {
                           const SizedBox(
                             height: 20,
                           ),
-                          Text(
-                            "تسجيل حضور الطلبه لماده ...... ",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: size.width < 500 ? 15 : 20,
-                            ),
+                          Consumer<LecturersProvider>(
+                            builder: (context, model, child) {
+                              return model.selected_Subject == null
+                                  ? Text("تسجيل حضور الطلبه لماده  ....",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: size.width < 500 ? 15 : 20,
+                                      ))
+                                  : Text(
+                                      "تسجيل حضور الطلبه لماده ${model.Selected_Subject} ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: size.width < 500 ? 15 : 20,
+                                      ),
+                                    );
+                            },
                           ),
-                          Text("الفرقه ......",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: size.width < 500 ? 15 : 20,
-                              )),
-                          Text("بتاريخ .....",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: size.width < 500 ? 15 : 20,
-                              )),
+                          Consumer<LecturersProvider>(
+                            builder: (context, model, child) {
+                              return model.selected_Team == null
+                                  ? Text("الفرقة ....",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: size.width < 500 ? 15 : 20,
+                                      ))
+                                  : Text(
+                                      "الفرقه ${model.Selected_Team} ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: size.width < 500 ? 15 : 20,
+                                      ),
+                                    );
+                            },
+                          ),
+                          Consumer<LecturersProvider>(
+                            builder: (context, model, child) {
+                              return Text(
+                                "بتاريخ ${TimeOfDay.now()} ",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: size.width < 500 ? 15 : 20,
+                                ),
+                              );
+                            },
+                          ),
                           Container(
                             margin: const EdgeInsets.only(top: 10),
                             width: 150,
-                            child: Consumer<Doctor_Attendance>(
+                            child: Consumer<LecturersProvider>(
                                 builder: (context, value, child) {
                               return ElevatedButton(
                                 style: ElevatedButton.styleFrom(
