@@ -67,14 +67,19 @@ class _QRState extends State<QR> {
                         child: TimerBuilder.periodic(
                           const Duration(seconds: 5),
                           builder: (context) {
+                            List<String> data = [
+                              value.Selected_Team.toString(),
+                              value.Selected_Subject.toString(),
+                              value.Date.toString(),
+                            ];
                             counter++;
-                            counter != 1 ? value.data.removeLast() : null;
+                            counter != 1 ? data.removeLast() : null;
                             qrData = generateRandomData(10);
                             value.allCodes.add(qrData);
-                            value.data.add(
+                            data.add(
                                 qrData); // Generate new data for the QR code
                             return QrImage(
-                              data: value.data.toString(),
+                              data: data.toString(),
                               version: QrVersions.auto,
                               size: 200.0,
                             );

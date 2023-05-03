@@ -2,17 +2,20 @@
 
 import 'package:btxproject2/Provider/Provider.dart';
 import 'package:btxproject2/Screens/HomeLecturers/Doctor/Attendance/qr.dart';
+import 'package:btxproject2/consatant/Constant.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class Doctor extends StatelessWidget {
   const Doctor({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Color color1 = HexColor('#3E6BA9');
     final TextEditingController date0 = TextEditingController();
     Size size = MediaQuery.of(context).size;
 
@@ -192,32 +195,39 @@ class Doctor extends StatelessWidget {
                               const SizedBox(
                                 width: 40,
                               ),
-                              Container(
-                                width: size.width < 500 ? 200 : 300,
-                                child: TextField(
-                                  controller: date0,
-                                  // ignore: prefer_const_constructors
-                                  decoration: InputDecoration(
-                                      fillColor: Colors.white,
+                              Consumer<LecturersProvider>(
+                                builder: (context, value, child) {
+                                  return Container(
+                                    width: size.width < 500 ? 200 : 300,
+                                    child: TextField(
+                                      controller: date0,
                                       // ignore: prefer_const_constructors
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                              color: Colors.black87, width: 3)),
-                                      icon: const Icon(
-                                          Icons.calendar_today_rounded),
-                                      labelText: "Select Date"),
-                                  onTap: () async {
-                                    DateTime? date = await showDatePicker(
-                                        context: context,
-                                        initialDate: DateTime.now(),
-                                        firstDate: DateTime(2000),
-                                        lastDate: DateTime(2101));
-                                    if (date != null) {
-                                      date0.text =
-                                          DateFormat('yyyy-MM-dd').format(date);
-                                    }
-                                  },
-                                ),
+                                      decoration: InputDecoration(
+                                          fillColor: Colors.white,
+                                          // ignore: prefer_const_constructors
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.black87,
+                                                  width: 3)),
+                                          icon: const Icon(
+                                              Icons.calendar_today_rounded),
+                                          labelText: "Select Date"),
+                                      onTap: () async {
+                                        value.date = await showDatePicker(
+                                            context: context,
+                                            initialDate: DateTime.now(),
+                                            firstDate: DateTime(2000),
+                                            lastDate: DateTime(2101));
+                                        if (value.date != null) {
+                                          date0.text = DateFormat('yyyy-MM-dd')
+                                              .format(value.date!);
+                                          value.setSelected_Date(
+                                              value.date.toString());
+                                        }
+                                      },
+                                    ),
+                                  );
+                                },
                               )
                             ],
                           ),
@@ -229,12 +239,14 @@ class Doctor extends StatelessWidget {
                               return model.selected_Subject == null
                                   ? Text("تسجيل حضور الطلبه لماده  ....",
                                       style: TextStyle(
+                                        color: color1,
                                         fontWeight: FontWeight.bold,
                                         fontSize: size.width < 500 ? 15 : 20,
                                       ))
                                   : Text(
-                                      "تسجيل حضور الطلبه لماده ${model.Selected_Subject} ",
+                                      "تسجيل حضور الطلبه  ${model.Selected_Subject} ",
                                       style: TextStyle(
+                                        color: color1,
                                         fontWeight: FontWeight.bold,
                                         fontSize: size.width < 500 ? 15 : 20,
                                       ),
@@ -246,12 +258,14 @@ class Doctor extends StatelessWidget {
                               return model.selected_Team == null
                                   ? Text("الفرقة ....",
                                       style: TextStyle(
+                                        color: color1,
                                         fontWeight: FontWeight.bold,
                                         fontSize: size.width < 500 ? 15 : 20,
                                       ))
                                   : Text(
                                       "الفرقه ${model.Selected_Team} ",
                                       style: TextStyle(
+                                        color: color1,
                                         fontWeight: FontWeight.bold,
                                         fontSize: size.width < 500 ? 15 : 20,
                                       ),
@@ -260,13 +274,21 @@ class Doctor extends StatelessWidget {
                           ),
                           Consumer<LecturersProvider>(
                             builder: (context, model, child) {
-                              return Text(
-                                "بتاريخ ${TimeOfDay.now()} ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: size.width < 500 ? 15 : 20,
-                                ),
-                              );
+                              return model.Date == null
+                                  ? Text("بتاريخ ....",
+                                      style: TextStyle(
+                                        color: color1,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: size.width < 500 ? 15 : 20,
+                                      ))
+                                  : Text(
+                                      "بتاريخ ${model.date} ",
+                                      style: TextStyle(
+                                        color: color1,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: size.width < 500 ? 15 : 20,
+                                      ),
+                                    );
                             },
                           ),
                           Container(
@@ -287,10 +309,39 @@ class Doctor extends StatelessWidget {
                                         fontSize: 25,
                                         fontStyle: FontStyle.normal)),
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const QR()));
+                                  if (value.Selected_Subject == null) {
+                                    DialogButton(
+                                      onPressed: () {
+                                        Navigator.of(context,
+                                                rootNavigator: true)
+                                            .pop();
+                                      },
+                                      child: Text("Please Enter Subject"),
+                                    );
+                                  } else if (value.Selected_Team == null) {
+                                    DialogButton(
+                                      onPressed: () {
+                                        Navigator.of(context,
+                                                rootNavigator: true)
+                                            .pop();
+                                      },
+                                      child: Text("Please Enter Team"),
+                                    );
+                                  } else if (value.date == null) {
+                                    DialogButton(
+                                      onPressed: () {
+                                        Navigator.of(context,
+                                                rootNavigator: true)
+                                            .pop();
+                                      },
+                                      child: Text("Please Enter Date"),
+                                    );
+                                  } else {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const QR()));
+                                  }
                                 },
 
                                 // ignore: prefer_const_constructors

@@ -1,6 +1,5 @@
 // ignore_for_file: file_names, avoid_unnecessary_containers, non_constant_identifier_names, camel_case_types, prefer_typing_uninitialized_variables
 
-import 'package:btxproject2/Screens/HomeLecturers/Doctor/Attendance/qr.dart';
 import 'package:btxproject2/Screens/students_Affairs/educationData/Syllabus/Lecture.dart';
 import 'package:btxproject2/Screens/students_Affairs/educationData/Syllabus/Syllabus.dart';
 import 'package:btxproject2/Screens/students_Affairs/educationData/TableScaffold.dart';
@@ -195,13 +194,14 @@ class LecturersProvider extends ChangeNotifier {
   String TeamQR = "الفرقة الرابعة";
   String SectionQR = "تكنولوجيا المعلومات";
   String SubjectsQR = "sadfg";
+  DateTime? date;
+  String? Date;
   String DataQR = TimeOfDay.now().toString();
-  List<String> data = [
-    "الفرقه",
-    "القسم",
-    "sadfg",
-    DateTime.now().toString(),
-  ];
+  void setSelected_Date(s) {
+    Date = s;
+    notifyListeners();
+  }
+
   List<String> allCodes = [];
   List<String> Teams = [
     ' الأولي',
