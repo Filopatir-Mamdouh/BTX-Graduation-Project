@@ -1,56 +1,69 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Data_Screen/Data_screen_responsive.dart';
-import 'package:graduation_project/Doctor_student_attendance/Doctor_student_Attendance_Provider.dart';
-import 'package:graduation_project/Doctor_student_attendance/Doctor_student_attendance_responsive.dart';
-import 'package:graduation_project/Educational%20_Data/Educational_Data_Screen_Responsive.dart';
-import 'package:graduation_project/Exams_table/Exams_table.dart';
-import 'package:graduation_project/Exams_table/Exams_table_class.dart';
-import 'package:graduation_project/Lecture_Attendance/Lecture_Attendance_table_responsive.dart';
-import 'package:graduation_project/Material_Schedual_Screen/Material_Schedual_Responsive.dart';
-import 'package:graduation_project/Student_Academiv_result_affairs/Student_Academic_Result_Responsive.dart';
-import 'package:graduation_project/Student_Attendance_Affairs/Student_Attendance_responsive.dart';
-import 'package:graduation_project/Student_information_screen/Student_information_Responsive.dart';
-import 'package:graduation_project/Student_information_screen/Student_information_provider.dart';
-import 'package:graduation_project/Students_Doctor_Results_Screeen/Student_Doctor_resultResponsive.dart';
-import 'package:graduation_project/Study_fees_affairs/Affairs_Study_fees_Responsive.dart';
-import 'package:graduation_project/Study_result_page/study_result_responsive.dart';
-import 'package:graduation_project/TeacherSceduleScreen/TeacherSceduleProvider.dart';
-import 'package:graduation_project/TeacherSceduleScreen/TeacherSceduleResponsive.dart';
-import 'package:graduation_project/Teacher_Basic_Data/Teacher_Basic_Data.dart';
-import 'package:graduation_project/Teacher_Basic_Data/Teacher_Basic_Data_responsive.dart';
-import 'package:graduation_project/affairs_main_page/affairs_body_class.dart';
-import 'package:graduation_project/affairs_main_page/affairs_main.dart';
-import 'package:graduation_project/basic_info/Basic_info_responsive.dart';
-import 'package:graduation_project/chat/chat_screen.dart';
-import 'package:graduation_project/Conversations/conversations_responsive.dart';
-import 'package:graduation_project/Conversations/conversations_screen.dart';
-import 'package:graduation_project/chat/other_chat_bubble.dart';
-import 'package:graduation_project/fees_page/fees_page_responsive.dart';
-import 'package:graduation_project/lecture_info/lecture_informationresponsive.dart';
-import 'package:graduation_project/library/available_devices_responsive.dart';
-import 'package:graduation_project/library/books_responsive.dart';
-import 'package:graduation_project/library/books_screen.dart';
-import 'package:graduation_project/presentation/provider/Taecher_Basic_Data_provider.dart';
-import 'package:graduation_project/presentation/provider/basic_informations_provider.dart';
-import 'package:graduation_project/presentation/provider/books_provider.dart';
-import 'package:graduation_project/presentation/provider/chat/chat_provider.dart';
-import 'package:graduation_project/presentation/provider/chat/conversations_provider.dart';
-import 'package:graduation_project/presentation/provider/devices_provider.dart';
-import 'package:graduation_project/presentation/provider/exam_schadule.dart';
-import 'package:graduation_project/presentation/provider/fees_provider.dart';
-import 'package:graduation_project/presentation/provider/lecture_schadule.dart';
-import 'package:graduation_project/presentation/provider/lecturers_attendance_schedule_provider.dart';
-import 'package:graduation_project/presentation/provider/lecturers_informations_provider.dart';
-import 'package:graduation_project/presentation/provider/material_Schedule_provider.dart';
-import 'package:graduation_project/presentation/provider/students_academic_results_provider.dart';
-import 'package:graduation_project/presentation/provider/students_attendance_schedule_provider.dart';
-import 'package:graduation_project/presentation/provider/students_data_provider.dart';
-import 'package:graduation_project/presentation/provider/study_fees_provider.dart';
-import 'package:graduation_project/presentation/provider/year_result.dart';
+import 'package:graduation_project/provider/document_request_provider.dart';
+import 'package:graduation_project/provider/inquiries_provider.dart';
+import 'package:graduation_project/provider/schedual_subject_provider.dart';
+import 'package:graduation_project/Pages/Documents_Request/Documents_request_responsive.dart';
+
+import 'package:graduation_project/Pages/affairs_main_page/Side_Menue_provider.dart';
+import 'package:graduation_project/Pages/Data_Screen/Data_screen_responsive.dart';
+import 'package:graduation_project/provider/Doctor_student_Attendance_Provider.dart';
+import 'package:graduation_project/Pages/Doctor_student_attendance/Doctor_student_attendance_responsive.dart';
+import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Screen_Responsive.dart';
+import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
+import 'package:graduation_project/Pages/Exams_table/Exams_table_class.dart';
+import 'package:graduation_project/Pages/Lecture_Attendance/Lecture_Attendance_table_responsive.dart';
+import 'package:graduation_project/Pages/Login&register/Login_page_responsive.dart';
+import 'package:graduation_project/Pages/Login&register/Register_responsive.dart';
+import 'package:graduation_project/Pages/Material_Schedual_Screen/Material_Schedual_Responsive.dart';
+import 'package:graduation_project/Pages/Student_Academiv_result_affairs/Student_Academic_Result_Responsive.dart';
+import 'package:graduation_project/Pages/Student_Attendance_Affairs/Student_Attendance_responsive.dart';
+import 'package:graduation_project/Pages/Student_information_screen/Student_information_Responsive.dart';
+import 'package:graduation_project/provider/Student_information_provider.dart';
+import 'package:graduation_project/Pages/Students_Doctor_Results_Screeen/Student_Doctor_resultResponsive.dart';
+import 'package:graduation_project/Pages/Study_fees_affairs/Affairs_Study_fees_Responsive.dart';
+import 'package:graduation_project/Pages/Study_result_page/study_result_responsive.dart';
+import 'package:graduation_project/provider/TeacherSceduleProvider.dart';
+import 'package:graduation_project/Pages/TeacherSceduleScreen/TeacherSceduleResponsive.dart';
+import 'package:graduation_project/Pages/Teacher_Basic_Data/Teacher_Basic_Data.dart';
+import 'package:graduation_project/Pages/Teacher_Basic_Data/Teacher_Basic_Data_responsive.dart';
+import 'package:graduation_project/Pages/affairs_main_page/affairs_body_class.dart';
+import 'package:graduation_project/Pages/affairs_main_page/affairs_main.dart';
+import 'package:graduation_project/Pages/basic_info/Basic_info_responsive.dart';
+import 'package:graduation_project/Pages/chat/chat_screen.dart';
+import 'package:graduation_project/Pages/Conversations/conversations_responsive.dart';
+import 'package:graduation_project/Pages/Conversations/conversations_screen.dart';
+import 'package:graduation_project/Pages/chat/other_chat_bubble.dart';
+import 'package:graduation_project/Pages/fees_page/fees_page_responsive.dart';
+import 'package:graduation_project/Pages/inquiries/inquiries_responsive.dart';
+import 'package:graduation_project/Pages/lecture_info/lecture_informationresponsive.dart';
+import 'package:graduation_project/Pages/library/available_devices_responsive.dart';
+import 'package:graduation_project/Pages/library/books_responsive.dart';
+import 'package:graduation_project/Pages/library/books_screen.dart';
+import 'package:graduation_project/provider/Taecher_Basic_Data_provider.dart';
+import 'package:graduation_project/provider/basic_informations_provider.dart';
+import 'package:graduation_project/provider/books_provider.dart';
+import 'package:graduation_project/provider/chat/chat_provider.dart';
+import 'package:graduation_project/provider/chat/conversations_provider.dart';
+import 'package:graduation_project/provider/devices_provider.dart';
+import 'package:graduation_project/provider/exam_schadule.dart';
+import 'package:graduation_project/provider/fees_provider.dart';
+import 'package:graduation_project/provider/lecture_schadule.dart';
+import 'package:graduation_project/provider/lecturers_attendance_schedule_provider.dart';
+import 'package:graduation_project/provider/lecturers_informations_provider.dart';
+import 'package:graduation_project/provider/material_Schedule_provider.dart';
+import 'package:graduation_project/provider/students_academic_results_provider.dart';
+import 'package:graduation_project/provider/students_attendance_schedule_provider.dart';
+import 'package:graduation_project/provider/students_data_provider.dart';
+import 'package:graduation_project/provider/study_fees_provider.dart';
+import 'package:graduation_project/provider/year_result.dart';
 import 'package:graduation_project/presentation/widgets/widgets/Educational_Data_provider.dart';
-import 'package:graduation_project/study_table/stydy_table_Responsive.dart';
+
+import 'package:graduation_project/Pages/schedule/subject_table_screen.dart';
+
+import 'package:graduation_project/Pages/schedule/subject_table_responsive.dart';
+import 'package:graduation_project/Pages/study_table/stydy_table_Responsive.dart';
 import 'package:provider/provider.dart';
 
 import './responsive_page/responsive.dart';
@@ -127,6 +140,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<BooksProvider>(
           create: (_) => BooksProvider(),
         ),
+        ChangeNotifierProvider<DocumentRequestProvider>(
+          create: (_) => DocumentRequestProvider(),
+        ),
+        ChangeNotifierProvider<Tables_provider>(
+          create: (_) => Tables_provider(),
+        ),
+        ChangeNotifierProvider<Inquiries_Provider>(
+          create: (_) => Inquiries_Provider(),
+        ),
       ],
       child: MaterialApp(
         localizationsDelegates: [
@@ -139,7 +161,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
         ],
         debugShowCheckedModeBanner: false,
-        home: conversations_responsive(),
+        home: Table_responsive(),
       ),
     );
   }
