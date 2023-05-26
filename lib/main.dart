@@ -1,5 +1,3 @@
-import 'package:btxproject2/Pages/HomeLecturers/Doctor/Attendance/main_screen_Doctor.dart';
-import 'package:btxproject2/Pages/students_Affairs/Home/Main_Screen_Home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: Main_Screen_Home(),
+      home: return scaffold(),
     );
   }
 }
