@@ -14,8 +14,6 @@ import 'package:graduation_project/Pages/Students_Doctor_Results_Screeen/Student
 import 'package:graduation_project/Pages/Teacher_Basic_Data/Teacher_Basic_Data.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
-import 'package:graduation_project/Pages/study_table/Study_Table_Desk_TAblet.dart';
-import 'package:graduation_project/Pages/study_table/study_table_class.dart';
 
 class Student_Doctor_Result_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
