@@ -63,7 +63,7 @@ import 'package:graduation_project/presentation/widgets/widgets/Educational_Data
 import 'package:graduation_project/Pages/schedule/subject_table_screen.dart';
 
 import 'package:graduation_project/Pages/schedule/subject_table_responsive.dart';
-import 'package:graduation_project/Pages/study_table/stydy_table_Responsive.dart';
+
 import 'package:provider/provider.dart';
 
 import './responsive_page/responsive.dart';
@@ -161,7 +161,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
         ],
         debugShowCheckedModeBanner: false,
-        home: Table_responsive(),
+        home: Study_Result_Responsive(),
       ),
     );
   }
