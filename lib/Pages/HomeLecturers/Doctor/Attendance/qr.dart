@@ -1,20 +1,15 @@
 import 'dart:math';
 
-import 'package:btxproject2/Provider/Provider.dart';
-import 'package:btxproject2/consatant/Constant.dart';
+import 'package:graduation_project/Provider/Provider.dart';
+import 'package:graduation_project/consatant/Constant.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:timer_builder/timer_builder.dart';
 
-class QR extends StatefulWidget {
+class QR extends StatelessWidget {
   const QR({super.key});
 
-  @override
-  State<QR> createState() => _QRState();
-}
-
-class _QRState extends State<QR> {
   @override
   Widget build(BuildContext context) {
     final Color color1 = HexColor('#3E6BA9');
@@ -78,7 +73,7 @@ class _QRState extends State<QR> {
                             value.allCodes.add(qrData);
                             data.add(
                                 qrData); // Generate new data for the QR code
-                            return QrImage(
+                            return QrImageView(
                               data: data.toString(),
                               version: QrVersions.auto,
                               size: 200.0,

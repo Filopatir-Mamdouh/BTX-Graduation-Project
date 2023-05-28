@@ -1,9 +1,9 @@
 // ignore_for_file: file_names, camel_case_types
 
-import 'package:btxproject2/Pages/HomeLecturers/LecturersBage.dart';
-import 'package:btxproject2/consatant/Constant.dart';
-import 'package:btxproject2/consatant/Drawer/LecturersDrawer.dart';
-import 'package:btxproject2/consatant/responsive.dart';
+import 'package:graduation_project/Pages/HomeLecturers/LecturersBage.dart';
+import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/consatant/Drawer/LecturersDrawer.dart';
+import 'package:graduation_project/responsive.dart';
 import 'package:flutter/material.dart';
 
 class Main_Screen_Lecturers extends StatelessWidget {

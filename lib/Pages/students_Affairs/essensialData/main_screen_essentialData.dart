@@ -1,10 +1,10 @@
 // ignore: file_names
 // ignore_for_file: file_names, duplicate_ignore
 
-import 'package:btxproject2/consatant/Constant.dart';
-import 'package:btxproject2/consatant/Drawer/affairs_side_menu.dart';
-import 'package:btxproject2/Pages/students_Affairs/essensialData/essentialData.dart';
-import 'package:btxproject2/consatant/responsive.dart';
+import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/consatant/Drawer/affairs_side_menu.dart';
+import 'package:graduation_project/Pages/students_Affairs/essensialData/essentialData.dart';
+import 'package:graduation_project/responsive.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types

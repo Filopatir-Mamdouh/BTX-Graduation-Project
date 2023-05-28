@@ -1,8 +1,8 @@
 // ignore_for_file: camel_case_types, file_names
 
-import 'package:btxproject2/Pages/Library/LibraryHome.dart';
-import 'package:btxproject2/consatant/Drawer/Library_Drawer.dart';
-import 'package:btxproject2/consatant/responsive.dart';
+import 'package:graduation_project/Pages/Library/LibraryHome.dart';
+import 'package:graduation_project/consatant/Drawer/Library_Drawer.dart';
+import 'package:graduation_project/responsive.dart';
 import 'package:flutter/material.dart';
 
 class Main_Screen_Library_Home extends StatelessWidget {

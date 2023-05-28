@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, camel_case_types, prefer_const_constructors_in_immutables, non_constant_identifier_names
 
-import 'package:btxproject2/Provider/Provider.dart';
+import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

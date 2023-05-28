@@ -1,9 +1,10 @@
 // ignore_for_file: file_names, camel_case_types, avoid_unnecessary_containers
 
-import 'package:btxproject2/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+
+import 'package:graduation_project/Provider/Provider.dart';
 
 class QR_Library extends StatelessWidget {
   const QR_Library({super.key});
@@ -24,7 +25,7 @@ class QR_Library extends StatelessWidget {
             children: [
               Container(
                 child: Consumer<Library_QR>(builder: (context, model, child) {
-                  return QrImage(
+                  return QrImageView(
                     data: model.data.toString(),
                     version: QrVersions.auto,
                     size: 200.0,

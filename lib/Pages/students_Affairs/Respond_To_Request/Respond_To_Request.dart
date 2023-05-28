@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, camel_case_types, non_constant_identifier_names, avoid_unnecessary_containers
 
-import 'package:btxproject2/consatant/Constant.dart';
+import 'package:graduation_project/consatant/Constant.dart';
 import 'package:flutter/material.dart';
 
 class Respond_To_Request extends StatelessWidget {

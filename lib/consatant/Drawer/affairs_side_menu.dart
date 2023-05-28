@@ -1,7 +1,7 @@
 // ignore_for_file: camel_case_types
 
-import 'package:btxproject2/Pages/students_Affairs/educationData/main_screen_educationData.dart';
-import 'package:btxproject2/Pages/students_Affairs/essensialData/main_screen_essentialData.dart';
+import 'package:graduation_project/Pages/students_Affairs/educationData/main_screen_educationData.dart';
+import 'package:graduation_project/Pages/students_Affairs/essensialData/main_screen_essentialData.dart';
 import 'package:flutter/material.dart';
 
 class sidemenu extends StatelessWidget {

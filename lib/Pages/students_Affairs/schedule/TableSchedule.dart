@@ -1,9 +1,9 @@
 // ignore_for_file: file_names, prefer_typing_uninitialized_variables, non_constant_identifier_names, camel_case_types
 
-import 'package:btxproject2/Provider/Provider.dart';
-import 'package:btxproject2/Pages/students_Affairs/educationData/main_screen_educationData.dart';
-import 'package:btxproject2/Pages/students_Affairs/essensialData/main_screen_essentialData.dart';
-import 'package:btxproject2/Pages/students_Affairs/schedule/Days.dart';
+import 'package:graduation_project/Provider/Provider.dart';
+import 'package:graduation_project/Pages/students_Affairs/educationData/main_screen_educationData.dart';
+import 'package:graduation_project/Pages/students_Affairs/essensialData/main_screen_essentialData.dart';
+import 'package:graduation_project/Pages/students_Affairs/schedule/Days.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

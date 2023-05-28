@@ -1,9 +1,9 @@
 // ignore_for_file: file_names, camel_case_types
 
-import 'package:btxproject2/Pages/students_Affairs/Respond_To_Request/Respond_To_Request.dart';
-import 'package:btxproject2/consatant/Constant.dart';
-import 'package:btxproject2/consatant/Drawer/DrawerHome.dart';
-import 'package:btxproject2/consatant/responsive.dart';
+import 'package:graduation_project/Pages/students_Affairs/Respond_To_Request/Respond_To_Request.dart';
+import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/consatant/Drawer/DrawerHome.dart';
+import 'package:graduation_project/responsive.dart';
 import 'package:flutter/material.dart';
 
 class Main_Screen_Respond_To_Request extends StatelessWidget {

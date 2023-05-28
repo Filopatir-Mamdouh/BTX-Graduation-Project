@@ -1,8 +1,8 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:btxproject2/Provider/Provider.dart';
-import 'package:btxproject2/Pages/HomeLecturers/Doctor/Attendance/qr.dart';
-import 'package:btxproject2/consatant/Constant.dart';
+import 'package:graduation_project/Provider/Provider.dart';
+import 'package:graduation_project/Pages/HomeLecturers/Doctor/Attendance/qr.dart';
+import 'package:graduation_project/consatant/Constant.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages

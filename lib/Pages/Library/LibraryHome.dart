@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, camel_case_types, sized_box_for_whitespace
 
-import 'package:btxproject2/Pages/Library/Main_Screen_QRLibrary.dart';
-import 'package:btxproject2/Provider/Provider.dart';
+import 'package:graduation_project/Pages/Library/Main_Screen_QRLibrary.dart';
+import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
