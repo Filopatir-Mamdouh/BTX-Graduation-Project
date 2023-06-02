@@ -1,7 +1,7 @@
 import 'package:appwrite/models.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:graduation_project/Provider/client.dart';
-import '../Logic/auth/authentication.dart';
+import 'package:graduation_project/Provider/backend/client.dart';
+import 'package:graduation_project/Logic/auth/authentication.dart';
 
 //  So this is where we defined auth providers
 
