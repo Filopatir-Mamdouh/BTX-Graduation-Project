@@ -8,11 +8,11 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
-import 'package:graduation_project/Pages/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
-import 'package:graduation_project/Pages/Student_information_screen/Student_information_Desk_Tablet.dart';
-import 'package:graduation_project/Pages/Student_information_screen/student_information.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
+import 'package:graduation_project/pages/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
+import 'package:graduation_project/pages/Student_information_screen/Student_information_Desk_Tablet.dart';
+import 'package:graduation_project/pages/Student_information_screen/student_information.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
 class student_Information_responsive extends StatelessWidget {

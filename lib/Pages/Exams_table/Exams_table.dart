@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Exams_table/Exams_table_class.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Exams_table/Exams_table_class.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
 class Exams_table_page extends StatelessWidget {

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'dart:html';
 
-import 'package:graduation_project/Pages/chat/constants/constants.dart';
+import 'package:graduation_project/pages/chat/constants/constants.dart';
 
 class affairs_body_class extends StatelessWidget {
   const affairs_body_class({super.key});

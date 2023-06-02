@@ -8,13 +8,13 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Doctor_student_attendance/Doctor_Student_Attendance_Desk_Tablet.dart';
-import 'package:graduation_project/Pages/Doctor_student_attendance/Doctor_student_Attenadace.dart';
-import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
-import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Screen.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Doctor_student_attendance/Doctor_Student_Attendance_Desk_Tablet.dart';
+import 'package:graduation_project/pages/Doctor_student_attendance/Doctor_student_Attenadace.dart';
+import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
+import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Screen.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
-import 'package:graduation_project/Pages/inquiries/inquiries.dart';
+import 'package:graduation_project/pages/inquiries/inquiries.dart';
 
 class inquiries_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

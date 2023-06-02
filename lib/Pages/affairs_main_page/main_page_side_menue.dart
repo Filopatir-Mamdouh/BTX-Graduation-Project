@@ -1,8 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
-import 'package:graduation_project/Pages/chat/constants/constants.dart';
+import 'package:graduation_project/pages/Exams_table/Exams_table.dart';
+import 'package:graduation_project/pages/chat/constants/constants.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
 
 class main_page_side_menue extends StatelessWidget {

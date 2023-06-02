@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/Pages/lecture_info/lecturers_informations_screen.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/lecture_info/lecturers_informations_screen.dart';
 import 'package:graduation_project/responsive.dart';
 
 class Lecture_information_Responsive extends StatelessWidget {

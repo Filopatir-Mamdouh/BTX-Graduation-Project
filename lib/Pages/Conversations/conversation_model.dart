@@ -1,4 +1,4 @@
-import 'package:graduation_project/Pages/Conversations/conversation_Entity.dart';
+import 'package:graduation_project/pages/Conversations/conversation_Entity.dart';
 
 class ConversationModel extends Conversation {
   const ConversationModel(

@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Student_Academiv_result_affairs/student_academic_result_Desk_tablet.dart';
-import 'package:graduation_project/Pages/Student_Academiv_result_affairs/students_academic_results.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Student_Academiv_result_affairs/student_academic_result_Desk_tablet.dart';
+import 'package:graduation_project/pages/Student_Academiv_result_affairs/students_academic_results.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
 class Student_Academic_Result_Responsive extends StatelessWidget {

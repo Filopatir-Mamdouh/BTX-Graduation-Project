@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Pages/chat/constants/constants.dart';
+import 'package:graduation_project/pages/chat/constants/constants.dart';
 import 'package:graduation_project/core/app_colors.dart';
-import 'package:graduation_project/Pages/chat/other_chat_bubble.dart';
-import 'package:graduation_project/Pages/chat/you_chat_bubble.dart';
-import 'package:graduation_project/Pages/chat/chat_message_model.dart';
-import 'package:graduation_project/provider/chat/chat_provider.dart';
+import 'package:graduation_project/pages/chat/other_chat_bubble.dart';
+import 'package:graduation_project/pages/chat/you_chat_bubble.dart';
+import 'package:graduation_project/pages/chat/chat_message_model.dart';
+import 'package:graduation_project/Provider/chat/chat_provider.dart';
 
 import 'package:provider/provider.dart';
 

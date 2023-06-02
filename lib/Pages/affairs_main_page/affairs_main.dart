@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/affairs_main_page/affairs_body_class.dart';
-import 'package:graduation_project/Pages/affairs_main_page/main_page_side_menue.dart';
+import 'package:graduation_project/pages/affairs_main_page/affairs_body_class.dart';
+import 'package:graduation_project/pages/affairs_main_page/main_page_side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
 class affairs_main extends StatelessWidget {

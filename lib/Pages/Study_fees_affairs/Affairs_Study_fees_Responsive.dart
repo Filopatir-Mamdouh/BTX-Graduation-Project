@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Study_fees_affairs/Affairs_Study_fees_Desk_tablet.dart';
-import 'package:graduation_project/Pages/Study_fees_affairs/Affairs_Study_fees_screen.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Study_fees_affairs/Affairs_Study_fees_Desk_tablet.dart';
+import 'package:graduation_project/pages/Study_fees_affairs/Affairs_Study_fees_screen.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
 class Affairs_Study_Fees_Responsive extends StatelessWidget {

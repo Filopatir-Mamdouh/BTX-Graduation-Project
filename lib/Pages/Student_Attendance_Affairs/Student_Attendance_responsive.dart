@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
-import 'package:graduation_project/Pages/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
+import 'package:graduation_project/pages/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
 class student_Attendance_responsive extends StatelessWidget {

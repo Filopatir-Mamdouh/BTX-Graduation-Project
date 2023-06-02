@@ -1,16 +1,16 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Pages/Documents_Request/Documents_request_responsive.dart';
+import 'package:graduation_project/pages/Documents_Request/Documents_request_responsive.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
-import 'package:graduation_project/Pages/affairs_main_page/Side_Menue_provider.dart';
+import 'package:graduation_project/pages/affairs_main_page/Side_Menue_provider.dart';
 
-import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
-import 'package:graduation_project/Pages/Study_result_page/study_result_responsive.dart';
-import 'package:graduation_project/Pages/chat/constants/constants.dart';
-import 'package:graduation_project/Pages/fees_page/fees_page_responsive.dart';
+import 'package:graduation_project/pages/Exams_table/Exams_table.dart';
+import 'package:graduation_project/pages/Study_result_page/study_result_responsive.dart';
+import 'package:graduation_project/pages/chat/constants/constants.dart';
+import 'package:graduation_project/pages/fees_page/fees_page_responsive.dart';
 
-import 'package:graduation_project/Pages/study_table/stydy_table_Responsive.dart';
+import 'package:graduation_project/pages/study_table/stydy_table_Responsive.dart';
 import 'package:provider/provider.dart';
 
 class sidemenu extends StatelessWidget {

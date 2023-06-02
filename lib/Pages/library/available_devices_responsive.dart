@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Lecture_Attendance/Lecture_Attendance_Desk_Tablet.dart';
-import 'package:graduation_project/Pages/Lecture_Attendance/lecturers_attendance_schedule_screen.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Lecture_Attendance/Lecture_Attendance_Desk_Tablet.dart';
+import 'package:graduation_project/pages/Lecture_Attendance/lecturers_attendance_schedule_screen.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/Pages/library/available_devices_screen.dart';
 import 'package:graduation_project/core/app_colors.dart';
 

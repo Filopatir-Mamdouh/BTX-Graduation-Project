@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Screen.dart';
-import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Screen.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/core/app_colors.dart';
 import 'package:graduation_project/presentation/widgets/widgets/Educational_Data_provider.dart';
 import 'package:graduation_project/presentation/widgets/widgets/default_drop_down_button.dart';
