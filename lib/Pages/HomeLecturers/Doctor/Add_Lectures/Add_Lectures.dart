@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, camel_case_types, non_constant_identifier_names, unused_local_variable, avoid_unnecessary_containers
 
 import 'package:graduation_project/Provider/Provider.dart';
-import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/constant/Constant.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:expandable/expandable.dart';
 import 'package:file_picker/file_picker.dart';

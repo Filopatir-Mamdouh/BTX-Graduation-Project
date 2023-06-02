@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:graduation_project/Provider/Provider.dart';
-import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/constant/Constant.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';

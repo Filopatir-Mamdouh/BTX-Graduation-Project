@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/Login&register/LoginPage_class.dart';
-import 'dart:html';
-
 import 'package:graduation_project/Pages/Login&register/MyTextField.dart';
 
 class register_class extends StatelessWidget {

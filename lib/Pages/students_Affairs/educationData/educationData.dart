@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, camel_case_types, sort_child_properties_last
 
-import 'package:graduation_project/consatant/Constant.dart';
-import 'package:graduation_project/consatant/Drawer/affairs_side_menu.dart';
+import 'package:graduation_project/constant/Constant.dart';
+import 'package:graduation_project/constant/Drawer/affairs_side_menu.dart';
 import 'package:graduation_project/Provider/Provider.dart';
 import 'package:graduation_project/responsive.dart';
 import 'package:flutter/material.dart';

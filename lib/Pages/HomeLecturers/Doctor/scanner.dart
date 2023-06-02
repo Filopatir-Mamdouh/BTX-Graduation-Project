@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/constant/Constant.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';

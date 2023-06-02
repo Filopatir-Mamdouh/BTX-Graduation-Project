@@ -2,12 +2,8 @@
 
 import 'dart:ui';
 
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
 
-import 'dart:html';
-
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/Login&register/LoginPage_class.dart';
 import 'package:graduation_project/responsive.dart';
 
@@ -18,7 +14,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
+    final Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: Responsive(
         mobile: (Row(

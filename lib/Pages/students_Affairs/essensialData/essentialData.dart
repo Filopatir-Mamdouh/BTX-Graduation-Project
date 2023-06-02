@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable, file_names
 
-import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/constant/Constant.dart';
 import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

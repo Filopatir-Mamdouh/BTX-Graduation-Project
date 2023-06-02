@@ -1,8 +1,8 @@
 // ignore_for_file: camel_case_types, file_names
 
 import 'package:graduation_project/Pages/HomeLecturers/Doctor/Add_Lectures/Add_Lectures.dart';
-import 'package:graduation_project/consatant/Constant.dart';
-import 'package:graduation_project/consatant/Drawer/LecturersDrawer.dart';
+import 'package:graduation_project/constant/Constant.dart';
+import 'package:graduation_project/constant/Drawer/LecturersDrawer.dart';
 import 'package:graduation_project/responsive.dart';
 import 'package:flutter/material.dart';
 

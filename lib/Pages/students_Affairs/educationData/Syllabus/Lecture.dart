@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, non_constant_identifier_names, avoid_unnecessary_containers, camel_case_types, sized_box_for_whitespace
 
-import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/constant/Constant.dart';
 import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, sort_child_properties_last, avoid_types_as_parameter_names, duplicate_ignore, avoid_unnecessary_containers, file_names
 
-import 'package:graduation_project/consatant/Constant.dart';
+import 'package:graduation_project/constant/Constant.dart';
 import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:expandable/expandable.dart';
