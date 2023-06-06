@@ -13,12 +13,13 @@ class BasicInformationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final basicInformationsProvider =
-        Provider.of<BasicInformationsProvider>(context);
     int basicInformationsIndex =
-        basicInformationsProvider.basicInformationsIndex;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+        BasicInformationsProvider().basicInformationsIndex;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<BasicInformationsProvider>(
+            create: (_) => BasicInformationsProvider())
+      ],
       child: Scaffold(
         body: Container(
           width: double.infinity,
@@ -60,7 +61,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 30.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 0);
                                 },
                                 color: basicInformationsIndex == 0
@@ -82,7 +83,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 30.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 1);
                                 },
                                 color: basicInformationsIndex == 1
@@ -104,7 +105,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 30.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 2);
                                 },
                                 color: basicInformationsIndex == 2
@@ -126,7 +127,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 40.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 3);
                                 },
                                 color: basicInformationsIndex == 3
@@ -254,53 +255,3 @@ class BasicInformationsScreen extends StatelessWidget {
     );
   }
 }
-
-
-/*
-PreviousQualification(
-                          qualification: "ثانوي عام رياضة",
-                          place: "مدرسة محرم بك الرسمية لغات",
-                          graduationYear: "2019",
-                          total: "450",
-                          percentage: "100%",
-                        )
-                         */
-
-                        /*
-                        PersonalDetails(
-                          name: "أحمد محمود",
-                          englishName: "Ahmed Mahmoud",
-                          code: "365",
-                          religion: "مسلم",
-                          gender: "ذكر",
-                          nationality: "مصري",
-                          birthDay: "19/05/2001",
-                          birthPlace: "بنها",
-                          socialStatus: "أعزب",
-                          cardType: "بطاقة قومية",
-                          cardNumber: "12345678910112",
-                          publishDate: "",
-                          publishPlace: "بنها",
-                          fatherName: "محمود حسن",
-                          motherName: "",
-                          entryStatus: "مستجد تقدير",
-                          acceptanceType: "محول",
-                          acceptanceYear: "2021-2020",
-                        )
-                         */
-
-                        /*
-                        ContactsDetails(
-                          city: "بنها",
-                          address: "بنها",
-                          homeNumber: "",
-                          phoneNumber: "01203491221",
-                          email: "",
-                          fax: "",
-                          buildingNumber: "",
-                          apartmentNumber: "",
-                          mailBox: "",
-                          mailCode: "",
-                        )
-                        
-                         */
