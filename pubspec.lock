@@ -357,6 +357,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0"
+  max_size_text:
+    dependency: "direct main"
+    description:
+      name: max_size_text
+      sha256: e03ae49be4ef80fd26aac3820fcc59f809e11f2e6004944ba8d75f1fd45ac5de
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.12"
   meta:
     dependency: transitive
     description:
@@ -365,6 +373,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
+  model:
+    dependency: "direct main"
+    description:
+      name: model
+      sha256: "0f3a35af85daeeedb4d27f1e4f0b4677a9c3210e50bfa4c66714519d7cd2af8c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.3"
   nested:
     dependency: transitive
     description:
@@ -445,6 +461,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.6"
+  picker_whell:
+    dependency: "direct main"
+    description:
+      name: picker_whell
+      sha256: "058760b01fbc838fe3ddfc18445c1f7f0157b2253c89cb3a856edb9597a85446"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   platform:
     dependency: transitive
     description:
@@ -530,6 +554,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  source_maps:
+    dependency: "direct main"
+    description:
+      name: source_maps
+      sha256: "708b3f6b97248e5781f493b765c3337db11c5d2c81c3094f10904bfa8004c703"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.10.12"
   source_span:
     dependency: transitive
     description:
@@ -538,6 +570,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  sqflite:
+    dependency: transitive
+    description:
+      name: sqflite
+      sha256: "00f32a183fd9410b7d221a5106fec2cfc34b72d15ce694ee4da9c12e235cc2a4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.2+4"
+  sqflite_common:
+    dependency: transitive
+    description:
+      name: sqflite_common
+      sha256: cd2c3caf1cdfd79bbf5787e3a95983e43d19584784df2e6dd1863673497a791f
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3+3"
   stack_trace:
     dependency: transitive
     description:
@@ -570,6 +618,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  synchronized:
+    dependency: transitive
+    description:
+      name: synchronized
+      sha256: "294228ee6183405c4053a60e8b47c22956da37c92fd410c89ddf0279c188f735"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0+2"
   term_glyph:
     dependency: transitive
     description:

@@ -27,39 +27,39 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: return scaffold(),
+      home: Scaffold(),
     );
   }
 }
 
-class AuthChecker extends StatelessWidget {
-  const AuthChecker({Key? key}) : super(key: key);
+// class AuthChecker extends StatelessWidget {
+//   const AuthChecker({Key? key}) : super(key: key);
 
-  Future<dynamic> getData() async {
-    // Perform asynchronous operations here
-    // For example, make an HTTP request or fetch data from a database
-    final userprovider = Provider;
-    final user = await ref.read(authProvider).getAccount();
-    return user;
-  }
+//   // Future<dynamic> getData() async {
+//   //   // Perform asynchronous operations here
+//   //   // For example, make an HTTP request or fetch data from a database
+//   //   final userprovider = Provider;
+//   //   final user = await ref.read(authProvider).getAccount();
+//   //   return user;
+//   // }
 
-//  So here's the thing what we have done
-//  if the _isLoggedIn is true, we will go to Home Page
-//  if false we will go to Welcome Page
-// and if the user is null we will show a Loading screen
-  @override
-  Widget build(BuildContext context) {
-    try {
-      if (user != null) {
-        return AffairsMain(); // It's asimple basic screen showing the home page with welcome message
-      } else {
-        return LoginPage(); // It's the intro screen we made
-      }
-      // TODO: Create a Loading Screen
-      return LoginPage(); // It's a plain screen with a circular progress indicator in Center
-    } catch (ex) {
-      debugPrint(ex.toString());
-      return const Scaffold();
-    }
-  }
-}
+// //  So here's the thing what we have done
+// //  if the _isLoggedIn is true, we will go to Home Page
+// //  if false we will go to Welcome Page
+// // and if the user is null we will show a Loading screen
+//   @override
+//   Widget build(BuildContext context) {
+//     try {
+//       if (user != null) {
+//         return AffairsMain(); // It's asimple basic screen showing the home page with welcome message
+//       } else {
+//         return LoginPage(); // It's the intro screen we made
+//       }
+//       // TODO: Create a Loading Screen
+//       return LoginPage(); // It's a plain screen with a circular progress indicator in Center
+//     } catch (ex) {
+//       debugPrint(ex.toString());
+//       return const Scaffold();
+//     }
+//   }
+// }
