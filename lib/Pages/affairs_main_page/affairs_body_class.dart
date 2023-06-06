@@ -1,13 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/chat/constants/constants.dart';
 
-import 'dart:html';
-
-import 'package:graduation_project/pages/chat/constants/constants.dart';
-
-class affairs_body_class extends StatelessWidget {
-  const affairs_body_class({super.key});
+class AffairsBodyClass extends StatelessWidget {
+  const AffairsBodyClass({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +11,7 @@ class affairs_body_class extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(children: [
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -40,83 +35,83 @@ class affairs_body_class extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text(
-                "البيانات الدراسية",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
+              child: Text(
+                "البيانات الدراسية",
+                style: TextStyle(color: grey_text, fontSize: 17),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             ElevatedButton(
               onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                side: const BorderSide(width: 2, color: Colors.black),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 18, horizontal: 17),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22),
+                ),
+              ),
               child: Text(
                 'شئون الطلاب',
                 style: TextStyle(color: grey_text, fontSize: 19),
               ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            ElevatedButton(
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 18, horizontal: 17),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            ElevatedButton(
-              onPressed: () {},
               child: Text(
                 'رعاية الطلاب',
                 style: TextStyle(color: grey_text, fontSize: 19),
               ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 18, horizontal: 17),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
-                ),
-              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text(
-                'المكتبة',
-                style: TextStyle(color: grey_text, fontSize: 19),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 18, horizontal: 17),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
+              child: Text(
+                'المكتبة',
+                style: TextStyle(color: grey_text, fontSize: 19),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             Padding(
@@ -137,23 +132,6 @@ class affairs_body_class extends StatelessWidget {
                     style: TextStyle(color: grey_text, fontSize: 20),
                   ),
                 )),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 1000),
-            //   child: SizedBox(
-            //     height: 30,
-            //     width: 2000,
-            //     child: Padding(
-            //       padding: const EdgeInsets.only(left: 150),
-            //       child: Container(
-            //         color: Color.fromARGB(255, 20, 30, 165),
-            //         child: Text(
-            //           "جميع الحقوق محفوظة لدي",
-            //           style: TextStyle(color: Colors.white),
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // )
           ]),
         ),
       ),

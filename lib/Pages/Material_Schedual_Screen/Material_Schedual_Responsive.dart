@@ -1,24 +1,18 @@
 // ignore_for_file: prefer_const_constructors, dead_code
-
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Material_Schedual_Screen/Material_Schedual_Desk_Tablet.dart';
 import 'package:graduation_project/pages/Material_Schedual_Screen/Material_Schedual_Screen.dart';
-import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
-class MaterialsScheduleScreen_Responsive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+import '../affairs_main_page/side_menue.dart';
 
+class MaterialsScheduleScreenResponsive extends StatelessWidget {
   PageController page = PageController();
 
   late final String title;
+
+  MaterialsScheduleScreenResponsive({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +20,19 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
       body: Responsive(
         mobile: MaterialApp(
           title: 'Material Schedule',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -64,9 +58,7 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: sidemenu(),
-              ),
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -74,19 +66,19 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'Material Schedule',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -99,18 +91,14 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    child: MaterialsScheduleScreen_Desk_Tablet(),
-                  ),
+                  child: MaterialsScheduleScreen_Desk_Tablet(),
                 ),
               ],
             ),
@@ -130,19 +118,19 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'Material Schedule',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -155,18 +143,14 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: MaterialsScheduleScreen_Desk_Tablet(),
-                  ),
+                  child: MaterialsScheduleScreen_Desk_Tablet(),
                 )
               ],
             ),

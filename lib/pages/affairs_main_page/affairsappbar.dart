@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
-class Affairs_AppBar extends StatelessWidget {
-  const Affairs_AppBar({Key? key}) : super(key: key);
+class AffairsAppBar extends StatelessWidget {
+  const AffairsAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class Affairs_AppBar extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
       ]),

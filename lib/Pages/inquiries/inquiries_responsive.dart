@@ -1,17 +1,7 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/pages/Doctor_student_attendance/Doctor_Student_Attendance_Desk_Tablet.dart';
-import 'package:graduation_project/pages/Doctor_student_attendance/Doctor_student_Attenadace.dart';
-import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
-import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Screen.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 import 'package:graduation_project/pages/inquiries/inquiries.dart';
@@ -41,7 +31,7 @@ class inquiries_responsive extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -89,7 +79,7 @@ class inquiries_responsive extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -145,7 +135,7 @@ class inquiries_responsive extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -161,15 +151,11 @@ class inquiries_responsive extends StatelessWidget {
               children: [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: Inquiries_Screen(),
-                  ),
+                  child: Inquiries_Screen(),
                 )
               ],
             ),

@@ -1,23 +1,19 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
 
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/pages/basic_info/basic_informations_screen.dart';
 import 'package:graduation_project/responsive.dart';
 
-class Basic_info_responsive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+import '../affairs_main_page/side_menue.dart';
 
+class BasicInfoResponsive extends StatelessWidget {
   PageController page = PageController();
 
   late final String title;
+
+  BasicInfoResponsive({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +21,19 @@ class Basic_info_responsive extends StatelessWidget {
       body: Responsive(
         mobile: MaterialApp(
           title: 'Student Result',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -63,9 +59,7 @@ class Basic_info_responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: sidemenu(),
-              ),
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -73,19 +67,19 @@ class Basic_info_responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'Study Fees',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -98,18 +92,14 @@ class Basic_info_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    child: BasicInformationsScreen(),
-                  ),
+                  child: BasicInformationsScreen(),
                 ),
               ],
             ),
@@ -129,19 +119,19 @@ class Basic_info_responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'Study Result',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -154,18 +144,14 @@ class Basic_info_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: BasicInformationsScreen(),
-                  ),
+                  child: BasicInformationsScreen(),
                 )
               ],
             ),

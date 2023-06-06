@@ -1,24 +1,16 @@
-// ignore_for_file: prefer_const_constructors, dead_code
-
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
 import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Screen.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
-class Educational_Data_Responsive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
+class EducationalDataResponsive extends StatelessWidget {
   PageController page = PageController();
 
   late final String title;
+
+  EducationalDataResponsive({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +18,22 @@ class Educational_Data_Responsive extends StatelessWidget {
       body: Responsive(
         mobile: MaterialApp(
           title: 'Student Result',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
-                color: Color(0xFF3E6BA9),
-                child: Center(
+                color: const Color(0xFF3E6BA9),
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -50,23 +42,21 @@ class Educational_Data_Responsive extends StatelessWidget {
                             color: Colors.white))),
               )
             ]),
-            body: EducationalDataScreen(),
+            body: const EducationalDataScreen(),
             appBar: AppBar(
-              backgroundColor: Color(0xFF3E6BA9), // Will work
+              backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
                   Image.asset('b3.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("شئون الطلاب"),
+                  const Text("شئون الطلاب"),
                 ],
               ),
             ),
-            drawer: Drawer(
-              child: Container(
-                child: sidemenu(),
-              ),
+            drawer: const Drawer(
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -74,22 +64,22 @@ class Educational_Data_Responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'Study Fees',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
-                color: Color(0xFF3E6BA9),
-                child: Center(
+                color: const Color(0xFF3E6BA9),
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -99,30 +89,26 @@ class Educational_Data_Responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    child: EducationalDataScreen_Desk_Tablet(),
-                  ),
+                  child: EducationalDataScreen_Desk_Tablet(),
                 ),
               ],
             ),
             appBar: AppBar(
-              backgroundColor: Color(0xFF3E6BA9), // Will work
+              backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
                   Image.asset('b3.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("شئون الطلاب"),
+                  const Text("شئون الطلاب"),
                 ],
               ),
             ),
@@ -130,22 +116,22 @@ class Educational_Data_Responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'Study Result',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
-                color: Color(0xFF3E6BA9),
-                child: Center(
+                color: const Color(0xFF3E6BA9),
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -155,30 +141,26 @@ class Educational_Data_Responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: EducationalDataScreen_Desk_Tablet(),
-                  ),
+                  child: EducationalDataScreen_Desk_Tablet(),
                 )
               ],
             ),
             appBar: AppBar(
-              backgroundColor: Color(0xFF3E6BA9), // Will work
+              backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
                   Image.asset('b3.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("شئون الطلاب"),
+                  const Text("شئون الطلاب"),
                 ],
               ),
             ),
@@ -193,9 +175,9 @@ class OpenPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint1 = Paint()
-      ..color = Color(0xffaa44aa)
+      ..color = const Color(0xffaa44aa)
       ..style = PaintingStyle.fill;
-    canvas.drawCircle(Offset(200, 200), 100, paint1);
+    canvas.drawCircle(const Offset(200, 200), 100, paint1);
   }
 
   @override

@@ -1,42 +1,35 @@
 // ignore_for_file: prefer_const_constructors, dead_code
-
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Documents_Request/Documents_request_class.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
-class documents_request_page_resposive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+class DocumentsRequestPageResposive extends StatelessWidget {
   PageController page = PageController();
   late final String title;
 
+  DocumentsRequestPageResposive({super.key});
+
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: Responsive(
         mobile: MaterialApp(
           title: 'Documents Request',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -62,9 +55,7 @@ class documents_request_page_resposive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: sidemenu(),
-              ),
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -72,19 +63,19 @@ class documents_request_page_resposive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'Documents Request',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -97,18 +88,14 @@ class documents_request_page_resposive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: DocumentRequestScreen(),
-                  ),
+                  child: DocumentRequestScreen(),
                 ),
               ],
             ),
@@ -128,19 +115,19 @@ class documents_request_page_resposive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'Documents Request',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -153,18 +140,14 @@ class documents_request_page_resposive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: DocumentRequestScreen(),
-                  ),
+                  child: DocumentRequestScreen(),
                 )
               ],
             ),

@@ -1,22 +1,18 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:graduation_project/pages/Documents_Request/Documents_request_responsive.dart';
+import 'package:graduation_project/Pages/Documents_Request/Documents_request_responsive.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
-import 'package:graduation_project/pages/affairs_main_page/Side_Menue_provider.dart';
+import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
+import 'package:graduation_project/Pages/Study_result_page/study_result_responsive.dart';
+import 'package:graduation_project/Pages/chat/constants/constants.dart';
+import 'package:graduation_project/Pages/fees_page/fees_page_responsive.dart';
 
-import 'package:graduation_project/pages/Exams_table/Exams_table.dart';
-import 'package:graduation_project/pages/Study_result_page/study_result_responsive.dart';
-import 'package:graduation_project/pages/chat/constants/constants.dart';
-import 'package:graduation_project/pages/fees_page/fees_page_responsive.dart';
+import 'package:graduation_project/Pages/study_table/stydy_table_Responsive.dart';
 
-import 'package:graduation_project/pages/study_table/stydy_table_Responsive.dart';
-import 'package:provider/provider.dart';
+class Sidemenu extends StatelessWidget {
+  const Sidemenu({super.key});
 
-class sidemenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.only(bottom: 100),
@@ -25,7 +21,7 @@ class sidemenu extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -38,44 +34,44 @@ class sidemenu extends StatelessWidget {
                   child: Image.asset(
                       "${Affairs_Side_Menue_provider().Student_Image}"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Column(
                   children: [
-                    Text("${Affairs_Side_Menue_provider().Student_Name}",
+                    Text(Affairs_Side_Menue_provider().Student_Name,
                         style: TextStyle(
                             color: grey_text,
                             fontSize: 18,
                             fontWeight: FontWeight.bold)),
-                    Text("${Affairs_Side_Menue_provider().Father_Name}",
+                    Text(Affairs_Side_Menue_provider().Father_Name,
                         style: TextStyle(
                             color: grey_text,
                             fontSize: 18,
                             fontWeight: FontWeight.bold)),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 )
               ],
             ),
             SizedBox(
               child: Center(
-                child: Text("${Affairs_Side_Menue_provider().year}",
+                child: Text(Affairs_Side_Menue_provider().year,
                     style: TextStyle(color: grey_text, fontSize: 16)),
               ),
             ),
             SizedBox(
               child: Center(
-                child: Text("${Affairs_Side_Menue_provider().Section}",
+                child: Text(Affairs_Side_Menue_provider().Section,
                     style: TextStyle(
                         color: grey_text,
                         fontSize: 15,
                         fontWeight: FontWeight.bold)),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               width: 310,
               height: 1,
@@ -84,45 +80,45 @@ class sidemenu extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(1)),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
               onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                side: const BorderSide(width: 2, color: Colors.black),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22),
+                ),
+              ),
               child: Text(
                 'البيانات الاساسية',
                 style: TextStyle(color: grey_text, fontSize: 17),
               ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
-                ),
-              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 13,
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text(
-                'البيانات التعليمية',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
+              child: Text(
+                'البيانات التعليمية',
+                style: TextStyle(color: grey_text, fontSize: 17),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 13,
             ),
             ElevatedButton(
@@ -133,21 +129,21 @@ class sidemenu extends StatelessWidget {
                       builder: (context) => Study_table_Responsive()),
                 );
               },
-              child: Text(
-                'الجدول الدراسي',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
+              child: Text(
+                'الجدول الدراسي',
+                style: TextStyle(color: grey_text, fontSize: 17),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 13,
             ),
             ElevatedButton(
@@ -157,21 +153,21 @@ class sidemenu extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Exams_table_page()),
                 );
               },
-              child: Text(
-                'جدول الامتحانات',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
+              child: Text(
+                'جدول الامتحانات',
+                style: TextStyle(color: grey_text, fontSize: 17),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 13,
             ),
             ElevatedButton(
@@ -182,21 +178,21 @@ class sidemenu extends StatelessWidget {
                       builder: (context) => fess_page_Responsive()),
                 );
               },
-              child: Text(
-                "الرسوم الدراسية",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
+              child: Text(
+                "الرسوم الدراسية",
+                style: TextStyle(color: grey_text, fontSize: 17),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 13,
             ),
             ElevatedButton(
@@ -207,21 +203,21 @@ class sidemenu extends StatelessWidget {
                       builder: (context) => Study_Result_Responsive()),
                 );
               },
-              child: Text(
-                "النتائج الدراسية",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
               ),
+              child: Text(
+                "النتائج الدراسية",
+                style: TextStyle(color: grey_text, fontSize: 17),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             ElevatedButton(
@@ -232,37 +228,37 @@ class sidemenu extends StatelessWidget {
                       builder: (context) => documents_request_page_resposive()),
                 );
               },
+              style: ElevatedButton.styleFrom(
+                side: const BorderSide(width: 2, color: Colors.black),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22),
+                ),
+              ),
               child: Text(
                 "طلب مستندات",
                 style: TextStyle(color: grey_text, fontSize: 17),
               ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
-                ),
-              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 13,
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text(
-                "تسجيل الخروج",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
                 ),
+              ),
+              child: Text(
+                "تسجيل الخروج",
+                style: TextStyle(color: grey_text, fontSize: 17),
               ),
             ),
           ],
