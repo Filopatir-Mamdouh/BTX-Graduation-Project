@@ -1,20 +1,11 @@
 // ignore_for_file: prefer_const_constructors, dead_code
-
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/TeacherSceduleScreen/TeacherSceduleScreen.dart';
 import 'package:graduation_project/pages/TeacherSceduleScreen/TeacherScedule_Desk_Tablet.dart';
-import 'package:graduation_project/pages/Teacher_Basic_Data/Teacher_Basic_Data.dart';
-import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
-import 'package:graduation_project/pages/study_table/Study_Table_Desk_TAblet.dart';
-import 'package:graduation_project/pages/study_table/study_table_class.dart';
+
+import '../affairs_main_page/side_menue.dart';
 
 class Teacher_Scedule_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -67,7 +58,7 @@ class Teacher_Scedule_responsive extends StatelessWidget {
             ),
             drawer: Drawer(
               child: Container(
-                child: sidemenu(),
+                child: Sidemenu(),
               ),
             ),
           ),
@@ -105,7 +96,7 @@ class Teacher_Scedule_responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(
@@ -161,7 +152,7 @@ class Teacher_Scedule_responsive extends StatelessWidget {
                 Flexible(
                   flex: 3,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(

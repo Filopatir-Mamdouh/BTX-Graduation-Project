@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/affairs_main_page/affairs_main.dart';
 import 'package:graduation_project/Provider/backend/auth.dart';
 import 'package:graduation_project/Pages/Login&register/Login_page_responsive.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: AuthChecker(),
+      home: return scaffold(),
     );
   }
 }
@@ -37,7 +38,7 @@ class AuthChecker extends StatelessWidget {
   Future<dynamic> getData() async {
     // Perform asynchronous operations here
     // For example, make an HTTP request or fetch data from a database
-    final userprovider = Provider
+    final userprovider = Provider;
     final user = await ref.read(authProvider).getAccount();
     return user;
   }
