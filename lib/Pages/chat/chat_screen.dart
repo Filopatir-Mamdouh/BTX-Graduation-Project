@@ -15,10 +15,13 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final chatProvider = Provider.of<ChatProvider>(context);
-    List<ChatMessageModel> chat = chatProvider.chat;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    List<ChatMessageModel> chat = ChatProvider().chat;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ChatProvider>(
+          create: (_) => ChatProvider(),
+        ),
+      ],
       child: Scaffold(
         backgroundColor: AppColors.primary,
         body: SafeArea(
@@ -38,7 +41,7 @@ class ChatScreen extends StatelessWidget {
                       ),
                     ),
                     Image.asset(
-                      "assets/images/app_logo.jpeg",
+                      "b3.jpeg",
                     ),
                   ],
                 ),
@@ -101,7 +104,7 @@ class ChatScreen extends StatelessWidget {
                               InkWell(
                                 onTap: () {
                                   if (messageController.text.isNotEmpty) {
-                                    chatProvider.sendMessage(
+                                    ChatProvider().sendMessage(
                                       email: myEmail,
                                       name: myName,
                                       role: myRole,
@@ -110,14 +113,14 @@ class ChatScreen extends StatelessWidget {
                                           "${TimeOfDay.now().hour}:${TimeOfDay.now().minute} ${TimeOfDay.now().period.name}",
                                     );
                                     messageController.clear();
-                                    chatProvider.changeIsMessageEmpty(
-                                        isEmpty: true);
+                                    ChatProvider()
+                                        .changeIsMessageEmpty(isEmpty: true);
                                   }
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.all(5.0),
                                   decoration: BoxDecoration(
-                                    color: chatProvider.isMessageEmpty
+                                    color: ChatProvider().isMessageEmpty
                                         ? AppColors.primary.withOpacity(0.7)
                                         : AppColors.primary,
                                     borderRadius: const BorderRadius.all(
@@ -144,10 +147,10 @@ class ChatScreen extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                   onChanged: (value) => value.isEmpty
-                                      ? chatProvider.changeIsMessageEmpty(
-                                          isEmpty: true)
-                                      : chatProvider.changeIsMessageEmpty(
-                                          isEmpty: false),
+                                      ? ChatProvider()
+                                          .changeIsMessageEmpty(isEmpty: true)
+                                      : ChatProvider()
+                                          .changeIsMessageEmpty(isEmpty: false),
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,
                                       hintText: "type your message",

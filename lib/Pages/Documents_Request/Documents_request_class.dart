@@ -12,12 +12,14 @@ class DocumentRequestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final documentRequestProvider =
-        Provider.of<DocumentRequestProvider>(context);
-    String? document = documentRequestProvider.document;
-    List<String> documents = documentRequestProvider.documents;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? document = DocumentRequestProvider().document;
+    List<String> documents = DocumentRequestProvider().documents;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<DocumentRequestProvider>(
+          create: (_) => DocumentRequestProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
@@ -59,8 +61,8 @@ class DocumentRequestScreen extends StatelessWidget {
                             list: documents,
                             value: document,
                             onChanged: (value) {
-                              documentRequestProvider.changeDocument(
-                                  selectedDocument: value);
+                              DocumentRequestProvider()
+                                  .changeDocument(selectedDocument: value);
                             },
                           ),
                         ),

@@ -11,18 +11,20 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final studentsAttendanceScheduleProvider =
-        Provider.of<StudentsAttendanceScheduleProvider>(context);
-    String? level = studentsAttendanceScheduleProvider.level;
-    List<String> levels = studentsAttendanceScheduleProvider.levels;
-    String? department = studentsAttendanceScheduleProvider.department;
-    List<String> departments = studentsAttendanceScheduleProvider.departments;
-    String? division = studentsAttendanceScheduleProvider.division;
-    List<String> divisions = studentsAttendanceScheduleProvider.divisions;
+    String? level = StudentsAttendanceScheduleProvider().level;
+    List<String> levels = StudentsAttendanceScheduleProvider().levels;
+    String? department = StudentsAttendanceScheduleProvider().department;
+    List<String> departments = StudentsAttendanceScheduleProvider().departments;
+    String? division = StudentsAttendanceScheduleProvider().division;
+    List<String> divisions = StudentsAttendanceScheduleProvider().divisions;
     List<SubjectAttendanceModel> subjectsAttendance =
-        studentsAttendanceScheduleProvider.subjectsAttendance;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+        StudentsAttendanceScheduleProvider().subjectsAttendance;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<StudentsAttendanceScheduleProvider>(
+          create: (_) => StudentsAttendanceScheduleProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -60,8 +62,8 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
                       list: levels,
                       value: level,
                       onChanged: (value) {
-                        studentsAttendanceScheduleProvider.changeLevel(
-                            selectedLevel: value);
+                        StudentsAttendanceScheduleProvider()
+                            .changeLevel(selectedLevel: value);
                       },
                     ),
                   ),
@@ -84,8 +86,8 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
                       list: departments,
                       value: department,
                       onChanged: (value) {
-                        studentsAttendanceScheduleProvider.changeDepartment(
-                            selectedDepartment: value);
+                        StudentsAttendanceScheduleProvider()
+                            .changeDepartment(selectedDepartment: value);
                       },
                     ),
                   ),
@@ -108,8 +110,8 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
                       list: divisions,
                       value: division,
                       onChanged: (value) {
-                        studentsAttendanceScheduleProvider.changeDivision(
-                            selectedDivision: value);
+                        StudentsAttendanceScheduleProvider()
+                            .changeDivision(selectedDivision: value);
                       },
                     ),
                   ),
@@ -179,7 +181,7 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
                                         ),
                                         Row(
                                           children: List.generate(
-                                            studentsAttendanceScheduleProvider
+                                            StudentsAttendanceScheduleProvider()
                                                 .subjectsAttendance[index]
                                                 .subjectAttendance
                                                 .length,
@@ -232,12 +234,12 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
                                         horizontal: 5.0),
                                     child: Row(
                                       children: List.generate(
-                                        studentsAttendanceScheduleProvider
+                                        StudentsAttendanceScheduleProvider()
                                             .subjectsAttendance[firstIndex]
                                             .subjectAttendance
                                             .length,
                                         (index) =>
-                                            studentsAttendanceScheduleProvider
+                                            StudentsAttendanceScheduleProvider()
                                                             .subjectsAttendance[
                                                                 firstIndex]
                                                             .subjectAttendance[
@@ -245,7 +247,7 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
                                                     true
                                                 ? InkWell(
                                                     onTap: () {
-                                                      studentsAttendanceScheduleProvider
+                                                      StudentsAttendanceScheduleProvider()
                                                           .changeSubjectAttendance(
                                                               subjectIndex:
                                                                   firstIndex,
@@ -265,7 +267,7 @@ class StudentsAttendanceScheduleScreen extends StatelessWidget {
                                                   )
                                                 : InkWell(
                                                     onTap: () {
-                                                      studentsAttendanceScheduleProvider
+                                                      StudentsAttendanceScheduleProvider()
                                                           .changeSubjectAttendance(
                                                               subjectIndex:
                                                                   firstIndex,

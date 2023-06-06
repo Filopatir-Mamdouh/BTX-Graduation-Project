@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/chat/constants/constants.dart';
+import 'package:graduation_project/Pages/library/books_responsive.dart';
+import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
 
 class AffairsBodyClass extends StatelessWidget {
   const AffairsBodyClass({super.key});
@@ -26,10 +28,13 @@ class AffairsBodyClass extends StatelessWidget {
                     style: TextStyle(color: grey_text, fontSize: 20),
                   ),
                 ),
+                SizedBox(
+                  width: 8,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 9),
                   child: Text(
-                    "احمد خالد حسن ابوالليل",
+                    "${Affairs_Side_Menue_provider().Student_Name}",
                     style: TextStyle(color: grey_text, fontSize: 20),
                   ),
                 ),
@@ -38,77 +43,94 @@ class AffairsBodyClass extends StatelessWidget {
             const SizedBox(
               height: 60,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "البيانات الدراسية",
+                  style: TextStyle(color: grey_text, fontSize: 17),
                 ),
-              ),
-              child: Text(
-                "البيانات الدراسية",
-                style: TextStyle(color: grey_text, fontSize: 17),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
+                ),
               ),
             ),
             const SizedBox(
               height: 40,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 18, horizontal: 17),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'شئون الطلاب',
+                  style: TextStyle(color: grey_text, fontSize: 19),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 17),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
-              child: Text(
-                'شئون الطلاب',
-                style: TextStyle(color: grey_text, fontSize: 19),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'رعاية الطلاب',
+                  style: TextStyle(color: grey_text, fontSize: 19),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 17),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
+                ),
               ),
             ),
             const SizedBox(
               height: 40,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 18, horizontal: 17),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => books_responsive()),
+                  );
+                },
+                child: Text(
+                  'المكتبة',
+                  style: TextStyle(color: grey_text, fontSize: 19),
                 ),
-              ),
-              child: Text(
-                'رعاية الطلاب',
-                style: TextStyle(color: grey_text, fontSize: 19),
-              ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 18, horizontal: 17),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 17),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
-              ),
-              child: Text(
-                'المكتبة',
-                style: TextStyle(color: grey_text, fontSize: 19),
               ),
             ),
             const SizedBox(

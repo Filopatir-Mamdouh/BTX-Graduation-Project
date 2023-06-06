@@ -9,9 +9,12 @@ class ExamsScheduleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ExamsSchedulePro = Provider.of<ExamsScheduleProvider>(context);
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ExamsScheduleProvider>(
+          create: (_) => ExamsScheduleProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: Padding(

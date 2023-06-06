@@ -5,7 +5,6 @@ import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/core/app_colors.dart';
 import 'package:graduation_project/presentation/widgets/widgets/Educational_Data_provider.dart';
 import 'package:graduation_project/presentation/widgets/widgets/default_drop_down_button.dart';
-import 'package:graduation_project/responsive.dart';
 
 import 'package:provider/provider.dart';
 
@@ -14,12 +13,14 @@ class EducationalDataScreen_Desk_Tablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final educationalDataProvider =
-        Provider.of<EducationalDataProvider>(context);
-    String? department = educationalDataProvider.department;
-    List<String> departments = educationalDataProvider.departments;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? department = EducationalDataProvider().department;
+    List<String> departments = EducationalDataProvider().departments;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<EducationalDataProvider>(
+          create: (_) => EducationalDataProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -60,8 +61,8 @@ class EducationalDataScreen_Desk_Tablet extends StatelessWidget {
                         list: departments,
                         value: department,
                         onChanged: (value) {
-                          educationalDataProvider.changeDepartment(
-                              selectedDepartment: value);
+                          EducationalDataProvider()
+                              .changeDepartment(selectedDepartment: value);
                         },
                       ),
                     ),

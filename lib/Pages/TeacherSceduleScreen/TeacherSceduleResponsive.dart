@@ -4,7 +4,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/TeacherSceduleScreen/TeacherSceduleScreen.dart';
 import 'package:graduation_project/pages/TeacherSceduleScreen/TeacherScedule_Desk_Tablet.dart';
 import 'package:graduation_project/responsive.dart';
-
 import '../affairs_main_page/side_menue.dart';
 
 class Teacher_Scedule_responsive extends StatelessWidget {

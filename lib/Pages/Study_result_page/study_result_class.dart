@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/app_colors.dart';
+import 'package:graduation_project/provider/inquiries_provider.dart';
 import 'package:graduation_project/provider/year_result.dart';
 import 'package:graduation_project/presentation/widgets/widgets/default_drop_down_button.dart';
 
@@ -10,11 +11,14 @@ class YearResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final yearResultProvider = Provider.of<YearResultProvider>(context);
-    String? level = yearResultProvider.level;
-    List<String> levels = yearResultProvider.levels;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? level = YearResultProvider().level;
+    List<String> levels = YearResultProvider().levels;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<YearResultProvider>(
+          create: (_) => YearResultProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: Padding(
@@ -50,7 +54,7 @@ class YearResultScreen extends StatelessWidget {
                       width: 15.0,
                     ),
                     SizedBox(
-                      width: 250,
+                      width: 200,
                       child: Expanded(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -58,8 +62,8 @@ class YearResultScreen extends StatelessWidget {
                             list: levels,
                             value: level,
                             onChanged: (value) {
-                              yearResultProvider.changeLevel(
-                                  selectedLevel: value);
+                              YearResultProvider()
+                                  .changeLevel(selectedLevel: value);
                             },
                           ),
                         ),

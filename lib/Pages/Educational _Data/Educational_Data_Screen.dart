@@ -10,12 +10,14 @@ class EducationalDataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final educationalDataProvider =
-        Provider.of<EducationalDataProvider>(context);
-    String? department = educationalDataProvider.department;
-    List<String> departments = educationalDataProvider.departments;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? department = EducationalDataProvider().department;
+    List<String> departments = EducationalDataProvider().departments;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<EducationalDataProvider>(
+          create: (_) => EducationalDataProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -56,8 +58,8 @@ class EducationalDataScreen extends StatelessWidget {
                         list: departments,
                         value: department,
                         onChanged: (value) {
-                          educationalDataProvider.changeDepartment(
-                              selectedDepartment: value);
+                          EducationalDataProvider()
+                              .changeDepartment(selectedDepartment: value);
                         },
                       ),
                     ),

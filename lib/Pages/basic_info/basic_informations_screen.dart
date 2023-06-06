@@ -18,7 +18,8 @@ class BasicInformationsScreen extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<BasicInformationsProvider>(
-            create: (_) => BasicInformationsProvider())
+          create: (_) => BasicInformationsProvider(),
+        ),
       ],
       child: Scaffold(
         body: Container(

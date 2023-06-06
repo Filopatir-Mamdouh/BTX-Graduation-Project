@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/responsive.dart';
-
 import 'affairs_body_class.dart';
 import 'main_page_side_menue.dart';
 

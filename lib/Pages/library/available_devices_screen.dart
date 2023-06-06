@@ -12,10 +12,13 @@ class DevicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final devicesProvider = Provider.of<DevicesProvider>(context);
-    List<AvailableDeviceModel> devices = devicesProvider.devices;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    List<AvailableDeviceModel> devices = DevicesProvider().devices;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<DevicesProvider>(
+          create: (_) => DevicesProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: SizedBox(

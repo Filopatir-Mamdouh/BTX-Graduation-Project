@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
+import 'package:graduation_project/Pages/basic_info/Basic_info_responsive.dart';
 import 'package:graduation_project/Pages/chat/constants/constants.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
 
@@ -77,58 +79,73 @@ class MainPageSidemenu extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BasicInfoResponsive()),
+                  );
+                },
+                child: Text(
+                  'البيانات الاساسية',
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
-              child: Text(
-                'البيانات الاساسية',
-                style: TextStyle(color: grey_text, fontSize: 17),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "تسجيل حضور",
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
+                ),
               ),
             ),
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "تسجيل الخروج",
+                  style: TextStyle(color: grey_text, fontSize: 17),
                 ),
-              ),
-              child: Text(
-                "تسجيل حضور",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
-              ),
-              child: Text(
-                "تسجيل الخروج",
-                style: TextStyle(color: grey_text, fontSize: 17),
               ),
             ),
           ],

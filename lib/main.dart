@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/pages/affairs_main_page/affairs_main.dart';
 //import 'package:graduation_project/Provider/backend/auth.dart';
 //import 'package:graduation_project/Pages/Login&register/Login_page_responsive.dart';
-import 'package:graduation_project/pages/basic_info/Basic_info_responsive.dart';
-import 'package:graduation_project/pages/students_Affairs/Home/Main_Screen_Home.dart';
 //import 'package:provider/provider.dart';
 
 void main() {
@@ -29,7 +26,7 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: Main_Screen_Home(),
+      home: Scaffold(),
     );
   }
 }

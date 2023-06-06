@@ -10,16 +10,18 @@ class StudentsAcademicResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final studentsAcademicResultsProvider =
-        Provider.of<StudentsAcademicResultsProvider>(context);
-    String? level = studentsAcademicResultsProvider.level;
-    List<String> levels = studentsAcademicResultsProvider.levels;
-    String? department = studentsAcademicResultsProvider.department;
-    List<String> departments = studentsAcademicResultsProvider.departments;
-    String? division = studentsAcademicResultsProvider.division;
-    List<String> divisions = studentsAcademicResultsProvider.divisions;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? level = StudentsAcademicResultsProvider().level;
+    List<String> levels = StudentsAcademicResultsProvider().levels;
+    String? department = StudentsAcademicResultsProvider().department;
+    List<String> departments = StudentsAcademicResultsProvider().departments;
+    String? division = StudentsAcademicResultsProvider().division;
+    List<String> divisions = StudentsAcademicResultsProvider().divisions;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<StudentsAcademicResultsProvider>(
+          create: (_) => StudentsAcademicResultsProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -57,8 +59,8 @@ class StudentsAcademicResultsScreen extends StatelessWidget {
                       list: levels,
                       value: level,
                       onChanged: (value) {
-                        studentsAcademicResultsProvider.changeLevel(
-                            selectedLevel: value);
+                        StudentsAcademicResultsProvider()
+                            .changeLevel(selectedLevel: value);
                       },
                     ),
                   ),
@@ -81,8 +83,8 @@ class StudentsAcademicResultsScreen extends StatelessWidget {
                       list: departments,
                       value: department,
                       onChanged: (value) {
-                        studentsAcademicResultsProvider.changeDepartment(
-                            selectedDepartment: value);
+                        StudentsAcademicResultsProvider()
+                            .changeDepartment(selectedDepartment: value);
                       },
                     ),
                   ),
@@ -105,8 +107,8 @@ class StudentsAcademicResultsScreen extends StatelessWidget {
                       list: divisions,
                       value: division,
                       onChanged: (value) {
-                        studentsAcademicResultsProvider.changeDivision(
-                            selectedDivision: value);
+                        StudentsAcademicResultsProvider()
+                            .changeDivision(selectedDivision: value);
                       },
                     ),
                   ),

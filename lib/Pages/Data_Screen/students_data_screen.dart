@@ -10,15 +10,18 @@ class StudentsDataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final studentsDataProvider = Provider.of<StudentsDataProvider>(context);
-    String? level = studentsDataProvider.level;
-    List<String> levels = studentsDataProvider.levels;
-    String? department = studentsDataProvider.department;
-    List<String> departments = studentsDataProvider.departments;
-    String? division = studentsDataProvider.division;
-    List<String> divisions = studentsDataProvider.divisions;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? level = StudentsDataProvider().level;
+    List<String> levels = StudentsDataProvider().levels;
+    String? department = StudentsDataProvider().department;
+    List<String> departments = StudentsDataProvider().departments;
+    String? division = StudentsDataProvider().division;
+    List<String> divisions = StudentsDataProvider().divisions;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<StudentsDataProvider>(
+          create: (_) => StudentsDataProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -56,7 +59,8 @@ class StudentsDataScreen extends StatelessWidget {
                       list: levels,
                       value: level,
                       onChanged: (value) {
-                        studentsDataProvider.changeLevel(selectedLevel: value);
+                        StudentsDataProvider()
+                            .changeLevel(selectedLevel: value);
                       },
                     ),
                   ),
@@ -79,8 +83,8 @@ class StudentsDataScreen extends StatelessWidget {
                       list: departments,
                       value: department,
                       onChanged: (value) {
-                        studentsDataProvider.changeDepartment(
-                            selectedDepartment: value);
+                        StudentsDataProvider()
+                            .changeDepartment(selectedDepartment: value);
                       },
                     ),
                   ),
@@ -103,8 +107,8 @@ class StudentsDataScreen extends StatelessWidget {
                       list: divisions,
                       value: division,
                       onChanged: (value) {
-                        studentsDataProvider.changeDivision(
-                            selectedDivision: value);
+                        StudentsDataProvider()
+                            .changeDivision(selectedDivision: value);
                       },
                     ),
                   ),
