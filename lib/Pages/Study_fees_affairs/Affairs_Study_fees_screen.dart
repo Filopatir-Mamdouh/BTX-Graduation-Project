@@ -10,15 +10,18 @@ class StudyFeesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final studyFeesProvider = Provider.of<StudyFeesProvider>(context);
-    String? level = studyFeesProvider.level;
-    List<String> levels = studyFeesProvider.levels;
-    String? department = studyFeesProvider.department;
-    List<String> departments = studyFeesProvider.departments;
-    String? division = studyFeesProvider.division;
-    List<String> divisions = studyFeesProvider.divisions;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? level = StudyFeesProvider().level;
+    List<String> levels = StudyFeesProvider().levels;
+    String? department = StudyFeesProvider().department;
+    List<String> departments = StudyFeesProvider().departments;
+    String? division = StudyFeesProvider().division;
+    List<String> divisions = StudyFeesProvider().divisions;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<StudyFeesProvider>(
+          create: (_) => StudyFeesProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -56,7 +59,7 @@ class StudyFeesScreen extends StatelessWidget {
                       list: levels,
                       value: level,
                       onChanged: (value) {
-                        studyFeesProvider.changeLevel(selectedLevel: value);
+                        StudyFeesProvider().changeLevel(selectedLevel: value);
                       },
                     ),
                   ),
@@ -79,8 +82,8 @@ class StudyFeesScreen extends StatelessWidget {
                       list: departments,
                       value: department,
                       onChanged: (value) {
-                        studyFeesProvider.changeDepartment(
-                            selectedDepartment: value);
+                        StudyFeesProvider()
+                            .changeDepartment(selectedDepartment: value);
                       },
                     ),
                   ),
@@ -103,8 +106,8 @@ class StudyFeesScreen extends StatelessWidget {
                       list: divisions,
                       value: division,
                       onChanged: (value) {
-                        studyFeesProvider.changeDivision(
-                            selectedDivision: value);
+                        StudyFeesProvider()
+                            .changeDivision(selectedDivision: value);
                       },
                     ),
                   ),

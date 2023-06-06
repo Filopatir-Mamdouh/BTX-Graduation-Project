@@ -12,10 +12,13 @@ class BooksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final booksProvider = Provider.of<BooksProvider>(context);
-    List<BookModel> books = booksProvider.books;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    List<BookModel> books = BooksProvider().books;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<BooksProvider>(
+          create: (_) => BooksProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: SizedBox(

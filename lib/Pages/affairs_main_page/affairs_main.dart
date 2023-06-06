@@ -10,7 +10,7 @@ import 'dart:html';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/affairs_main_page/affairs_body_class.dart';
 import 'package:graduation_project/Pages/affairs_main_page/main_page_side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 
 class affairs_main extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

@@ -13,10 +13,13 @@ class BasicDataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final basicDataProvider = Provider.of<BasicDataProvider>(context);
-    XFile? profileImage = basicDataProvider.profileImage;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    XFile? profileImage = BasicDataProvider().profileImage;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<BasicDataProvider>(
+          create: (_) => BasicDataProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -80,7 +83,7 @@ class BasicDataScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () async {
-                              await basicDataProvider.pickImageFromGallery();
+                              await BasicDataProvider().pickImageFromGallery();
                             },
                             child: Container(
                               padding:

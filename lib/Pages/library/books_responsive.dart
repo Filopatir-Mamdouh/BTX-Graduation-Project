@@ -12,10 +12,9 @@ import 'package:graduation_project/Pages/Lecture_Attendance/Lecture_Attendance_D
 import 'package:graduation_project/Pages/Lecture_Attendance/lecturers_attendance_schedule_screen.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/Pages/library/available_devices_screen.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 import 'package:graduation_project/core/app_colors.dart';
 import 'package:graduation_project/Pages/library/books_screen.dart';
-
-import 'package:graduation_project/responsive.dart';
 
 class books_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

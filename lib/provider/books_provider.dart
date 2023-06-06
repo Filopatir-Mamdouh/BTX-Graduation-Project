@@ -3,7 +3,7 @@ import 'package:graduation_project/Pages/library/book_model.dart';
 
 class BooksProvider with ChangeNotifier {
   List<BookModel> books = List.generate(
-    20,
+    2,
     (index) => const BookModel(
       bookName: "اسم الكتاب",
       bookAuthor: "المؤلف",

@@ -2,15 +2,14 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/Documents_Request/Documents_request_responsive.dart';
+import 'package:graduation_project/Pages/schedule/subject_table_responsive.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
-import 'package:graduation_project/Pages/affairs_main_page/Side_Menue_provider.dart';
 
 import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
 import 'package:graduation_project/Pages/Study_result_page/study_result_responsive.dart';
 import 'package:graduation_project/Pages/chat/constants/constants.dart';
 import 'package:graduation_project/Pages/fees_page/fees_page_responsive.dart';
 
-import 'package:graduation_project/Pages/study_table/stydy_table_Responsive.dart';
 import 'package:provider/provider.dart';
 
 class sidemenu extends StatelessWidget {
@@ -87,181 +86,205 @@ class sidemenu extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'البيانات الاساسية',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'البيانات الاساسية',
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'البيانات التعليمية',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'البيانات التعليمية',
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Study_table_Responsive()),
-                );
-              },
-              child: Text(
-                'الجدول الدراسي',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => Table_responsive()),
+                  );
+                },
+                child: Text(
+                  'الجدول الدراسي',
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => Exams_table_page()),
-                );
-              },
-              child: Text(
-                'جدول الامتحانات',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => Exams_table_page()),
+                  );
+                },
+                child: Text(
+                  'جدول الامتحانات',
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => fess_page_Responsive()),
-                );
-              },
-              child: Text(
-                "الرسوم الدراسية",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => fess_page_Responsive()),
+                  );
+                },
+                child: Text(
+                  "الرسوم الدراسية",
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Study_Result_Responsive()),
-                );
-              },
-              child: Text(
-                "النتائج الدراسية",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Study_Result_Responsive()),
+                  );
+                },
+                child: Text(
+                  "النتائج الدراسية",
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 16,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => documents_request_page_resposive()),
-                );
-              },
-              child: Text(
-                "طلب مستندات",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            documents_request_page_resposive()),
+                  );
+                },
+                child: Text(
+                  "طلب مستندات",
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "تسجيل الخروج",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "تسجيل الخروج",
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),

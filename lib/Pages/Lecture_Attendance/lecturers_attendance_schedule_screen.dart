@@ -10,12 +10,14 @@ class LecturersAttendanceScheduleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lecturersAttendanceScheduleProvider =
-        Provider.of<LecturersAttendanceScheduleProvider>(context);
     int selectedScheduleType =
-        lecturersAttendanceScheduleProvider.selectedScheduleType;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+        LecturersAttendanceScheduleProvider().selectedScheduleType;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<LecturersAttendanceScheduleProvider>(
+          create: (_) => LecturersAttendanceScheduleProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -37,7 +39,7 @@ class LecturersAttendanceScheduleScreen extends StatelessWidget {
                 children: [
                   MaterialButton(
                     onPressed: () {
-                      lecturersAttendanceScheduleProvider
+                      LecturersAttendanceScheduleProvider()
                           .changeSelectedScheduleType(index: 0);
                     },
                     padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -55,7 +57,7 @@ class LecturersAttendanceScheduleScreen extends StatelessWidget {
                   ),
                   MaterialButton(
                     onPressed: () {
-                      lecturersAttendanceScheduleProvider
+                      LecturersAttendanceScheduleProvider()
                           .changeSelectedScheduleType(index: 1);
                     },
                     padding: const EdgeInsets.symmetric(horizontal: 30.0),

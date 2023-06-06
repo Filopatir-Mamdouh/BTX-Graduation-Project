@@ -13,12 +13,14 @@ class BasicInformationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final basicInformationsProvider =
-        Provider.of<BasicInformationsProvider>(context);
     int basicInformationsIndex =
-        basicInformationsProvider.basicInformationsIndex;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+        BasicInformationsProvider().basicInformationsIndex;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<BasicInformationsProvider>(
+          create: (_) => BasicInformationsProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Container(
           width: double.infinity,
@@ -60,7 +62,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 30.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 0);
                                 },
                                 color: basicInformationsIndex == 0
@@ -82,7 +84,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 30.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 1);
                                 },
                                 color: basicInformationsIndex == 1
@@ -104,7 +106,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 30.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 2);
                                 },
                                 color: basicInformationsIndex == 2
@@ -126,7 +128,7 @@ class BasicInformationsScreen extends StatelessWidget {
                               child: MaterialButton(
                                 height: 40.0,
                                 onPressed: () {
-                                  basicInformationsProvider
+                                  BasicInformationsProvider()
                                       .changeBasicInformationsIndex(index: 3);
                                 },
                                 color: basicInformationsIndex == 3

@@ -13,7 +13,7 @@ import 'package:graduation_project/Pages/Doctor_student_attendance/Doctor_studen
 import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
 import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Screen.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 
 class Doctor_student_Attendance_Responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

@@ -11,7 +11,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/Pages/fees_page/fees_class.dart';
 import 'package:graduation_project/Pages/fees_page/fees_page_Desk_Tablet.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 
 class fess_page_Responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

@@ -10,16 +10,18 @@ class StudentsAttendanceScreen_Desk_Tablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final studentsAttendanceProvider =
-        Provider.of<StudentsAttendanceProvider>(context);
-    String? level = studentsAttendanceProvider.level;
-    List<String> levels = studentsAttendanceProvider.levels;
-    String? department = studentsAttendanceProvider.department;
-    List<String> departments = studentsAttendanceProvider.departments;
-    String? subject = studentsAttendanceProvider.subject;
-    List<String> subjects = studentsAttendanceProvider.subjects;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    String? level = StudentsAttendanceProvider().level;
+    List<String> levels = StudentsAttendanceProvider().levels;
+    String? department = StudentsAttendanceProvider().department;
+    List<String> departments = StudentsAttendanceProvider().departments;
+    String? subject = StudentsAttendanceProvider().subject;
+    List<String> subjects = StudentsAttendanceProvider().subjects;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<StudentsAttendanceProvider>(
+          create: (_) => StudentsAttendanceProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -59,8 +61,8 @@ class StudentsAttendanceScreen_Desk_Tablet extends StatelessWidget {
                         list: levels,
                         value: level,
                         onChanged: (value) {
-                          studentsAttendanceProvider.changeLevel(
-                              selectedLevel: value);
+                          StudentsAttendanceProvider()
+                              .changeLevel(selectedLevel: value);
                         },
                       ),
                     ),
@@ -83,8 +85,8 @@ class StudentsAttendanceScreen_Desk_Tablet extends StatelessWidget {
                         list: departments,
                         value: department,
                         onChanged: (value) {
-                          studentsAttendanceProvider.changeDepartment(
-                              selectedDepartment: value);
+                          StudentsAttendanceProvider()
+                              .changeDepartment(selectedDepartment: value);
                         },
                       ),
                     ),
@@ -107,8 +109,8 @@ class StudentsAttendanceScreen_Desk_Tablet extends StatelessWidget {
                         list: subjects,
                         value: subject,
                         onChanged: (value) {
-                          studentsAttendanceProvider.changeSubject(
-                              selectedSubject: value);
+                          StudentsAttendanceProvider()
+                              .changeSubject(selectedSubject: value);
                         },
                       ),
                     ),

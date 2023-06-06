@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
+import 'package:graduation_project/Pages/basic_info/Basic_info_responsive.dart';
 import 'package:graduation_project/Pages/chat/constants/constants.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
 
@@ -79,57 +80,72 @@ class main_page_side_menue extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'البيانات الاساسية',
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Basic_info_responsive()),
+                  );
+                },
+                child: Text(
+                  'البيانات الاساسية',
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 30,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "تسجيل حضور",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "تسجيل حضور",
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 30,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "تسجيل الخروج",
-                style: TextStyle(color: grey_text, fontSize: 17),
-              ),
-              style: ElevatedButton.styleFrom(
-                side: const BorderSide(width: 2, color: Colors.black),
-                primary: Color.fromARGB(255, 255, 255, 255),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+            Container(
+              width: 150,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "تسجيل الخروج",
+                  style: TextStyle(color: grey_text, fontSize: 17),
+                ),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(width: 2, color: Colors.black),
+                  primary: Color.fromARGB(255, 255, 255, 255),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
                 ),
               ),
             ),

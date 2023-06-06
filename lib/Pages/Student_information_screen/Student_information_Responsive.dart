@@ -13,7 +13,7 @@ import 'package:graduation_project/Pages/Student_Attendance_Affairs/students_att
 import 'package:graduation_project/Pages/Student_information_screen/Student_information_Desk_Tablet.dart';
 import 'package:graduation_project/Pages/Student_information_screen/student_information.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 
 class student_Information_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

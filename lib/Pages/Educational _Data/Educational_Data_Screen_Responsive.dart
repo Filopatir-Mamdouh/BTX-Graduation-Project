@@ -11,7 +11,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
 import 'package:graduation_project/Pages/Educational%20_Data/Educational_Data_Screen.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 
 class Educational_Data_Responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

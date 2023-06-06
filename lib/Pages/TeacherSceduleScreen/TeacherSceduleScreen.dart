@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/provider/TeacherSceduleProvider.dart';
 import 'package:graduation_project/core/app_colors.dart';
+import 'package:graduation_project/provider/study_fees_provider.dart';
 import 'package:provider/provider.dart';
 
 class ScheduleScreen extends StatelessWidget {
@@ -8,10 +9,12 @@ class ScheduleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final materialsScheduleProvider =
-        Provider.of<TeacherScedueScreenProvider>(context);
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<TeacherScedueScreenProvider>(
+          create: (_) => TeacherScedueScreenProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: Padding(

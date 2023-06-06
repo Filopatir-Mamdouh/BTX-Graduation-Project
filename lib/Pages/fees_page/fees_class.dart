@@ -9,9 +9,12 @@ class StudyFees extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final studyFeesProvider = Provider.of<StudyFeesPro>(context);
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<StudyFeesPro>(
+          create: (_) => StudyFeesPro(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: Padding(

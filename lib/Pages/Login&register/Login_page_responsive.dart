@@ -9,7 +9,7 @@ import 'dart:html';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/Login&register/LoginPage_class.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 
 class LoginPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

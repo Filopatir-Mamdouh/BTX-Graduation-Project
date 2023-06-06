@@ -8,10 +8,12 @@ class ScheduleScreen_Desk_Tablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final materialsScheduleProvider =
-        Provider.of<TeacherScedueScreenProvider>(context);
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<TeacherScedueScreenProvider>(
+          create: (_) => TeacherScedueScreenProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: Padding(

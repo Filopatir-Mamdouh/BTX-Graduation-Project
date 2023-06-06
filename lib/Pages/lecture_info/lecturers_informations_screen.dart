@@ -9,11 +9,12 @@ class LecturersInformationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lecturersInformationsProvider =
-        Provider.of<LecturersInformationsProvider>(context);
-
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<LecturersInformationsProvider>(
+          create: (_) => LecturersInformationsProvider(),
+        ),
+      ],
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(

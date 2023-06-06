@@ -11,10 +11,14 @@ class ConversationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final conversationsProvider = Provider.of<ConversationsProvider>(context);
-    List<ConversationModel> conversations = conversationsProvider.conversations;
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    List<ConversationModel> conversations =
+        ConversationsProvider().conversations;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ConversationsProvider>(
+          create: (_) => ConversationsProvider(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: SizedBox(

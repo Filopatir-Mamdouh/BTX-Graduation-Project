@@ -10,12 +10,14 @@ class Inquiries_Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final studentAffairsProvider = Provider.of<Inquiries_Provider>(context);
-    List<String> studentAffairsStaff =
-        studentAffairsProvider.studentAffairsStaff;
+    List<String> studentAffairsStaff = Inquiries_Provider().studentAffairsStaff;
     return Scaffold(
-      body: Directionality(
-        textDirection: TextDirection.rtl,
+      body: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<Inquiries_Provider>(
+            create: (_) => Inquiries_Provider(),
+          ),
+        ],
         child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(

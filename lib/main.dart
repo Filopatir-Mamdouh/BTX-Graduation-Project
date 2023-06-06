@@ -1,12 +1,15 @@
 //
 
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/Conversations/conversation.dart';
+import 'package:graduation_project/Pages/Conversations/conversation_model.dart';
+import 'package:graduation_project/Pages/Data_Screen/Data_Screen_Desk_tablet.dart';
+import 'package:graduation_project/Pages/TeacherSceduleScreen/TeacherSceduleScreen.dart';
 import 'package:graduation_project/provider/document_request_provider.dart';
 import 'package:graduation_project/provider/inquiries_provider.dart';
 import 'package:graduation_project/provider/schedual_subject_provider.dart';
 import 'package:graduation_project/Pages/Documents_Request/Documents_request_responsive.dart';
 
-import 'package:graduation_project/Pages/affairs_main_page/Side_Menue_provider.dart';
 import 'package:graduation_project/Pages/Data_Screen/Data_screen_responsive.dart';
 import 'package:graduation_project/provider/Doctor_student_Attendance_Provider.dart';
 import 'package:graduation_project/Pages/Doctor_student_attendance/Doctor_student_attendance_responsive.dart';
@@ -81,91 +84,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<StudyFeesProvider>(
-          create: (_) => StudyFeesProvider(),
-        ),
-        ChangeNotifierProvider<StudentsAcademicResultsProvider>(
-          create: (_) => StudentsAcademicResultsProvider(),
-        ),
-        ChangeNotifierProvider<StudentsAttendanceScheduleProvider>(
-          create: (_) => StudentsAttendanceScheduleProvider(),
-        ),
-        ChangeNotifierProvider<BasicInformationsProvider>(
-          create: (_) => BasicInformationsProvider(),
-        ),
-        ChangeNotifierProvider<StudentsDataProvider>(
-          create: (_) => StudentsDataProvider(),
-        ),
-        ChangeNotifierProvider<LecturersAttendanceScheduleProvider>(
-          create: (_) => LecturersAttendanceScheduleProvider(),
-        ),
-        ChangeNotifierProvider<LecturersInformationsProvider>(
-          create: (_) => LecturersInformationsProvider(),
-        ),
-        ChangeNotifierProvider<LecturesScheduleProvider>(
-          create: (_) => LecturesScheduleProvider(),
-        ),
-        ChangeNotifierProvider<StudyFeesPro>(
-          create: (_) => StudyFeesPro(),
-        ),
-        ChangeNotifierProvider<ExamsScheduleProvider>(
-          create: (_) => ExamsScheduleProvider(),
-        ),
-        ChangeNotifierProvider<YearResultProvider>(
-          create: (_) => YearResultProvider(),
-        ),
-        ChangeNotifierProvider<MaterialsScheduleProvider>(
-          create: (_) => MaterialsScheduleProvider(),
-        ),
-        ChangeNotifierProvider<EducationalDataProvider>(
-          create: (_) => EducationalDataProvider(),
-        ),
-        ChangeNotifierProvider<BasicDataProvider>(
-          create: (_) => BasicDataProvider(),
-        ),
-        ChangeNotifierProvider<StudentsInformationsProvider>(
-          create: (_) => StudentsInformationsProvider(),
-        ),
-        ChangeNotifierProvider<StudentsAttendanceProvider>(
-          create: (_) => StudentsAttendanceProvider(),
-        ),
-        ChangeNotifierProvider<ChatProvider>(
-          create: (_) => ChatProvider(),
-        ),
-        ChangeNotifierProvider<ConversationsProvider>(
-          create: (_) => ConversationsProvider(),
-        ),
-        ChangeNotifierProvider<DevicesProvider>(
-          create: (_) => DevicesProvider(),
-        ),
-        ChangeNotifierProvider<BooksProvider>(
-          create: (_) => BooksProvider(),
-        ),
-        ChangeNotifierProvider<DocumentRequestProvider>(
-          create: (_) => DocumentRequestProvider(),
-        ),
-        ChangeNotifierProvider<Tables_provider>(
-          create: (_) => Tables_provider(),
-        ),
-        ChangeNotifierProvider<Inquiries_Provider>(
-          create: (_) => Inquiries_Provider(),
-        ),
-      ],
-      child: MaterialApp(
-        localizationsDelegates: [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: [
-          // English
-          Locale('ar'),
-        ],
-        debugShowCheckedModeBanner: false,
-        home: Table_responsive(),
-      ),
+    return Material(
+      child: MaterialApp(localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ], supportedLocales: [
+        // English
+        Locale('ar'),
+      ], debugShowCheckedModeBanner: false, home: affairs_main()),
     );
   }
 }

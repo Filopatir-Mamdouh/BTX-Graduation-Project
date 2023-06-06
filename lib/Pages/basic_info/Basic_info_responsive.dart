@@ -10,7 +10,7 @@ import 'dart:html';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/Pages/basic_info/basic_informations_screen.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/consatant/responsive.dart';
 
 class Basic_info_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
