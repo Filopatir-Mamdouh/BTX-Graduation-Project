@@ -154,7 +154,7 @@ class register_class extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage_class()),
+                                builder: (context) => LoginPageClass()),
                           );
                         },
                         child: Text("سجل الدخول",

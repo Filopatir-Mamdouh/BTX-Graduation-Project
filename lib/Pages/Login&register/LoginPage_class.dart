@@ -1,8 +1,12 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:graduation_project/Logic/auth/authentication.dart';
 import 'package:graduation_project/Pages/Login&register/MyTextField.dart';
 import 'package:graduation_project/Pages/Login&register/register_class.dart';
+import 'package:graduation_project/Provider/backend/auth.dart';
 
 /*  
 In this page user can login to his profile by entering his E-mail and password.

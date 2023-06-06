@@ -68,7 +68,7 @@ class Available_devices_responsive extends StatelessWidget {
             ),
             drawer: Drawer(
               child: Container(
-                child: sidemenu(),
+                child: Sidemenu(),
               ),
             ),
           ),
@@ -106,7 +106,7 @@ class Available_devices_responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(
@@ -162,7 +162,7 @@ class Available_devices_responsive extends StatelessWidget {
                 Flexible(
                   flex: 3,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(

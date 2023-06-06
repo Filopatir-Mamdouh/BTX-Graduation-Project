@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/affairs_main_page/affairs_main.dart';
 import 'package:graduation_project/Provider/backend/auth.dart';
 import 'package:graduation_project/Pages/Login&register/Login_page_responsive.dart';
+import 'package:graduation_project/pages/basic_info/Basic_info_responsive.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       // ignore: prefer_const_literals_to_create_immutables
       localizationsDelegates: [
         GlobalCupertinoLocalizations.delegate,
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: BasicInfoResponsive(),
     );
   }
 }

@@ -1,21 +1,13 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/pages/Student_Academiv_result_affairs/student_academic_result_Desk_tablet.dart';
-import 'package:graduation_project/pages/Student_Academiv_result_affairs/students_academic_results.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/responsive.dart';
 
 import 'package:graduation_project/pages/schedule/subject_table_screen.dart';
 
-class Table_responsive extends StatelessWidget {
+class StudentScheduleResponsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   PageController page = PageController();
@@ -28,19 +20,19 @@ class Table_responsive extends StatelessWidget {
       body: Responsive(
         mobile: MaterialApp(
           title: 'الجدول الدراسي',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -52,7 +44,7 @@ class Table_responsive extends StatelessWidget {
                             color: Colors.white))),
               )
             ]),
-            body: Table_screen(),
+            body: StudentSchedule(),
             appBar: AppBar(
               backgroundColor: Color(0xFF3E6BA9), // Will work
               title: Row(
@@ -66,9 +58,7 @@ class Table_responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: sidemenu(),
-              ),
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -76,19 +66,19 @@ class Table_responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'الجدول الدراسي',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -101,18 +91,14 @@ class Table_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    child: Table_screen(),
-                  ),
+                  child: StudentSchedule(),
                 ),
               ],
             ),
@@ -132,19 +118,19 @@ class Table_responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'الجدول الدراسي',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -157,18 +143,14 @@ class Table_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: Table_screen(),
-                  ),
+                  child: StudentSchedule(),
                 )
               ],
             ),

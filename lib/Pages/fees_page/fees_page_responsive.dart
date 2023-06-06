@@ -1,12 +1,5 @@
 // ignore_for_file: prefer_const_constructors, dead_code
-
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/pages/fees_page/fees_class.dart';
@@ -64,7 +57,7 @@ class fess_page_Responsive extends StatelessWidget {
             ),
             drawer: Drawer(
               child: Container(
-                child: sidemenu(),
+                child: Sidemenu(),
               ),
             ),
           ),
@@ -102,7 +95,7 @@ class fess_page_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(
@@ -158,7 +151,7 @@ class fess_page_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(

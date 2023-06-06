@@ -6,8 +6,8 @@ import 'package:graduation_project/provider/schedual_subject_provider.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 
-class Table_screen extends StatelessWidget {
-  const Table_screen({super.key});
+class StudentSchedule extends StatelessWidget {
+  const StudentSchedule({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -127,9 +127,9 @@ class Table_screen extends StatelessWidget {
                                                           model.Licture_begin
                                                               .indexOf(i)] ==
                                                       "محاضره"
-                                                  ? Color.fromARGB(
+                                                  ? const Color.fromARGB(
                                                       255, 255, 255, 255)
-                                                  : Color.fromARGB(
+                                                  : const Color.fromARGB(
                                                       255, 255, 255, 255)),
                                           child: model.periode_Lecture[
                                                       model.Licture_begin

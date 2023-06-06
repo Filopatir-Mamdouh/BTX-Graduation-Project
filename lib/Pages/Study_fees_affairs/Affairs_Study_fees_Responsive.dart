@@ -65,7 +65,7 @@ class Affairs_Study_Fees_Responsive extends StatelessWidget {
             ),
             drawer: Drawer(
               child: Container(
-                child: sidemenu(),
+                child: Sidemenu(),
               ),
             ),
           ),
@@ -103,7 +103,7 @@ class Affairs_Study_Fees_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(
@@ -159,7 +159,7 @@ class Affairs_Study_Fees_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 3,
                   child: Container(
-                    child: sidemenu(),
+                    child: Sidemenu(),
                   ),
                 ),
                 Flexible(

@@ -17,7 +17,7 @@ class register extends StatelessWidget {
           children: [
             Expanded(
               flex: 6,
-              child: LoginPage_class(),
+              child: LoginPageClass(),
             )
           ],
         )),
@@ -25,7 +25,7 @@ class register extends StatelessWidget {
           children: [
             Expanded(
               flex: 6,
-              child: LoginPage_class(),
+              child: LoginPageClass(),
             ),
           ],
         ),
@@ -33,7 +33,7 @@ class register extends StatelessWidget {
           children: [
             Expanded(
               flex: 6,
-              child: LoginPage_class(),
+              child: LoginPageClass(),
             ),
           ],
         ),
