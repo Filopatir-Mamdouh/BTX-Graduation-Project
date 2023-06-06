@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
       ], supportedLocales: [
         // English
         Locale('ar'),
-      ], debugShowCheckedModeBanner: false, home: affairs_main()),
+      ], debugShowCheckedModeBanner: false, home: BasicDataScreen()),
     );
   }
 }
