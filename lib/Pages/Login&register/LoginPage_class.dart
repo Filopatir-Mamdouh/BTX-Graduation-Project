@@ -12,7 +12,7 @@ import 'package:graduation_project/Provider/backend/auth.dart';
 In this page user can login to his profile by entering his E-mail and password.
  */
 
-class LoginPageClass extends StatelessWidget {
+class LoginPageClass extends ConsumerWidget {
   final _email = TextEditingController();
 
   final _password = TextEditingController();
@@ -21,8 +21,12 @@ class LoginPageClass extends StatelessWidget {
 
   LoginPageClass({super.key});
 
+
+
+  //  The above provider is used to access authentication class
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
         Container(
