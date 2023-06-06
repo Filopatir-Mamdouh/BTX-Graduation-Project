@@ -8,12 +8,14 @@ import 'package:graduation_project/Pages/Login&register/register_class.dart';
 In this page user can login to his profile by entering his E-mail and password.
  */
 
-class LoginPage_class extends StatelessWidget {
+class LoginPageClass extends StatelessWidget {
   final _email = TextEditingController();
 
   final _password = TextEditingController();
 
   var defaultText = const TextStyle(color: Colors.red);
+
+  LoginPageClass({super.key});
 
   @override
   Widget build(BuildContext context) {

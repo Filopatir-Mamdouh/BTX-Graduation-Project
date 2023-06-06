@@ -1,17 +1,16 @@
-// ignore_for_file: prefer_const_constructors, dead_code
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'package:graduation_project/pages/Students_Doctor_Results_Screeen/Student_Doctor_Results_Desk_Tablet.dart';
 import 'package:graduation_project/pages/Students_Doctor_Results_Screeen/Students_Doctor_Results.dart';
 import 'package:graduation_project/responsive.dart';
 
 import '../affairs_main_page/side_menue.dart';
 
-class Student_Doctor_Result_responsive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+class StudentDoctorResultResponsive extends StatelessWidget {
   PageController page = PageController();
   late final String title;
+
+  StudentDoctorResultResponsive({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,22 +19,22 @@ class Student_Doctor_Result_responsive extends StatelessWidget {
       body: Responsive(
         mobile: MaterialApp(
           title: 'Result Table',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
-                color: Color(0xFF3E6BA9),
-                child: Center(
+                color: const Color(0xFF3E6BA9),
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -44,23 +43,21 @@ class Student_Doctor_Result_responsive extends StatelessWidget {
                             color: Colors.white))),
               )
             ]),
-            body: StudentsAcademicResultsScreen(),
+            body: const StudentsAcademicResultsScreen(),
             appBar: AppBar(
-              backgroundColor: Color(0xFF3E6BA9), // Will work
+              backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
                   Image.asset('b3.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("المحاضرون"),
+                  const Text("المحاضرون"),
                 ],
               ),
             ),
-            drawer: Drawer(
-              child: Container(
-                child: Sidemenu(),
-              ),
+            drawer: const Drawer(
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -68,22 +65,22 @@ class Student_Doctor_Result_responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'Result Table',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
-                color: Color(0xFF3E6BA9),
-                child: Center(
+                color: const Color(0xFF3E6BA9),
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -93,30 +90,26 @@ class Student_Doctor_Result_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: Sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: StudentsAcademicResultsScreen_Desk_Tablet(),
-                  ),
+                  child: StudentsAcademicResultsScreen_Desk_Tablet(),
                 ),
               ],
             ),
             appBar: AppBar(
-              backgroundColor: Color(0xFF3E6BA9), // Will work
+              backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
                   Image.asset('b3.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("المحاضرون"),
+                  const Text("المحاضرون"),
                 ],
               ),
             ),
@@ -124,22 +117,22 @@ class Student_Doctor_Result_responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'Result Table',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
-                color: Color(0xFF3E6BA9),
-                child: Center(
+                color: const Color(0xFF3E6BA9),
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -149,30 +142,26 @@ class Student_Doctor_Result_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: Sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: StudentsAcademicResultsScreen_Desk_Tablet(),
-                  ),
+                  child: StudentsAcademicResultsScreen_Desk_Tablet(),
                 ),
               ],
             ),
             appBar: AppBar(
-              backgroundColor: Color(0xFF3E6BA9), // Will work
+              backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
                   Image.asset('b3.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("المحاضرون"),
+                  const Text("المحاضرون"),
                 ],
               ),
             ),
@@ -187,9 +176,9 @@ class OpenPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint1 = Paint()
-      ..color = Color(0xffaa44aa)
+      ..color = const Color(0xffaa44aa)
       ..style = PaintingStyle.fill;
-    canvas.drawCircle(Offset(200, 200), 100, paint1);
+    canvas.drawCircle(const Offset(200, 200), 100, paint1);
   }
 
   @override

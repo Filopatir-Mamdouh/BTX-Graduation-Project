@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Pages/Documents_Request/Documents_request_responsive.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
-import 'package:graduation_project/Pages/Exams_table/Exams_table.dart';
 import 'package:graduation_project/Pages/Study_result_page/study_result_responsive.dart';
 import 'package:graduation_project/Pages/chat/constants/constants.dart';
 import 'package:graduation_project/Pages/fees_page/fees_page_responsive.dart';
 
 import 'package:graduation_project/Pages/study_table/stydy_table_Responsive.dart';
+
+import '../Documents_Request/Documents_request_responsive.dart';
+import '../Exams_table/Exams_table.dart';
 
 class Sidemenu extends StatelessWidget {
   const Sidemenu({super.key});
@@ -150,7 +151,7 @@ class Sidemenu extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => Exams_table_page()),
+                  MaterialPageRoute(builder: (context) => ExamsTablePage()),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -225,7 +226,7 @@ class Sidemenu extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => documents_request_page_resposive()),
+                      builder: (context) => DocumentsRequestPageResposive()),
                 );
               },
               style: ElevatedButton.styleFrom(
