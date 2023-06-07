@@ -21,8 +21,6 @@ class LoginPageClass extends ConsumerWidget {
 
   LoginPageClass({super.key});
 
-
-
   //  The above provider is used to access authentication class
 
   @override
@@ -97,10 +95,6 @@ class LoginPageClass extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("ليس لديك حساب ؟", style: TextStyle(fontSize: 18)),
-                  //TextButton.icon(
-                  //onPressed: (){},
-                  //icon: Icon(Icons.person, color: Colors.black,size: 24.0,),
-                  //label: Text('Logout', style: TextStyle(color: Colors.black)),)
                   TextButton(
                     onPressed: () {
                       Navigator.pushReplacement(

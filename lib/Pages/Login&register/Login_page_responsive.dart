@@ -1,16 +1,16 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/Login&register/LoginPage_class.dart';
-import 'package:graduation_project/consatant/responsive.dart';
+import 'package:graduation_project/responsive.dart';
 
 class LoginPage extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   PageController page = PageController();
   late final String title;
 
+  LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: Responsive(
         mobile: (Row(
