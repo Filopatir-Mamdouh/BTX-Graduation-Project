@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/library/book_model.dart';
 import 'package:graduation_project/core/app_colors.dart';
 
+import 'book_model.dart';
+
 TableRow booksTableRow({
   bool isFirstRow = false,
   required BookModel book,
