@@ -1,6 +1,6 @@
-import 'package:btxproject2/Provider/Provider.dart';
-import 'package:btxproject2/consatant/constant.dart';
-import 'package:btxproject2/pages/home_lecturers/doctor/attendance/qr.dart';
+import 'package:graduation_project/Provider/Provider.dart';
+import 'package:graduation_project/constant/constant.dart';
+import 'package:graduation_project/pages/home_lecturers/doctor/attendance/qr.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages

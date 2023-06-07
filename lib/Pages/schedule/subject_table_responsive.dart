@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 
 import 'package:graduation_project/pages/schedule/subject_table_screen.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 class StudentScheduleResponsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

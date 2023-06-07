@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Students_Doctor_Results_Screeen/Student_Doctor_Results_Desk_Tablet.dart';
 import 'package:graduation_project/pages/Students_Doctor_Results_Screeen/Students_Doctor_Results.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 import '../affairs_main_page/side_menue.dart';
 

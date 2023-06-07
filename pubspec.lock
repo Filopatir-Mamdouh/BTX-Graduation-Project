@@ -129,14 +129,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
-  easy_sidemenu:
-    dependency: "direct main"
-    description:
-      name: easy_sidemenu
-      sha256: "38b2bc91da34d354fa0d1720e2050539509b18b269664f8df1f3e7c3be587352"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.1+1"
   equatable:
     dependency: "direct main"
     description:
@@ -570,6 +562,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  splash_view:
+    dependency: "direct main"
+    description:
+      name: splash_view
+      sha256: fd556452e8e51842a2797d0da6862fc5fb6d665ffe57be7213744a5d1e83dda8
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   sqflite:
     dependency: transitive
     description:

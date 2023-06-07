@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/Login&register/LoginPage_class.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 class register extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

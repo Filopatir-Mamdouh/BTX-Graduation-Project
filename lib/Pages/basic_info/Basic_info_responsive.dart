@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/basic_info/basic_informations_screen.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 import '../affairs_main_page/side_menue.dart';
 

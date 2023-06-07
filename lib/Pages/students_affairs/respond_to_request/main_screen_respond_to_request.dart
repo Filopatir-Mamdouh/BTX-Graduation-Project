@@ -1,7 +1,7 @@
-import 'package:btxproject2/Pages/students_Affairs/Respond_To_Request/Respond_To_Request.dart';
-import 'package:btxproject2/consatant/constant.dart';
-import 'package:btxproject2/consatant/drawer/drawer_home.dart';
-import 'package:btxproject2/consatant/responsive.dart';
+import 'package:graduation_project/Pages/students_Affairs/Respond_To_Request/Respond_To_Request.dart';
+import 'package:graduation_project/constant/constant.dart';
+import 'package:graduation_project/constant/drawer/drawer_home.dart';
+import 'package:graduation_project/constant/responsive.dart';
 import 'package:flutter/material.dart';
 
 class MainScreenRespondToRequest extends StatelessWidget {

@@ -1,7 +1,7 @@
-import 'package:btxproject2/Provider/Provider.dart';
-import 'package:btxproject2/Pages/students_Affairs/schedule/Days.dart';
-import 'package:btxproject2/pages/students_affairs/education_data/main_screen_educationdata.dart';
-import 'package:btxproject2/pages/students_affairs/essensial_data/main_screen_essential_data.dart';
+import 'package:graduation_project/Provider/Provider.dart';
+import 'package:graduation_project/Pages/students_Affairs/schedule/Days.dart';
+import 'package:graduation_project/pages/students_affairs/education_data/main_screen_educationdata.dart';
+import 'package:graduation_project/pages/students_affairs/essensial_data/main_screen_essential_data.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -1,11 +1,11 @@
-import 'package:btxproject2/pages/students_affairs/education_data/degre_scaffold.dart';
-import 'package:btxproject2/pages/students_affairs/education_data/syllabus/lecture.dart';
-import 'package:btxproject2/pages/students_affairs/education_data/syllabus/syllabus.dart';
-import 'package:btxproject2/pages/students_affairs/education_data/tables_caffold.dart';
-import 'package:btxproject2/pages/students_affairs/essensial_data/communicate.dart';
-import 'package:btxproject2/pages/students_affairs/essensial_data/parents.dart';
-import 'package:btxproject2/pages/students_affairs/essensial_data/personality.dart';
-import 'package:btxproject2/pages/students_affairs/essensial_data/previous_qualification.dart';
+import 'package:graduation_project/pages/students_affairs/education_data/degre_scaffold.dart';
+import 'package:graduation_project/pages/students_affairs/education_data/syllabus/lecture.dart';
+import 'package:graduation_project/pages/students_affairs/education_data/syllabus/syllabus.dart';
+import 'package:graduation_project/pages/students_affairs/education_data/tables_caffold.dart';
+import 'package:graduation_project/pages/students_affairs/essensial_data/communicate.dart';
+import 'package:graduation_project/pages/students_affairs/essensial_data/parents.dart';
+import 'package:graduation_project/pages/students_affairs/essensial_data/personality.dart';
+import 'package:graduation_project/pages/students_affairs/essensial_data/previous_qualification.dart';
 import 'package:flutter/material.dart';
 
 class Semester extends ChangeNotifier {

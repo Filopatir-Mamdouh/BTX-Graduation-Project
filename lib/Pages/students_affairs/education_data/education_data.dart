@@ -1,7 +1,7 @@
-import 'package:btxproject2/consatant/constant.dart';
-import 'package:btxproject2/Provider/Provider.dart';
-import 'package:btxproject2/consatant/drawer/library_drawer.dart';
-import 'package:btxproject2/consatant/responsive.dart';
+import 'package:graduation_project/constant/constant.dart';
+import 'package:graduation_project/Provider/Provider.dart';
+import 'package:graduation_project/constant/drawer/library_drawer.dart';
+import 'package:graduation_project/constant/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

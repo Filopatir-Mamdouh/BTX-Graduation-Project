@@ -1,4 +1,4 @@
-import 'package:btxproject2/Provider/Provider.dart';
+import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -21,7 +21,7 @@ class QRLibrary extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Consumer<LibraryQR>(builder: (context, model, child) {
-                return QrImage(
+                return QrImageView(
                   data: model.data.toString(),
                   version: QrVersions.auto,
                   size: 200.0,

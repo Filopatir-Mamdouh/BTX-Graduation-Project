@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 import 'affairs_body_class.dart';
 import 'main_page_side_menue.dart';
 

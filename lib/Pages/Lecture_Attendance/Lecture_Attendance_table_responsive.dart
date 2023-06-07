@@ -1,17 +1,10 @@
 // ignore_for_file: prefer_const_constructors, dead_code
-
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Lecture_Attendance/Lecture_Attendance_Desk_Tablet.dart';
 import 'package:graduation_project/pages/Lecture_Attendance/lecturers_attendance_schedule_screen.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 class Lecture_attendance_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

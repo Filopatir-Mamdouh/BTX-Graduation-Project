@@ -34,9 +34,9 @@ dependencies:
   file_picker: ^5.2.6
   dropdown_button2: ^2.0.0
   expandable: ^5.0.1
+  splash_view: ^2.0.1
   appwrite: ^9.0.0
   timer_builder: ^2.0.0
-   splash_view: ^2.0.1
    
   flutter:
     sdk: flutter

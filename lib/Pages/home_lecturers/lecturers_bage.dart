@@ -1,6 +1,6 @@
 // ignore_for_file: sort_child_properties_last, file_names
 
-import 'package:btxproject2/Provider/Provider.dart';
+import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

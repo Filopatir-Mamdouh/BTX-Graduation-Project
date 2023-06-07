@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Data_Screen/Data_Screen_Desk_tablet.dart';
 import 'package:graduation_project/pages/Data_Screen/students_data_screen.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 class StudentsDataScreenResponsive extends StatelessWidget {
   PageController page = PageController();

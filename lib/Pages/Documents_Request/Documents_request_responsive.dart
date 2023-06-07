@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Documents_Request/Documents_request_class.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 class DocumentsRequestPageResposive extends StatelessWidget {
   PageController page = PageController();

@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Desk_TAblet.dart';
 import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Screen.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
-import 'package:graduation_project/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 
 class EducationalDataResponsive extends StatelessWidget {
   PageController page = PageController();

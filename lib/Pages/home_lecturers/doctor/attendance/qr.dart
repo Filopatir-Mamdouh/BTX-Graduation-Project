@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:btxproject2/Provider/Provider.dart';
-import 'package:btxproject2/consatant/constant.dart';
+import 'package:graduation_project/Provider/Provider.dart';
+import 'package:graduation_project/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -73,7 +73,7 @@ class QR extends StatelessWidget {
                             value.allCodes.add(qrData);
                             data.add(
                                 qrData); // Generate new data for the QR code
-                            return QrImage(
+                            return QrImageView(
                               data: data.toString(),
                               version: QrVersions.auto,
                               size: 200.0,
