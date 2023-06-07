@@ -31,14 +31,13 @@ environment:
 dependencies:
   scoped_model: ^2.0.0
   responsive_framework: ^0.2.0
-  easy_sidemenu: ^0.1.1+1
-  
   file_picker: ^5.2.6
   dropdown_button2: ^2.0.0
   expandable: ^5.0.1
   appwrite: ^9.0.0
   timer_builder: ^2.0.0
-  
+   splash_view: ^2.0.1
+   
   flutter:
     sdk: flutter
   flutter_localizations:
