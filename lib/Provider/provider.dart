@@ -279,8 +279,6 @@ class LecturersProvider extends ChangeNotifier {
   }
 
   List<String> get subject => subjects;
-  String? get selectedSubject => selectedSubjects;
-
   void setSelectedSubject(s) {
     selectedSubjects = s;
     notifyListeners();
