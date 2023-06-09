@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/chat/constants/constants.dart';
 import 'package:graduation_project/provider/Affairs_side_Menue_provider.dart';
 
+import '../library/books_responsive.dart';
+
 class AffairsBodyClass extends StatelessWidget {
   const AffairsBodyClass({super.key});
 
@@ -114,7 +116,7 @@ class AffairsBodyClass extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => booksresponsive()),
+                    MaterialPageRoute(builder: (context) => books_responsive()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

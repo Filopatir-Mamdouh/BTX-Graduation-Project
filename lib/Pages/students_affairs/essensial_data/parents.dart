@@ -1,5 +1,5 @@
+import 'package:graduation_project/Provider/provider.dart';
 import 'package:graduation_project/constant/constant.dart';
-import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -158,4 +158,5 @@ class Parents extends StatelessWidget {
   }
 }
 
-Container parentsScaffold = const Parents() as Container;
+// ignore: avoid_unnecessary_containers
+Container parentsScaffold = Container(child: const Parents());

@@ -471,4 +471,7 @@ class TableAttenadnce extends StatelessWidget {
   }
 }
 
-Container tableScaffold = const TableAttenadnce() as Container;
+// ignore: avoid_unnecessary_containers
+Container tableScaffold = Container(
+  child: const TableAttenadnce(),
+);

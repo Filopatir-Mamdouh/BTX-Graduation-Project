@@ -23,7 +23,7 @@ class MainScreenTableSchedule extends StatelessWidget {
           : null,
       appBar: AppBar(
           actions: [
-            Image.asset("assets/img/image1.png"),
+            Image.asset("assets/b3.jpeg"),
             const SizedBox(
               width: 1,
             ),

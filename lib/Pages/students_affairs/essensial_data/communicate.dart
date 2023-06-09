@@ -135,4 +135,7 @@ class Communicate extends StatelessWidget {
   }
 }
 
-Container communicateScaffold = const Communicate() as Container;
+// ignore: avoid_unnecessary_containers
+Container communicateScaffold = Container(
+  child: const Communicate(),
+);

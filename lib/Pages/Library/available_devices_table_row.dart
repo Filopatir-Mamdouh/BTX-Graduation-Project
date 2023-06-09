@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Pages/library/available_device_model.dart';
 import 'package:graduation_project/core/app_colors.dart';
+
+import 'available_device_model.dart';
 
 TableRow devicesTableRow({
   bool isFirstRow = false,

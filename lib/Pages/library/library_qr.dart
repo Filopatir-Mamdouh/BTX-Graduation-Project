@@ -21,7 +21,7 @@ class QRLibrary extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Consumer<LibraryQR>(builder: (context, model, child) {
-                return QrImageView(
+                return QrImage(
                   data: model.data.toString(),
                   version: QrVersions.auto,
                   size: 200.0,

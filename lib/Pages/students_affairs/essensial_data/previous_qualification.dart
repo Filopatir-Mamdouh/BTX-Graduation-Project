@@ -84,4 +84,5 @@ class PreviousQualification extends StatelessWidget {
   }
 }
 
-Container previousScaffold = const PreviousQualification() as Container;
+// ignore: avoid_unnecessary_containers
+Container previousScaffold = Container(child: const PreviousQualification());

@@ -1,18 +1,9 @@
 // ignore_for_file: prefer_const_constructors, dead_code
-
-import 'dart:ui';
-
-import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Pages/Lecture_Attendance/Lecture_Attendance_Desk_Tablet.dart';
-import 'package:graduation_project/Pages/Lecture_Attendance/lecturers_attendance_schedule_screen.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/Pages/library/available_devices_screen.dart';
-import 'package:graduation_project/consatant/responsive.dart';
+import 'package:graduation_project/constant/responsive.dart';
 import 'package:graduation_project/core/app_colors.dart';
 
 class Available_devices_responsive extends StatelessWidget {
@@ -28,19 +19,19 @@ class Available_devices_responsive extends StatelessWidget {
       body: Responsive(
         mobile: MaterialApp(
           title: 'المكتبة',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: AppColors.grey,
                 child: Center(
@@ -66,9 +57,7 @@ class Available_devices_responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: sidemenu(),
-              ),
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -76,19 +65,19 @@ class Available_devices_responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'المكتبة',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: AppColors.grey,
                 child: Center(
@@ -101,18 +90,14 @@ class Available_devices_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    child: DevicesScreen(),
-                  ),
+                  child: DevicesScreen(),
                 ),
               ],
             ),
@@ -132,19 +117,19 @@ class Available_devices_responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'المكتبة',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: AppColors.grey,
                 child: Center(
@@ -157,18 +142,14 @@ class Available_devices_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: sidemenu(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: DevicesScreen(),
-                  ),
+                  child: DevicesScreen(),
                 )
               ],
             ),

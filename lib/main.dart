@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:graduation_project/pages/home_lecturers/doctor/attendance/main_screen_doctor.dart';
 //import 'package:graduation_project/Provider/backend/auth.dart';
 //import 'package:graduation_project/Pages/Login&register/Login_page_responsive.dart';
 //import 'package:provider/provider.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: MainScreenDoctor(),
     );
   }
 }

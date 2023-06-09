@@ -138,4 +138,5 @@ class Student extends StatelessWidget {
   }
 }
 
-Container studentScaffold = const Student() as Container;
+// ignore: avoid_unnecessary_containers
+Container studentscaffold = Container(child: const Student());

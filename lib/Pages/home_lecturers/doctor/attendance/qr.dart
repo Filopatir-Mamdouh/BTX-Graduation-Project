@@ -27,7 +27,7 @@ class QR extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
             actions: [
-              Image.asset("assets/img/image1.png"),
+              Image.asset("assets/b3.jpeg"),
               const SizedBox(
                 width: 1,
               ),
@@ -67,13 +67,12 @@ class QR extends StatelessWidget {
                               value.selectedSubjects.toString(),
                               value.date.toString(),
                             ];
-                            counter++;
-                            counter != 1 ? data.removeLast() : null;
+                            counter != 0 ? data.removeLast() : null;
                             qrData = generateRandomData(10);
                             value.allCodes.add(qrData);
-                            data.add(
-                                qrData); // Generate new data for the QR code
-                            return QrImageView(
+                            data.add(qrData);
+                            counter++; // Generate new data for the QR code
+                            return QrImage(
                               data: data.toString(),
                               version: QrVersions.auto,
                               size: 200.0,

@@ -298,4 +298,5 @@ class Personality extends StatelessWidget {
   }
 }
 
-Container personalityScaffold = const Personality() as Container;
+// ignore: avoid_unnecessary_containers
+Container personalityScaffold = Container(child: const Personality());

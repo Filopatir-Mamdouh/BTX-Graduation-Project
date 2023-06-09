@@ -21,7 +21,7 @@ class MainScreenQRLibrary extends StatelessWidget {
           : null,
       appBar: AppBar(
           actions: [
-            Image.asset("assets/img/image2.png"),
+            Image.asset("assets/b2.jpeg"),
             const SizedBox(
               width: 1,
             ),

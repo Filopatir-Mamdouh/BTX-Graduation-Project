@@ -152,4 +152,7 @@ class Degree extends StatelessWidget {
   }
 }
 
-Container degreeScaffold = const Degree() as Container;
+// ignore: avoid_unnecessary_containers
+Container degreeScaffold = Container(
+  child: const Degree(),
+);

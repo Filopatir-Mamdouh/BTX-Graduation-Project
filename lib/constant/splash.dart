@@ -13,7 +13,7 @@ class Loading extends StatelessWidget {
         backgroundColor: color1,
         loadingIndicator: const RefreshProgressIndicator(),
         logo: Image.asset(
-          "assets/img/image1.png",
+          "assets/b3.jpeg",
           width: 100,
           height: 100,
         ),

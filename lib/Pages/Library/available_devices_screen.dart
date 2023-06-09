@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Pages/library/available_device_model.dart';
 import 'package:graduation_project/Pages/library/available_devices_table_row.dart';
 import 'package:graduation_project/core/app_colors.dart';
 
@@ -7,12 +6,14 @@ import 'package:graduation_project/provider/devices_provider.dart';
 
 import 'package:provider/provider.dart';
 
+import 'available_device_model.dart';
+
 class DevicesScreen extends StatelessWidget {
   const DevicesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<AvailableDeviceModel> devices = DevicesProvider().devices;
+    List devices = DevicesProvider().devices;
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<DevicesProvider>(

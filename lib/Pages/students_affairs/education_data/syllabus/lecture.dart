@@ -3,7 +3,10 @@ import 'package:graduation_project/Provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-Container tableLecturesScaffold = const TableLectures() as Container;
+// ignore: avoid_unnecessary_containers
+Container tableLecturesScaffold = Container(
+  child: const TableLectures(),
+);
 
 class TableLectures extends StatelessWidget {
   const TableLectures({super.key});

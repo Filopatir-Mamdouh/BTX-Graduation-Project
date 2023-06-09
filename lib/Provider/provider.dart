@@ -1,4 +1,5 @@
 import 'package:graduation_project/pages/students_affairs/education_data/degre_scaffold.dart';
+import 'package:graduation_project/pages/students_affairs/education_data/studentscaffold.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/syllabus/lecture.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/syllabus/syllabus.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/tables_caffold.dart';
@@ -9,7 +10,7 @@ import 'package:graduation_project/pages/students_affairs/essensial_data/previou
 import 'package:flutter/material.dart';
 
 class Semester extends ChangeNotifier {
-  Container syllabus = const Text("اختر الترم") as Container;
+  Container syllabus = Container(child: const Text("اختر الترم"));
   bool changeStyleSemesterOne = false;
   bool changeStyleSemesterTwo = false;
   first() {
@@ -33,7 +34,7 @@ class Semester extends ChangeNotifier {
 }
 
 class StudentDetails extends ChangeNotifier {
-  String studentImgPath = "assets/img/image1.png";
+  String studentImgPath = "assets/b3.jpeg";
   String subjectName = "المادة";
   int degree = 0;
   String studentName = "فيلوباتير";
@@ -91,7 +92,7 @@ class ScaffoldDataEducation extends ChangeNotifier {
   bool table = false;
   bool syllabus = false;
   studentScaffold() {
-    scaffold = studentScaffold();
+    scaffold = studentscaffold;
     student = true;
     degree = false;
     table = false;
@@ -279,6 +280,7 @@ class LecturersProvider extends ChangeNotifier {
   }
 
   List<String> get subject => subjects;
+  String? get selectedSubject => selectedSubjects;
   void setSelectedSubject(s) {
     selectedSubjects = s;
     notifyListeners();

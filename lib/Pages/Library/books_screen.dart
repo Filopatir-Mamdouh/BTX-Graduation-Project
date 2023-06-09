@@ -12,7 +12,7 @@ class BooksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<BookModel> books = BooksProvider().books;
+    List books = BooksProvider().books;
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<BooksProvider>(

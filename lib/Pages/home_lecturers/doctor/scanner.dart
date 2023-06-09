@@ -39,7 +39,7 @@ class _ScannerState extends State<Scanner> {
           title: SafeArea(
             child: Row(
               children: [
-                Image.asset("assets/img/image1.png"),
+                Image.asset("assets/b3.jpeg"),
                 const SizedBox(
                   width: 1,
                 ),

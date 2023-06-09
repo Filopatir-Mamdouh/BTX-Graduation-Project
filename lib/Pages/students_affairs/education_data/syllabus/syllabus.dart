@@ -435,4 +435,7 @@ class Syllabus extends StatelessWidget {
   }
 }
 
-Container syllabusScaffold = const Syllabus() as Container;
+// ignore: avoid_unnecessary_containers
+Container syllabusScaffold = Container(
+  child: const Syllabus(),
+);
