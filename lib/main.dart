@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/pages/home_lecturers/doctor/attendance/main_screen_doctor.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:graduation_project/pages/Login&register/Register_responsive.dart';
 //import 'package:graduation_project/Provider/backend/auth.dart';
 //import 'package:graduation_project/Pages/Login&register/Login_page_responsive.dart';
 //import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,19 +16,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       // ignore: prefer_const_literals_to_create_immutables
       localizationsDelegates: [
         GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales
       ],
-      locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
+      locale: const Locale(
+          "ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: MainScreenDoctor(),
+      home: register(),
     );
   }
 }

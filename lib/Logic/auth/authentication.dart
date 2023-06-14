@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart' as models;
 import 'package:flutter/foundation.dart';
+import 'package:graduation_project/Logic/server/assign_teams.dart';
 
 ///  We have created a class named [Authentication] which contains all
 ///  the methods that we need to perform the authentication process.
@@ -51,7 +52,7 @@ class Authentication {
     try {
       return await account.get();
     } on AppwriteException catch (e) {
-      log(e.toString());
+      debugPrint(e.toString());
       return null;
     }
   }
@@ -78,7 +79,7 @@ class Authentication {
   }
 
   ///  A function to signup the user with email and password
-  Future<void> signUp(String email, String password) async {
+  Future<void> signUp(String email, String password, int index) async {
     //  In this create method is used to signup the user using
     //  email and password
     //  keep in mind it only registers a user and doesn't signin
@@ -89,17 +90,17 @@ class Authentication {
     //  to perform an operation when its completed
     try {
       //
-      await account.create(
+      models.User createUserResponse = await account.create(
         email: email,
         password: password,
-        userId: 'unique()',
+        userId: ID.unique(),
       );
-      // We will creating a userId as the email id(UNIQUE)
-      await account.createEmailSession(email: email, password: password);
+      String userId = createUserResponse.$id;
+      AssignTeam(userId, index, email);
       //
     } on Exception catch (e) {
       //
-      debugPrint('Logged Error\n${e.toString()}');
+      debugPrint('Here : Logged Error\n${e.toString()}');
     }
   }
 

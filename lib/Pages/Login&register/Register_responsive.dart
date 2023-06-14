@@ -8,6 +8,8 @@ class register extends StatelessWidget {
   PageController page = PageController();
   late final String title;
 
+  register({super.key});
+
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;

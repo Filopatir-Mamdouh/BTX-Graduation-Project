@@ -16,15 +16,17 @@ class LoginPageClass extends ConsumerWidget {
   final _email = TextEditingController();
 
   final _password = TextEditingController();
-
   var defaultText = const TextStyle(color: Colors.red);
 
   LoginPageClass({super.key});
 
-  //  The above provider is used to access authentication class
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    late final Authentication auth = ref.watch(authProvider);
+    Future<void> onPressedFunction() async {
+      await auth.login(_email.text, _password.text);
+    }
+
     return Scaffold(
       bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
         Container(
@@ -44,7 +46,7 @@ class LoginPageClass extends ConsumerWidget {
           child: Column(
             children: [
               Image.asset(
-                "logo2.png",
+                "assets/logo2.png",
                 height: 240,
                 width: 350,
               ),
@@ -55,6 +57,8 @@ class LoginPageClass extends ConsumerWidget {
                   hint: "البريد الالكتروني",
                   inputType: TextInputType.emailAddress,
                   isPassword: false,
+                  controller: _email,
+                  isAvailable: true,
                 ),
               ),
               const SizedBox(
@@ -67,13 +71,15 @@ class LoginPageClass extends ConsumerWidget {
                   inputType: TextInputType.text,
                   isPassword: true,
                   icon: const Icon(Icons.password),
+                  controller: _password,
+                  isAvailable: true,
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: onPressedFunction,
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
                     const Color(0xFF3E6BA9),
