@@ -13,7 +13,6 @@ class register_class extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    UserData userData = ref.watch(userDataProvider);
     TextEditingController fName = TextEditingController();
     TextEditingController nationalID = TextEditingController();
     TextEditingController userId = TextEditingController();
