@@ -7,12 +7,12 @@ class Student {
   final String relegion;
   final String gender;
   final String nationality;
-  final String birthDay;
+  final DateTime birthDate;
   final String birthPlace;
   final String socialStatus;
   final String idType;
-  final int nattionalId;
-  final String publishDate;
+  final int nationalId;
+  final DateTime publishDate;
   final String publishPlace;
   final String fatherName;
   final String motherName;
@@ -29,7 +29,6 @@ class Student {
   final int apartmentNumber;
   final String mailBox;
   final int mailCode;
-
   final String fatherNationality;
   final String fatherCity;
   final String fatherAddress;
@@ -54,11 +53,11 @@ class Student {
       required this.relegion,
       required this.gender,
       required this.nationality,
-      required this.birthDay,
+      required this.birthDate,
       required this.birthPlace,
       required this.socialStatus,
       required this.idType,
-      required this.nattionalId,
+      required this.nationalId,
       required this.publishDate,
       required this.publishPlace,
       required this.fatherName,
@@ -100,11 +99,11 @@ class Student {
       relegion: map['relegion'],
       gender: map['gender'],
       nationality: map['nationality'],
-      birthDay: map['birthDay'],
+      birthDate: map['birthDay'],
       birthPlace: map['birthPlace'],
       socialStatus: map['socialStatus'],
       idType: map['idType'],
-      nattionalId: map['nattionalId'],
+      nationalId: map['nationalId'],
       publishDate: map['publishDate'],
       publishPlace: map['publishPlace'],
       fatherName: map['fatherName'],
@@ -151,11 +150,11 @@ class Student {
       "relegion": relegion,
       "gender": gender,
       "nationality": nationality,
-      "birthDay": birthDay,
+      "birthDay": birthDate,
       "birthPlace": birthPlace,
       "socialStatus": socialStatus,
       "idType": idType,
-      "nattionalId": nattionalId,
+      "nationalId": nationalId,
       "publishDate": publishDate,
       "publishPlace": publishPlace,
       "fatherName": fatherName,

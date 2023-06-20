@@ -37,6 +37,7 @@ class StudentDetails extends ChangeNotifier {
   String studentImgPath = "assets/b3.jpeg";
   String subjectName = "المادة";
   int degree = 0;
+  int code = 345;
   String studentName = "فيلوباتير";
   String studentNameEnglish = "Filopatir Mamdouh";
   int studentCode = 201902047;

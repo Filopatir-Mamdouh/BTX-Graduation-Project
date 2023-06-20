@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/pages/Login&register/Register_responsive.dart';
+
+import 'Pages/students_affairs/essensial_data/main_screen_essential_data.dart';
+
 //import 'package:graduation_project/Provider/backend/auth.dart';
 //import 'package:graduation_project/Pages/Login&register/Login_page_responsive.dart';
 //import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -17,8 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // ignore: prefer_const_literals_to_create_immutables
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale(
           "ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
-      home: register(),
+      home: MainScreenEssentialData(),
     );
   }
 }

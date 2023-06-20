@@ -1,4 +1,5 @@
 import 'package:appwrite/models.dart';
+import 'package:graduation_project/constant/backend/enums.dart';
 
 class User {
   /// User ID.
@@ -23,7 +24,7 @@ class User {
   final bool emailVerification;
 
   /// User Team ID
-  final String teamId;
+  final Roles role;
 
   /// User preferences as a key-value object
   final Preferences prefs;
@@ -37,7 +38,7 @@ class User {
       required this.email,
       required this.emailVerification,
       required this.prefs,
-      required this.teamId});
+      required this.role});
 
   factory User.fromMap(Map<String, dynamic> map) {
     return User(
@@ -48,7 +49,7 @@ class User {
       passwordUpdate: map['passwordUpdate'],
       email: map['email'],
       emailVerification: map['emailVerification'],
-      teamId: map['teamId'],
+      role: map['role'],
       // Here preference is actually a different class model. This is left
       // as an exercise for you to discover. The more you discover, the more
       // interesting it gets
@@ -65,7 +66,7 @@ class User {
       "passwordUpdate": passwordUpdate,
       "email": email,
       "emailVerification": emailVerification,
-      "teamId": teamId,
+      "role": role,
       "prefs": prefs.toMap(),
     };
   }

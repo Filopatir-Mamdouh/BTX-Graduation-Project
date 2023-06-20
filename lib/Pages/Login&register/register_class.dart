@@ -1,18 +1,18 @@
-import 'package:appwrite/appwrite.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/Pages/Login&register/LoginPage_class.dart';
 import 'package:graduation_project/Pages/Login&register/MyTextField.dart';
-import 'package:graduation_project/Logic/database/user_data.dart';
-import 'package:graduation_project/Provider/backend/user_data.dart';
 import 'package:graduation_project/Provider/backend/auth.dart';
 import 'package:graduation_project/Logic/auth/authentication.dart';
+import 'package:graduation_project/Provider/register_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../Logic/server/get_user.dart';
 
 class register_class extends ConsumerWidget {
   const register_class({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, ref) {
     TextEditingController fName = TextEditingController();
     TextEditingController nationalID = TextEditingController();
     TextEditingController userId = TextEditingController();
@@ -20,27 +20,29 @@ class register_class extends ConsumerWidget {
     TextEditingController phone = TextEditingController();
     TextEditingController controller = TextEditingController();
     late int index;
-    String? isOk;
-    bool isAvailable = false;
-
     late final Authentication auth = ref.watch(authProvider);
     Future<void> onPressedFunction() async {
       await auth.signUp(email.text, controller.text, index);
     }
 
-    void onChanged(param) {
-      if ((userId.toString() != "") || (nationalID.toString() != "")) {
-        int uid = userId.toString() as int;
-        int nid = nationalID.toString() as int;
-        List lst = userData.isUser(uid, nid) as List;
-        if (lst[0]) {
-          isAvailable = lst[0];
-          index = lst[1];
+    Future<void> onChanged(param) async {
+      if ((userId.text != "") &&
+          (nationalID.text.length == 14) &&
+          (nationalID.text != "")) {
+        debugPrint("${userId.text} + ${nationalID.text}");
+        int uid = int.parse(userId.text);
+        int nid = int.parse(nationalID.text);
+        debugPrint("$uid + $nid");
+        GetUser user = GetUser();
+        int isUser = await user.isUser(uid, nid);
+        debugPrint("$isUser");
+        if (isUser <= 1) {
+          ref.read(isAvailableProvider.notifier).reverse();
+          index = isUser;
+          ref.read(isOkProvider).isOk();
         } else {
-          isOk = "تأكد من الكود و الرقم القومي";
+          ref.read(isOkProvider).notOk();
         }
-      } else {
-        isOk = "أدخل المعلومات الناقصة";
       }
     }
 
@@ -73,34 +75,45 @@ class register_class extends ConsumerWidget {
                   height: 5,
                 ),
                 SizedBox(
-                  width: 480,
-                  child: MyTextField(
-                    icon: const Icon(Icons.credit_card_outlined),
-                    hint: "كود المستخدم",
-                    inputType: TextInputType.number,
-                    isPassword: false,
-                    controller: userId,
-                    isAvailable: true,
-                    onChanged: onChanged,
-                  ),
-                ),
+                    width: 480,
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        return MyTextField(
+                          icon: const Icon(Icons.credit_card_outlined),
+                          hint: "كود المستخدم",
+                          inputType: TextInputType.number,
+                          isPassword: false,
+                          controller: userId,
+                          isAvailable: ref.watch(isAvailableProvider)[0],
+                          onChanged: onChanged,
+                        );
+                      },
+                    )),
                 const SizedBox(
                   height: 5,
                 ),
                 SizedBox(
-                  width: 480,
-                  child: MyTextField(
-                    hint: "الرقم القومى",
-                    inputType: TextInputType.number,
-                    isPassword: true,
-                    icon: const Icon(Icons.person_add),
-                    controller: nationalID,
-                    isAvailable: true,
-                    onChanged: onChanged,
-                  ),
-                ),
-                Text(
-                  isOk!,
+                    width: 480,
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        return MyTextField(
+                          hint: "الرقم القومى",
+                          inputType: TextInputType.number,
+                          isPassword: false,
+                          icon: const Icon(Icons.person_add),
+                          controller: nationalID,
+                          isAvailable: ref.watch(isAvailableProvider)[0],
+                          onChanged: onChanged,
+                        );
+                      },
+                    )),
+                Consumer(
+                  builder: (context, ref, child) {
+                    return Text(
+                      ref.watch(isOkProvider).text,
+                      style: const TextStyle(color: Colors.red),
+                    );
+                  },
                 ),
                 const SizedBox(
                   height: 5,
@@ -120,58 +133,70 @@ class register_class extends ConsumerWidget {
                   height: 5,
                 ),
                 SizedBox(
-                  width: 480,
-                  child: MyTextField(
-                    icon: const Icon(Icons.email),
-                    hint: "البريد الالكتروني",
-                    inputType: TextInputType.emailAddress,
-                    isPassword: false,
-                    controller: email,
-                    isAvailable: isAvailable,
-                  ),
-                ),
+                    width: 480,
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        return MyTextField(
+                          icon: const Icon(Icons.email),
+                          hint: "البريد الالكتروني",
+                          inputType: TextInputType.emailAddress,
+                          isPassword: false,
+                          controller: email,
+                          isAvailable: ref.watch(isAvailableProvider)[1],
+                        );
+                      },
+                    )),
                 const SizedBox(
                   height: 5,
                 ),
                 SizedBox(
-                  width: 480,
-                  child: MyTextField(
-                    icon: const Icon(Icons.phone_android),
-                    hint: "رقم الهاتف",
-                    inputType: TextInputType.emailAddress,
-                    isPassword: false,
-                    controller: phone,
-                    isAvailable: isAvailable,
-                  ),
-                ),
+                    width: 480,
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        return MyTextField(
+                          icon: const Icon(Icons.phone_android),
+                          hint: "رقم الهاتف",
+                          inputType: TextInputType.emailAddress,
+                          isPassword: false,
+                          controller: phone,
+                          isAvailable: ref.watch(isAvailableProvider)[1],
+                        );
+                      },
+                    )),
                 const SizedBox(
                   height: 5,
                 ),
                 SizedBox(
-                  width: 480,
-                  child: MyTextField(
-                    icon: const Icon(Icons.password_rounded),
-                    hint: "كلمة المرور",
-                    inputType: TextInputType.emailAddress,
-                    isPassword: true,
-                    controller: controller,
-                    isAvailable: isAvailable,
-                  ),
-                ),
+                    width: 480,
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        return MyTextField(
+                          icon: const Icon(Icons.password_rounded),
+                          hint: "كلمة المرور",
+                          inputType: TextInputType.emailAddress,
+                          isPassword: true,
+                          controller: controller,
+                          isAvailable: ref.watch(isAvailableProvider)[1],
+                        );
+                      },
+                    )),
                 const SizedBox(
                   height: 5,
                 ),
                 SizedBox(
-                  width: 480,
-                  child: MyTextField(
-                    icon: const Icon(Icons.paste_sharp),
-                    hint: "تأكيد كلمة المرور",
-                    inputType: TextInputType.emailAddress,
-                    isPassword: false,
-                    controller: controller,
-                    isAvailable: isAvailable,
-                  ),
-                ),
+                    width: 480,
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        return MyTextField(
+                          icon: const Icon(Icons.paste_sharp),
+                          hint: "تأكيد كلمة المرور",
+                          inputType: TextInputType.emailAddress,
+                          isPassword: false,
+                          controller: controller,
+                          isAvailable: ref.watch(isAvailableProvider)[1],
+                        );
+                      },
+                    )),
                 const SizedBox(
                   height: 10,
                 ),
@@ -201,10 +226,6 @@ class register_class extends ConsumerWidget {
                   children: [
                     const Text("لديك حساب بالفعل؟",
                         style: TextStyle(fontSize: 18)),
-                    //TextButton.icon(
-                    //onPressed: (){},
-                    //icon: Icon(Icons.person, color: Colors.black,size: 24.0,),
-                    //label: Text('Logout', style: TextStyle(color: Colors.black)),)
                     TextButton(
                       onPressed: () {
                         Navigator.pushReplacement(

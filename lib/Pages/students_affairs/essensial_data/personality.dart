@@ -1,7 +1,8 @@
 import 'package:graduation_project/constant/constant.dart';
-import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../../Provider/provider.dart';
 
 class Personality extends StatelessWidget {
   const Personality({super.key});
@@ -61,7 +62,7 @@ class Personality extends StatelessWidget {
                     Expanded(
                       child: Center(child: Consumer<StudentDetails>(
                           builder: (context, model, child) {
-                        return Text("${model.studentCode}",
+                        return Text("${model.code}",
                             style: TextStyle(color: color1));
                       })),
                     )
