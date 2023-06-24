@@ -1,30 +1,28 @@
 // ignore_for_file: sort_child_properties_last, file_names
 
-import 'package:graduation_project/Provider/Provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-class Lecturers extends StatelessWidget {
+import '../../Provider/backend/apiprovider.dart';
+
+class Lecturers extends ConsumerWidget {
   const Lecturers({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final insModel = ref.watch(insProvider);
     Size size = MediaQuery.of(context).size;
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => LecturersProvider(),
-        )
-      ],
-      child: Scaffold(
+    return insModel.when(
+      loading: () => const CircularProgressIndicator(),
+      error: (err, stack) => Text('Error: $err \n'),
+      data: (context) => Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: Center(child:
-                  Consumer<LecturersProvider>(builder: (context, model, child) {
-                return Text(model.hint);
-              })),
+            const Expanded(
+              child: Center(
+                  child: Text(
+                      'تقوم الأوطان على كاهل ثلاثة: فلاح يغذيه، جندي يحميه، ومعلم يربيه')),
               flex: 1,
             ),
             Expanded(
@@ -41,9 +39,9 @@ class Lecturers extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Consumer<LecturersProvider>(builder: (context, model, child) {
+                  Consumer(builder: (context, ref, child) {
                     return Text(
-                      model.doctorName,
+                      insModel.value?.insName ?? '',
                       style: const TextStyle(fontSize: 20),
                     );
                   })

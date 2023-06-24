@@ -1,19 +1,17 @@
-import 'package:graduation_project/Provider/Provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import '../../Provider/backend/apiprovider.dart';
 
-class LibraryDrawer extends StatelessWidget {
+class LibraryDrawer extends ConsumerWidget {
   const LibraryDrawer({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final studentModel = ref.watch(studentProvider);
     Color greyText = const Color(0xFF707070);
-    return SingleChildScrollView(
-      child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => StudentDetails(),
-          )
-        ],
+    return studentModel.when(
+      loading: () => const CircularProgressIndicator(),
+      error: (err, stack) => Text('Error: $err'),
+      data: (context) => SingleChildScrollView(
         child: Column(
           children: [
             Padding(
@@ -21,51 +19,50 @@ class LibraryDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 0.5, color: greyText),
-                      borderRadius: const BorderRadius.all(Radius.circular(50)),
-                    ),
-                    child: Consumer<StudentDetails>(
-                        builder: (context, model, child) {
-                      return Image.asset(model.studentImgPath);
-                    }),
-                  ),
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 0.5, color: greyText),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
+                      ),
+                      child: Image.asset('assets/profile.png')),
                   const SizedBox(
                     height: 5,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Consumer<StudentDetails>(
-                          builder: (context, model, child) {
-                        return Text(model.studentName,
+                      Consumer(builder: (context, ref, child) {
+                        return Text(
+                            studentModel.value?.name.split(' ')[0] ?? '',
                             style: TextStyle(
                               color: greyText,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ));
                       }),
-                      Consumer<StudentDetails>(
-                          builder: (context, model, child) {
-                        return Text(model.fatherName,
+                      Consumer(builder: (context, ref, child) {
+                        int? n = studentModel.value?.name.indexOf(' ');
+                        return Text(
+                            studentModel.value?.name.substring(n! + 1) ?? '',
                             style: TextStyle(
                                 color: greyText,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold));
                       }),
-                      Consumer<StudentDetails>(
-                          builder: (context, model, child) {
-                        return Text(model.studentTeam,
+                      Consumer(builder: (context, ref, child) {
+                        return Text(studentModel.value?.year ?? '',
                             style: TextStyle(
                                 color: greyText,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold));
                       }),
-                      Consumer<StudentDetails>(
-                          builder: (context, model, child) {
-                        return Text(model.section,
+                      Consumer(builder: (context, model, child) {
+                        return Text(
+                            studentModel.value?.depart ??
+                                studentModel.value?.program ??
+                                '',
                             style: TextStyle(
                                 color: greyText,
                                 fontSize: 18,

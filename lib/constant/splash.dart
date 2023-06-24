@@ -1,15 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:graduation_project/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_view/source/presentation/presentation.dart';
 
-import 'package:graduation_project/constant/constant.dart';
-
 class Loading extends StatelessWidget {
-  const Loading({
-    Key? key,
-    required this.page,
-  }) : super(key: key);
-  final Widget page;
+  const Loading({super.key});
   @override
   Widget build(BuildContext context) {
     final Color color1 = HexColor('#3E6BA9');
@@ -22,7 +16,6 @@ class Loading extends StatelessWidget {
         height: 100,
       ),
       duration: const Duration(seconds: 5),
-      done: Done(page),
     );
   }
 }

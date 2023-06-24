@@ -56,3 +56,16 @@ class PassNotifier extends ChangeNotifier {
 
 final passProvider =
     ChangeNotifierProvider<PassNotifier>((ref) => PassNotifier());
+
+class PageNotifier extends ChangeNotifier {
+  Widget _page = const Scaffold();
+  Widget get page => _page;
+
+  void setText(page) {
+    _page = page;
+    notifyListeners();
+  }
+}
+
+final pageProvider =
+    ChangeNotifierProvider<PageNotifier>((ref) => PageNotifier());

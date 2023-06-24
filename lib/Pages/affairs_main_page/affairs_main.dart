@@ -5,10 +5,10 @@ import 'package:graduation_project/constant/responsive.dart';
 import 'affairs_body_class.dart';
 import 'main_page_side_menue.dart';
 
-class StudentMain extends StatelessWidget {
+class StudentAffairsMain extends StatelessWidget {
   PageController page = PageController();
 
-  StudentMain({super.key});
+  StudentAffairsMain({super.key});
 
   @override
   Widget build(BuildContext context) {

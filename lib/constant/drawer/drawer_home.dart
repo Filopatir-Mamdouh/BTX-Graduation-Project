@@ -1,30 +1,26 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/pages/home_lecturers/doctor/attendance/main_screen_doctor.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/main_screen_educationdata.dart';
 import 'package:graduation_project/pages/students_affairs/essensial_data/main_screen_essential_data.dart';
-import 'package:graduation_project/provider/provider.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-class DrawerHome extends StatelessWidget {
+import '../../Provider/backend/apiprovider.dart';
+import '../../Provider/provider.dart';
+
+class DrawerHome extends ConsumerWidget {
   const DrawerHome({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     Color greyText = const Color(0xFF707070);
     Size size = MediaQuery.of(context).size;
     // ignore: prefer_typing_uninitialized_variables
     var dropdownValue;
-
-    return SingleChildScrollView(
-      child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => StudentDetails(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => LecturersDrawer(),
-          )
-        ],
+    final affairmodel = ref.watch(affairsProvider);
+    return affairmodel.when(
+      loading: () => const CircularProgressIndicator(),
+      error: (err, stack) => Text('Error: $err'),
+      data: (context) => SingleChildScrollView(
         child: Column(
           children: [
             Column(
@@ -34,31 +30,28 @@ class DrawerHome extends StatelessWidget {
                   height: 30,
                 ),
                 Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 0.5, color: greyText),
-                    borderRadius: const BorderRadius.all(Radius.circular(50)),
-                  ),
-                  child: Consumer<StudentDetails>(
-                      builder: (context, model, child) {
-                    return Image.asset(model.studentImgPath);
-                  }),
-                ),
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 0.5, color: greyText),
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    ),
+                    child: Image.asset("assets/profile.png")),
                 const SizedBox(
                   height: 5,
                 ),
                 Column(
                   children: [
-                    Consumer<StudentDetails>(builder: (context, model, child) {
-                      return Text(model.studentName,
+                    Consumer(builder: (context, ref, child) {
+                      return Text(affairmodel.value?.Name.split(' ')[0] ?? '',
                           style: TextStyle(
                               color: greyText,
                               fontSize: 18,
                               fontWeight: FontWeight.bold));
                     }),
-                    Consumer<StudentDetails>(builder: (context, model, child) {
-                      return Text(model.fatherName,
+                    Consumer(builder: (context, ref, child) {
+                      return Text(
+                          affairmodel.value?.Name.split(' ').removeAt(0) ?? '',
                           style: TextStyle(
                               color: greyText,
                               fontSize: 18,
@@ -79,8 +72,8 @@ class DrawerHome extends StatelessWidget {
                 color: Colors.white,
               ),
               width: 170,
-              child: Consumer<LecturersDrawer>(
-                builder: (context, value, child) {
+              child: Consumer(
+                builder: (context, ref, child) {
                   return DropdownButtonHideUnderline(
                     child: DropdownButton2<String>(
                       // CANT SET THE DEFAULT VALUE**
@@ -147,7 +140,10 @@ class DrawerHome extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25))),
 
-                      items: value.studentDetailsList.map((String items) {
+                      items: ref
+                          .watch(lecturersDrawerProvider)
+                          .studentDetailsList
+                          .map((String items) {
                         return DropdownMenuItem(
                             value: items, child: Center(child: Text(items)));
                       }).toList(),
@@ -166,8 +162,8 @@ class DrawerHome extends StatelessWidget {
                 color: Colors.white,
               ),
               width: 170,
-              child: Consumer<LecturersDrawer>(
-                builder: (context, value, child) {
+              child: Consumer(
+                builder: (context, ref, child) {
                   return DropdownButtonHideUnderline(
                     child: DropdownButton2<String>(
                       // CANT SET THE DEFAULT VALUE**
@@ -211,7 +207,10 @@ class DrawerHome extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25))),
 
-                      items: value.instructorDetailsList.map((String items) {
+                      items: ref
+                          .watch(lecturersDrawerProvider)
+                          .instructorDetailsList
+                          .map((String items) {
                         return DropdownMenuItem(
                             value: items, child: Center(child: Text(items)));
                       }).toList(),
@@ -230,8 +229,8 @@ class DrawerHome extends StatelessWidget {
                 color: Colors.white,
               ),
               width: 170,
-              child: Consumer<LecturersDrawer>(
-                builder: (context, value, child) {
+              child: Consumer(
+                builder: (context, ref, child) {
                   return DropdownButtonHideUnderline(
                     child: DropdownButton2<String>(
                       // CANT SET THE DEFAULT VALUE**
@@ -283,7 +282,10 @@ class DrawerHome extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25))),
 
-                      items: value.educationDetailsList.map((String items) {
+                      items: ref
+                          .watch(lecturersDrawerProvider)
+                          .educationDetailsList
+                          .map((String items) {
                         return DropdownMenuItem(
                             value: items,
                             child: Center(

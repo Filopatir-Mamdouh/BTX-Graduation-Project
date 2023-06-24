@@ -35,7 +35,7 @@ class Semester extends ChangeNotifier {
 }
 
 class StudentDetails extends ChangeNotifier {
-  String studentImgPath = "assets/b3.jpeg";
+  String studentImgPath = "assets\\prof.jpeg";
   String subjectName = "المادة";
   int degree = 0;
   int code = 345;
@@ -228,7 +228,7 @@ class LecturersProvider extends ChangeNotifier {
   String doctorName = "الاسم";
   String doctorNameFather = "اسم الاب";
   String hint = "hint";
-  String doctorImgPath = "";
+  String doctorImgPath = "assets\\prof.jpeg";
   String? selectedTeams;
   String name = "Bavly";
   String teamQR = "الفرقة الرابعة";
@@ -366,18 +366,19 @@ class RespondAnswer extends ChangeNotifier {
           }).toList();
 }
 
-class LecturersDrawer extends ChangeNotifier {
-  List<String> educationDetailsList = [
-    "المقررات الدراسية",
-    "الجدول الدراسي",
-    "الحضور"
-  ];
-  List<String> instructorDetailsList = ["بيانات المحاضرين", "الحضور"];
-  List<String> studentDetailsList = [
-    "البيانات الأساسية",
-    "النتائج الدراسية",
-    "نسبة الحضور",
-    "الرسوم الدراسية",
-    "استخراج مستند"
-  ];
+class LecturersDrawer {
+  List<String> get educationDetailsList =>
+      ["المقررات الدراسية", "الجدول الدراسي", "الحضور"];
+  List<String> get instructorDetailsList => ["بيانات المحاضرين", "الحضور"];
+  List<String> get studentDetailsList => [
+        "البيانات الأساسية",
+        "النتائج الدراسية",
+        "نسبة الحضور",
+        "الرسوم الدراسية",
+        "استخراج مستند"
+      ];
 }
+
+final lecturersDrawerProvider = Provider<LecturersDrawer>((ref) {
+  return LecturersDrawer();
+});

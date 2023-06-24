@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -7,23 +8,26 @@ import 'package:graduation_project/constant/backend/enums.dart';
 class Instructors {
   final int insId;
   final String insName;
-  final List<ITSubjects> subjects;
+  final List<dynamic> subjects;
   final int phone;
   final int nationalID;
+  final String email;
   Instructors({
     required this.insId,
     required this.insName,
     required this.subjects,
     required this.phone,
     required this.nationalID,
+    required this.email,
   });
 
   Instructors copyWith({
     int? insId,
     String? insName,
-    List<ITSubjects>? subjects,
+    List<dynamic>? subjects,
     int? phone,
     int? nationalID,
+    String? email,
   }) {
     return Instructors(
       insId: insId ?? this.insId,
@@ -31,6 +35,7 @@ class Instructors {
       subjects: subjects ?? this.subjects,
       phone: phone ?? this.phone,
       nationalID: nationalID ?? this.nationalID,
+      email: email ?? this.email,
     );
   }
 
@@ -41,6 +46,7 @@ class Instructors {
       'subjects': subjects,
       'phone': phone,
       'nationalID': nationalID,
+      'email': email,
     };
   }
 
@@ -48,9 +54,10 @@ class Instructors {
     return Instructors(
       insId: map['insId'] as int,
       insName: map['insName'] as String,
-      subjects: List<ITSubjects>.from((map['subjects'] as List<ITSubjects>)),
+      subjects: map['subjects'] as List<dynamic>,
       phone: map['phone'] as int,
       nationalID: map['nationalID'] as int,
+      email: map['email'] as String,
     );
   }
 
@@ -61,7 +68,7 @@ class Instructors {
 
   @override
   String toString() {
-    return 'Instructors(insId: $insId, insName: $insName, subjects: $subjects, phone: $phone, nationalID: $nationalID)';
+    return 'Instructors(insId: $insId, insName: $insName, subjects: $subjects, phone: $phone, nationalID: $nationalID, email: $email)';
   }
 
   @override
@@ -72,7 +79,8 @@ class Instructors {
         other.insName == insName &&
         listEquals(other.subjects, subjects) &&
         other.phone == phone &&
-        other.nationalID == nationalID;
+        other.nationalID == nationalID &&
+        other.email == email;
   }
 
   @override
@@ -81,6 +89,7 @@ class Instructors {
         insName.hashCode ^
         subjects.hashCode ^
         phone.hashCode ^
-        nationalID.hashCode;
+        nationalID.hashCode ^
+        email.hashCode;
   }
 }

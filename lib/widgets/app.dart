@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/Provider/Affairs_side_Menue_provider.dart';
 import 'package:graduation_project/Provider/Doctor_student_Attendance_Provider.dart';
 import 'package:graduation_project/Provider/Student_information_provider.dart';
 import 'package:graduation_project/Provider/Taecher_Basic_Data_provider.dart';
@@ -19,12 +18,11 @@ import 'package:graduation_project/Provider/students_academic_results_provider.d
 import 'package:graduation_project/Provider/students_attendance_schedule_provider.dart';
 import 'package:graduation_project/Provider/students_data_provider.dart';
 import 'package:graduation_project/Provider/year_result.dart';
-import 'package:graduation_project/pages/Student_Academiv_result_affairs/students_academic_results.dart';
 import 'package:graduation_project/presentation/widgets/widgets/Educational_Data_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../Pages/library/available_devices_responsive.dart';
 import '../Provider/study_fees_provider.dart';
+import '../provider/Affairs_side_Menue_provider.dart';
 import 'authchecker.dart';
 
 class MyApp extends StatelessWidget {

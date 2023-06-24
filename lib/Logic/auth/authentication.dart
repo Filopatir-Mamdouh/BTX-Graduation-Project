@@ -1,13 +1,11 @@
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart' as models;
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Logic/server/assign_teams.dart';
 import 'package:graduation_project/Pages/Login&register/Register_responsive.dart';
 
 import '../../Pages/home_lecturers/main_screen_lecturersbage.dart';
 import '../../constant/backend/enums.dart';
-import '../../constant/splash.dart';
 import '../../pages/affairs_main_page/affairs_main.dart';
 import '../../pages/students_affairs/home/home_page.dart';
 import '../server/get_user.dart';
@@ -79,7 +77,12 @@ class Authentication {
     try {
       //
       await account.createEmailSession(email: email, password: password);
-      route(context, email);
+      final page = await route(context, email);
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => page,
+          ));
     } on Exception catch (e) {
       //
       debugPrint('Logged Error\n${e.toString()}');
@@ -127,27 +130,18 @@ class Authentication {
     }
   }
 
-  Future<void> route(context, email) async {
+  Future<Widget> route(BuildContext context, email) async {
     GetUser user = GetUser();
     Roles role = await user.getRole(email);
     switch (role) {
       case Roles.affairs:
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: ((context) => const AffairsHome())));
-        break;
+        return const AffairsHome();
       case Roles.students:
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: ((context) => StudentMain())));
-        break;
+        return StudentAffairsMain();
       case Roles.instructors:
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: ((context) => const MainScreenLecturers())));
-        break;
+        return const MainScreenLecturers();
       default:
-        MaterialPageRoute(builder: ((context) => register()));
-        break;
+        return register();
     }
   }
 }

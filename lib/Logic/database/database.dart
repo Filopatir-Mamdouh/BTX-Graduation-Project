@@ -1,4 +1,5 @@
 import 'package:appwrite/appwrite.dart';
+import 'package:appwrite/models.dart';
 
 class ApiFunctions {
   final Client client;
@@ -8,13 +9,14 @@ class ApiFunctions {
   ApiFunctions(this.client) {
     databases = Databases(client);
   }
-  Future getDocuments(collectionId, queries) async {
+  Future<List<Document>> getDocuments(collectionId, queries) async {
     try {
       final response = await databases.listDocuments(
           databaseId: databaseId, collectionId: collectionId, queries: queries);
-      return response;
+      return response.documents;
     } on AppwriteException catch (e) {
       print(e.message);
+      return [];
     }
   }
 }

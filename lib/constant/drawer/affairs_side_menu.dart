@@ -1,47 +1,40 @@
-import 'package:graduation_project/Provider/Provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/main_screen_educationdata.dart';
 import 'package:graduation_project/pages/students_affairs/essensial_data/main_screen_essential_data.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
+import '../../Provider/backend/apiprovider.dart';
 import '../widgets/logout.dart';
 
-class Sidemenu extends StatelessWidget {
+class Sidemenu extends ConsumerWidget {
   const Sidemenu({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final studentModel = ref.watch(studentProvider);
     Color greyText = const Color(0xFF707070);
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => StudentDetails(),
-        )
-      ],
-      child: SingleChildScrollView(
+    return studentModel.when(
+      loading: () => const CircularProgressIndicator(),
+      error: (err, stack) => Text('Error: $err'),
+      data: (context) => SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(bottom: 100),
           child: Column(
             children: [
               Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 0.5, color: greyText),
-                  borderRadius: const BorderRadius.all(Radius.circular(50)),
-                ),
-                child:
-                    Consumer<StudentDetails>(builder: (context, model, child) {
-                  return Image.asset(model.studentImgPath);
-                }),
-              ),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 0.5, color: greyText),
+                    borderRadius: const BorderRadius.all(Radius.circular(50)),
+                  ),
+                  child: Image.asset('assets/profile.png')),
               const SizedBox(
                 height: 8,
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context,
+                      context as BuildContext,
                       MaterialPageRoute(
                           builder: (context) =>
                               const MainScreenEssentialData()));
@@ -66,7 +59,7 @@ class Sidemenu extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context,
+                      context as BuildContext,
                       MaterialPageRoute(
                           builder: (context) =>
                               const MainScreenEducationData()));

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:graduation_project/Provider/register_provider.dart';
 import '../Logic/auth/authentication.dart';
 import '../Pages/Login&register/Register_responsive.dart';
-import '../Pages/affairs_main_page/affairs_main.dart';
 import '../Provider/backend/auth.dart';
 import '../constant/splash.dart';
 
@@ -15,9 +15,9 @@ class AuthChecker extends ConsumerWidget {
     late final Authentication auth = ref.watch(authProvider);
     final user = await ref.read(userProvider.future);
     if (user?.email != null) {
-      return auth.route(context, user?.email);
+      ref.read(pageProvider).setText(await auth.route(context, user?.email));
     } else {
-      return [false];
+      ref.read(pageProvider).setText(register());
     }
   }
 
@@ -28,10 +28,11 @@ class AuthChecker extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     isLoggedIn(context, ref);
-    try {
-      return Loading(page: register());
-    } catch (e) {
-      rethrow;
-    }
+    return Consumer(
+      builder: (context, ref, child) {
+        FlutterNativeSplash.remove();
+        return ref.watch(pageProvider).page;
+      },
+    );
   }
 }

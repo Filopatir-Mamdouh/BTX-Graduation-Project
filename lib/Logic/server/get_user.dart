@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/constant/backend/collections_id.dart';
 
 import '../../constant/backend/enums.dart';
+import '../../models/user.dart';
 import 'admin.dart';
 
 class GetUser {
@@ -62,7 +64,10 @@ class GetUser {
           case 'students':
             return Roles.students;
           case 'instructors':
+            print("INs");
             return Roles.instructors;
+          default:
+            return Roles.none;
         }
       }
     } on AppwriteException catch (e) {
