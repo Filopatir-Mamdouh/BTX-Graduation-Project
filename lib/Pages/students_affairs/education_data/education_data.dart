@@ -165,19 +165,3 @@ class EducatinData extends StatelessWidget {
     );
   }
 }
-
-// bottomNavigationBar: BottomNavigationBar(
-//         items: const <BottomNavigationBarItem>[
-//           BottomNavigationBarItem(
-//               icon: Icon(Icons.arrow_left), label: 'السابق'),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.school),
-//             label: 'البيانات التعليمية',
-//             backgroundColor: Colors.purple,
-//           ),
-//           BottomNavigationBarItem(
-//               icon: Icon(Icons.arrow_right), label: 'التالي'),
-//         ],
-//       ),
-
-

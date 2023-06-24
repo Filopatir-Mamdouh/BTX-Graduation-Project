@@ -141,43 +141,47 @@ class Team extends ChangeNotifier {
 
 class ScaffoldEssensialData extends ChangeNotifier {
   Container scaffold = Container();
-  bool personality = false;
-  bool communication = false;
-  bool parents = false;
-  bool previousQualification = false;
+  bool _personality = false;
+  bool _communication = false;
+  bool _parents = false;
+  bool _previousQualification = false;
+  bool get personality => _personality;
+  bool get communication => _communication;
+  bool get parents => _parents;
+  bool get previousQualification => _previousQualification;
   personalityscaffold() {
     scaffold = personalityScaffold;
-    personality = true;
-    communication = false;
-    parents = false;
-    previousQualification = false;
+    _personality = true;
+    _communication = false;
+    _parents = false;
+    _previousQualification = false;
     notifyListeners();
   }
 
   communicatescaffold() {
     scaffold = communicateScaffold;
-    communication = true;
-    personality = false;
-    parents = false;
-    previousQualification = false;
+    _communication = true;
+    _personality = false;
+    _parents = false;
+    _previousQualification = false;
     notifyListeners();
   }
 
   parentsscaffold() {
     scaffold = parentsScaffold;
-    communication = false;
-    personality = false;
-    parents = true;
-    previousQualification = false;
+    _communication = false;
+    _personality = false;
+    _parents = true;
+    _previousQualification = false;
     notifyListeners();
   }
 
   previousscaffold() {
     scaffold = previousScaffold;
-    previousQualification = true;
-    communication = false;
-    personality = false;
-    parents = false;
+    _previousQualification = true;
+    _communication = false;
+    _personality = false;
+    _parents = false;
     notifyListeners();
   }
 }
@@ -381,4 +385,8 @@ class LecturersDrawer {
 
 final lecturersDrawerProvider = Provider<LecturersDrawer>((ref) {
   return LecturersDrawer();
+});
+
+final essentialProvider = Provider<ScaffoldEssensialData>((ref) {
+  return ScaffoldEssensialData();
 });

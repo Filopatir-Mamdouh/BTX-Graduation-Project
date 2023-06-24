@@ -1,86 +1,82 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/constant/constant.dart';
-import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-class PreviousQualification extends StatelessWidget {
+import '../../../Provider/backend/apiprovider.dart';
+
+class PreviousQualification extends ConsumerWidget {
   const PreviousQualification({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     final Color color1 = HexColor('#3E6BA9');
-    return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => StudentDetails(),
-          ),
-        ],
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                  const Expanded(child: Text("المؤهل ")),
-                  Expanded(child: Center(child: Consumer<StudentDetails>(
-                      builder: (context, model, child) {
-                    return Text(model.qualification,
-                        style: TextStyle(color: color1));
-                  })))
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  const Expanded(child: Text("الجهة ")),
-                  Expanded(child: Center(child: Consumer<StudentDetails>(
-                      builder: (context, model, child) {
-                    return Text(model.sideQualification,
-                        style: TextStyle(color: color1));
-                  })))
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  const Expanded(child: Text("سنة التخرج ")),
-                  Expanded(child: Center(child: Consumer<StudentDetails>(
-                      builder: (context, model, child) {
-                    return Text("${model.graduationYear}",
-                        style: TextStyle(color: color1));
-                  })))
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  const Expanded(child: Text("المجموع ")),
-                  Expanded(child: Center(child: Consumer<StudentDetails>(
-                      builder: (context, model, child) {
-                    return Text("${model.totalDegreeGraduation}",
-                        style: TextStyle(color: color1));
-                  })))
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  const Expanded(child: Text("النسبة ")),
-                  Expanded(child: Center(child: Consumer<StudentDetails>(
-                      builder: (context, model, child) {
-                    return Text("${model.percentage}%",
-                        style: TextStyle(color: color1));
-                  })))
-                ],
-              ),
-            ),
-          ],
-        ));
+    final studentModel = ref.watch(studentProvider);
+    return studentModel.when(
+        loading: () => const CircularProgressIndicator(),
+        error: (err, stack) => Text('Error: $err'),
+        data: (context) => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      const Expanded(child: Text("المؤهل ")),
+                      Expanded(
+                          child: Center(
+                              child: Text(
+                                  studentModel.value?.qualification ?? '',
+                                  style: TextStyle(color: color1))))
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      const Expanded(child: Text("الجهة ")),
+                      Expanded(
+                          child: Center(
+                              child: Text(studentModel.value?.place ?? '',
+                                  style: TextStyle(color: color1))))
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      const Expanded(child: Text("سنة التخرج ")),
+                      Expanded(
+                          child: Center(
+                              child: Text(
+                                  "${studentModel.value?.graduationYear}",
+                                  style: TextStyle(color: color1))))
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      const Expanded(child: Text("المجموع ")),
+                      Expanded(
+                          child: Center(
+                              child: Text("${studentModel.value?.total}",
+                                  style: TextStyle(color: color1))))
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      const Expanded(child: Text("النسبة ")),
+                      Expanded(
+                          child: Center(
+                              child: Text("${studentModel.value?.percentage}%",
+                                  style: TextStyle(color: color1))))
+                    ],
+                  ),
+                ),
+              ],
+            ));
   }
 }
 

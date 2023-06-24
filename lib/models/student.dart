@@ -50,6 +50,7 @@ class Student {
   final String depart;
   final String program;
   final String year;
+  final int studentId;
 
   final Preferences prefs;
 
@@ -100,6 +101,7 @@ class Student {
       this.depart,
       this.program,
       this.year,
+      this.studentId,
       this.prefs);
 
   factory Student.fromMap(Map<String, dynamic> map) {
@@ -150,6 +152,7 @@ class Student {
       map['depart'] as String,
       map['program'] as String,
       map['year'] as String,
+      map['studentId'] as int,
       Preferences.fromMap(map['prefs'] as Map<String, dynamic>),
     );
   }
@@ -202,6 +205,7 @@ class Student {
       'depart': depart,
       'program': program,
       'year': year,
+      'studentId': studentId,
       'prefs': prefs.toMap(),
     };
   }
@@ -253,6 +257,7 @@ class Student {
     String? depart,
     String? program,
     String? year,
+    int? studentId,
     Preferences? prefs,
   }) {
     return Student(
@@ -302,6 +307,7 @@ class Student {
       depart ?? this.depart,
       program ?? this.program,
       year ?? this.year,
+      studentId ?? this.studentId,
       prefs ?? this.prefs,
     );
   }
@@ -313,7 +319,7 @@ class Student {
 
   @override
   String toString() {
-    return 'Student(name: $name, englishName: $englishName, code: $code, relegion: $relegion, gender: $gender, nationality: $nationality, birthDate: $birthDate, birthPlace: $birthPlace, socialStatus: $socialStatus, idType: $idType, nationalId: $nationalId, publishDate: $publishDate, publishPlace: $publishPlace, fatherName: $fatherName, motherName: $motherName, entryStatus: $entryStatus, acceptanceType: $acceptanceType, acceptanceYear: $acceptanceYear, city: $city, address: $address, homeNumber: $homeNumber, phoneNumber: $phoneNumber, email: $email, fax: $fax, buildingNumber: $buildingNumber, apartmentNumber: $apartmentNumber, mailBox: $mailBox, mailCode: $mailCode, fatherNationality: $fatherNationality, fatherCity: $fatherCity, fatherAddress: $fatherAddress, fatherJob: $fatherJob, fatherJobPlace: $fatherJobPlace, degreeOfKinship: $degreeOfKinship, fatherPhoneNumber: $fatherPhoneNumber, fatherEmail: $fatherEmail, fatherFax: $fatherFax, qualification: $qualification, place: $place, graduationYear: $graduationYear, total: $total, percentage: $percentage, faculty: $faculty, depart: $depart, program: $program, year: $year, prefs: $prefs)';
+    return 'Student(name: $name, englishName: $englishName, code: $code, relegion: $relegion, gender: $gender, nationality: $nationality, birthDate: $birthDate, birthPlace: $birthPlace, socialStatus: $socialStatus, idType: $idType, nationalId: $nationalId, publishDate: $publishDate, publishPlace: $publishPlace, fatherName: $fatherName, motherName: $motherName, entryStatus: $entryStatus, acceptanceType: $acceptanceType, acceptanceYear: $acceptanceYear, city: $city, address: $address, homeNumber: $homeNumber, phoneNumber: $phoneNumber, email: $email, fax: $fax, buildingNumber: $buildingNumber, apartmentNumber: $apartmentNumber, mailBox: $mailBox, mailCode: $mailCode, fatherNationality: $fatherNationality, fatherCity: $fatherCity, fatherAddress: $fatherAddress, fatherJob: $fatherJob, fatherJobPlace: $fatherJobPlace, degreeOfKinship: $degreeOfKinship, fatherPhoneNumber: $fatherPhoneNumber, fatherEmail: $fatherEmail, fatherFax: $fatherFax, qualification: $qualification, place: $place, graduationYear: $graduationYear, total: $total, percentage: $percentage, faculty: $faculty, depart: $depart, program: $program, year: $year, studentId: $studentId, prefs: $prefs)';
   }
 
   @override
@@ -366,6 +372,7 @@ class Student {
         other.depart == depart &&
         other.program == program &&
         other.year == year &&
+        other.studentId == studentId &&
         other.prefs == prefs;
   }
 
@@ -417,6 +424,7 @@ class Student {
         depart.hashCode ^
         program.hashCode ^
         year.hashCode ^
+        studentId.hashCode ^
         prefs.hashCode;
   }
 }
