@@ -4,6 +4,8 @@ import 'package:graduation_project/pages/students_affairs/essensial_data/main_sc
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/logout.dart';
+
 class Sidemenu extends StatelessWidget {
   const Sidemenu({super.key});
 
@@ -181,22 +183,7 @@ class Sidemenu extends StatelessWidget {
               const SizedBox(
                 height: 13,
               ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  side: const BorderSide(width: 2, color: Colors.black),
-                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(22),
-                  ),
-                ),
-                child: const Text(
-                  "تسجيل الخروج",
-                  style: TextStyle(color: Colors.black, fontSize: 17),
-                ),
-              ),
+              const LogoutButton(),
             ],
           ),
         ),

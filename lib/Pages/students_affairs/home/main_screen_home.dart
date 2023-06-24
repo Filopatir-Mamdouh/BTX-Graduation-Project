@@ -44,14 +44,14 @@ class MainScreenHome extends StatelessWidget {
           backgroundColor: color1),
       body: Responsive(
         // Let's work on our mobile part
-        mobile: const Home(),
+        mobile: const AffairsHome(),
         tablet: Row(
           children: [
             if (size.height > 500 || size.width < 100)
               const Expanded(flex: 2, child: DrawerHome()),
             const Expanded(
               flex: 5,
-              child: Home(),
+              child: AffairsHome(),
             ),
           ],
         ),
@@ -65,7 +65,7 @@ class MainScreenHome extends StatelessWidget {
             ),
             Expanded(
               flex: size.width > 1340 ? 5 : 7,
-              child: const Home(),
+              child: const AffairsHome(),
             ),
           ],
         ),

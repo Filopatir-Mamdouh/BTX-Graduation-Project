@@ -24,7 +24,7 @@ class LoginPageClass extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     late final Authentication auth = ref.watch(authProvider);
     Future<void> onPressedFunction() async {
-      await auth.login(_email.text, _password.text);
+      await auth.login(_email.text, _password.text, context);
     }
 
     return Scaffold(

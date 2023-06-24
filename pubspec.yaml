@@ -37,6 +37,7 @@ dependencies:
   splash_view: ^2.0.1
   appwrite: ^9.0.0
   timer_builder: ^2.0.0
+  email_validator: ^2.1.17
    
   flutter:
     sdk: flutter
@@ -60,6 +61,8 @@ dependencies:
   dart_appwrite: ^8.0.0
   flutter_riverpod: ^2.3.6
   riverpod_annotation: ^2.1.1
+  validated: ^2.0.0
+  validadores: ^1.0.5
 
 dev_dependencies:
   flutter_test:

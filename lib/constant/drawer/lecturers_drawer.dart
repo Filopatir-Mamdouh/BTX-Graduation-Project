@@ -6,6 +6,8 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/logout.dart';
+
 class DrawerLecturers extends StatelessWidget {
   const DrawerLecturers({Key? key}) : super(key: key);
   @override
@@ -242,24 +244,7 @@ class DrawerLecturers extends StatelessWidget {
             const SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(170, 53),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25), // <-- Radius
-                    ),
-                    backgroundColor: Colors.white,
-                    side: const BorderSide(color: Colors.black87, width: 3),
-                    textStyle: const TextStyle(
-                        fontSize: 25, fontStyle: FontStyle.normal)),
-                child: Text(
-                  "تسجيل الخروج",
-                  style: TextStyle(
-                      fontSize: size.width < 500 ? 10 : 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87),
-                )),
+            const LogoutButton(),
           ],
         ),
       ),

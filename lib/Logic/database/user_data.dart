@@ -1,6 +1,4 @@
 import 'package:appwrite/appwrite.dart';
-import 'package:flutter/material.dart';
-import 'package:graduation_project/models/user.dart';
 import 'package:graduation_project/constant/backend/collections_id.dart';
 
 class UserData {
@@ -52,7 +50,7 @@ class UserData {
         return [false];
       }
     } on AppwriteException catch (e) {
-      debugPrint(e.message);
+      print(e.message);
       return [];
     }
   }

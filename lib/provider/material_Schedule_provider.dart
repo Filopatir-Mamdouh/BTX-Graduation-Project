@@ -1,11 +1,276 @@
 import 'package:flutter/material.dart';
 
-class MaterialsScheduleProvider with ChangeNotifier {
-  String day = "الاحد";
-  String subject = "Iot security";
-  String place = "A101";
-  String lecturer_Name = "احمد خالد";
-  String section = "network";
-  String year = "الرابعه";
-  String Study_Table_Subject = "مادة";
+class MaterialsTableProvider with ChangeNotifier {
+  final List<Map<String, dynamic>> listOfPetrol = [
+    {
+      "day": "السبت",
+      "lecs": [
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+      ],
+    },
+    {
+      "day": "الاحد",
+      "lecs": [
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "IT",
+          "year": "3rd",
+        },
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+      ],
+    },
+    {
+      "day": "الاثنين",
+      "lecs": [
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+      ],
+    },
+    {
+      "day": "الثلاثاء",
+      "lecs": [
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+      ],
+    },
+    {
+      "day": "الاربعاء",
+      "lecs": [
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+      ],
+    },
+    {
+      "day": "الخميس",
+      "lecs": [
+        {
+          "hours": "3",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "2",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+        {
+          "hours": "1",
+          "material": "IOT",
+          "place": "قاعة 5",
+          "lecturer": "دكتور احمد",
+          "depratment": "CS",
+          "year": "3rd",
+        },
+      ],
+    },
+  ];
 }

@@ -4,7 +4,7 @@ import '../pages/library/book_model.dart';
 
 class BooksProvider with ChangeNotifier {
   List<BookModel> books = List.generate(
-    2,
+    5,
     (index) => const BookModel(
       bookName: "اسم الكتاب",
       bookAuthor: "المؤلف",

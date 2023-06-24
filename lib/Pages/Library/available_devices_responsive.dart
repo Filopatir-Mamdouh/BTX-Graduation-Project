@@ -1,14 +1,14 @@
-// ignore_for_file: prefer_const_constructors, dead_code
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/Pages/library/available_devices_screen.dart';
-import 'package:graduation_project/constant/responsive.dart';
+
 import 'package:graduation_project/core/app_colors.dart';
 
-class Available_devices_responsive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+import '../../constant/responsive.dart';
 
+class Available_devices_responsive extends StatelessWidget {
   PageController page = PageController();
 
   late final String title;
@@ -18,23 +18,24 @@ class Available_devices_responsive extends StatelessWidget {
     return Scaffold(
       body: Responsive(
         mobile: MaterialApp(
-          title: 'المكتبة',
           localizationsDelegates: const [
+            GlobalCupertinoLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [
-            // Arabic
-            Locale('ar'),
+            Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales
           ],
+          locale: const Locale(
+              "ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
+          title: 'المكتبة',
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
               Container(
                 height: 25,
                 color: AppColors.grey,
-                child: Center(
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -43,20 +44,20 @@ class Available_devices_responsive extends StatelessWidget {
                             color: Colors.white))),
               )
             ]),
-            body: DevicesScreen(),
+            body: const DevicesScreen(),
             appBar: AppBar(
               backgroundColor: AppColors.grey, // Will work
               title: Row(
                 children: [
                   Image.asset('b2.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("المكتبة"),
+                  const Text("المكتبة"),
                 ],
               ),
             ),
-            drawer: Drawer(
+            drawer: const Drawer(
               child: Sidemenu(),
             ),
           ),
@@ -64,23 +65,24 @@ class Available_devices_responsive extends StatelessWidget {
 
         //desktop view
         desktop: MaterialApp(
-          title: 'المكتبة',
           localizationsDelegates: const [
+            GlobalCupertinoLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [
-            // Arabic
-            Locale('ar'),
+            Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales
           ],
+          locale: const Locale(
+              "ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
+          title: 'المكتبة',
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
               Container(
                 height: 25,
                 color: AppColors.grey,
-                child: Center(
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -106,33 +108,34 @@ class Available_devices_responsive extends StatelessWidget {
               title: Row(
                 children: [
                   Image.asset('b2.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("المكتبة"),
+                  const Text("المكتبة"),
                 ],
               ),
             ),
           ),
         ),
         tablet: MaterialApp(
-          title: 'المكتبة',
           localizationsDelegates: const [
+            GlobalCupertinoLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [
-            // Arabic
-            Locale('ar'),
+            Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales
           ],
+          locale: const Locale(
+              "ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
+          title: 'المكتبة',
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
               Container(
                 height: 25,
                 color: AppColors.grey,
-                child: Center(
+                child: const Center(
                     child: Text(
                         "جميع الحقوق محفوظة © طلاب جامعة بني سويف التكنولوجية",
                         style: TextStyle(
@@ -158,10 +161,10 @@ class Available_devices_responsive extends StatelessWidget {
               title: Row(
                 children: [
                   Image.asset('b2.jpeg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("المكتبة"),
+                  const Text("المكتبة"),
                 ],
               ),
             ),
@@ -176,9 +179,9 @@ class OpenPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint1 = Paint()
-      ..color = Color(0xffaa44aa)
+      ..color = const Color(0xffaa44aa)
       ..style = PaintingStyle.fill;
-    canvas.drawCircle(Offset(200, 200), 100, paint1);
+    canvas.drawCircle(const Offset(200, 200), 100, paint1);
   }
 
   @override

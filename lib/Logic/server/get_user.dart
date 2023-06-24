@@ -4,44 +4,70 @@ import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constant/backend/collections_id.dart';
 
+import '../../constant/backend/enums.dart';
 import 'admin.dart';
 
 class GetUser {
   late Databases databases;
   late String databaseId;
+  late String collectionId;
 
   GetUser() {
     databases = Databases(Admin.admin);
     databaseId = "645a9aab3568829d5c12";
+    collectionId = CollectionId().usersId;
   }
 
-  Future<int> isUser(int uid, int nid) async {
+  Future<List> isUser(int uid, int nid) async {
     try {
-      final student = await databases.listDocuments(
+      final response = await databases.listDocuments(
           databaseId: databaseId,
-          collectionId: CollectionId().studentsId,
+          collectionId: collectionId,
           queries: [
-            Query.equal('studentid', uid),
-            Query.equal('NationalID', nid)
+            Query.equal('userId', uid),
+            Query.equal('NationalID', '$nid')
           ]);
-      if (student.documents.isNotEmpty) {
-        return 0;
-      } else {
-        final ins = await databases.listDocuments(
-            databaseId: databaseId,
-            collectionId: CollectionId().insId,
-            queries: [
-              Query.equal('insid', uid),
-              Query.equal('nationalid', nid)
-            ]);
-        if (ins.documents.isNotEmpty) {
-          return 1;
+      if (response.documents.isNotEmpty) {
+        print(response.documents.first.data.toString());
+        final name = response.documents.first.data['username'];
+        switch (response.documents.first.data['Roles']) {
+          case 'affairs':
+            return [0, name];
+          case 'students':
+            return [1, name];
+          case 'instructors':
+            return [2, name];
         }
       }
     } on AppwriteException catch (e) {
       debugPrint(e.message);
-      return 2;
     }
-    return 3;
+    return [];
+  }
+
+  Future<Roles> getRole(email) async {
+    try {
+      final response = await databases.listDocuments(
+          databaseId: databaseId,
+          collectionId: collectionId,
+          queries: [
+            Query.equal('email', '$email'),
+          ]);
+      if (response.documents.isNotEmpty) {
+        print(response.documents.first.data.toString());
+        final name = response.documents.first.data['username'];
+        switch (response.documents.first.data['Roles']) {
+          case 'affairs':
+            return Roles.affairs;
+          case 'students':
+            return Roles.students;
+          case 'instructors':
+            return Roles.instructors;
+        }
+      }
+    } on AppwriteException catch (e) {
+      debugPrint(e.message);
+    }
+    return Roles.none;
   }
 }

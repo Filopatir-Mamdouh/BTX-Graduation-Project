@@ -30,3 +30,29 @@ class IsAvailable extends StateNotifier<List<bool>> {
 final isAvailableProvider =
     StateNotifierProvider.autoDispose<IsAvailable, List<bool>>(
         (ref) => IsAvailable());
+
+class NameNotifer extends ChangeNotifier {
+  String _text = "";
+  String get text => _text;
+
+  void setName(name) {
+    _text = name;
+    notifyListeners();
+  }
+}
+
+final nameProvider =
+    ChangeNotifierProvider<NameNotifer>((ref) => NameNotifer());
+
+class PassNotifier extends ChangeNotifier {
+  String _text = "";
+  String get text => _text;
+
+  void setText(text) {
+    _text = text;
+    notifyListeners();
+  }
+}
+
+final passProvider =
+    ChangeNotifierProvider<PassNotifier>((ref) => PassNotifier());

@@ -1,7 +1,16 @@
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart' as models;
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:graduation_project/Logic/server/assign_teams.dart';
+import 'package:graduation_project/Pages/Login&register/Register_responsive.dart';
+
+import '../../Pages/home_lecturers/main_screen_lecturersbage.dart';
+import '../../constant/backend/enums.dart';
+import '../../constant/splash.dart';
+import '../../pages/affairs_main_page/affairs_main.dart';
+import '../../pages/students_affairs/home/home_page.dart';
+import '../server/get_user.dart';
 
 ///  We have created a class named [Authentication] which contains all
 ///  the methods that we need to perform the authentication process.
@@ -56,7 +65,7 @@ class Authentication {
   }
 
   // A function to login the user with email and password
-  Future<void> login(String email, String password) async {
+  Future<void> login(String email, String password, context) async {
     ///  here account is the object of Account class and create session
     ///  is a method of Account class which signs in the current user.
     ///  We are using try catch block so that if there is any error we can
@@ -66,10 +75,11 @@ class Authentication {
     ///  if you don't want to see you can comment it out.
     ///  nevermind I did that for you😉
     /// var data = await account.createSession(email: email, password: password);
+    debugPrint(email);
     try {
       //
       await account.createEmailSession(email: email, password: password);
-      //
+      route(context, email);
     } on Exception catch (e) {
       //
       debugPrint('Logged Error\n${e.toString()}');
@@ -114,6 +124,30 @@ class Authentication {
     } on Exception catch (e) {
       //
       debugPrint('Logged Error\n${e.toString()}');
+    }
+  }
+
+  Future<void> route(context, email) async {
+    GetUser user = GetUser();
+    Roles role = await user.getRole(email);
+    switch (role) {
+      case Roles.affairs:
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: ((context) => const AffairsHome())));
+        break;
+      case Roles.students:
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: ((context) => StudentMain())));
+        break;
+      case Roles.instructors:
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: ((context) => const MainScreenLecturers())));
+        break;
+      default:
+        MaterialPageRoute(builder: ((context) => register()));
+        break;
     }
   }
 }

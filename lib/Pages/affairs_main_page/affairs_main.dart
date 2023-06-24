@@ -5,10 +5,10 @@ import 'package:graduation_project/constant/responsive.dart';
 import 'affairs_body_class.dart';
 import 'main_page_side_menue.dart';
 
-class AffairsMain extends StatelessWidget {
+class StudentMain extends StatelessWidget {
   PageController page = PageController();
 
-  AffairsMain({super.key});
+  StudentMain({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class AffairsMain extends StatelessWidget {
               backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
-                  Image.asset('b3.jpeg'),
+                  Image.asset('assets/b3.jpeg'),
                   const SizedBox(
                     width: 10,
                   ),
@@ -102,7 +102,7 @@ class AffairsMain extends StatelessWidget {
               backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
-                  Image.asset('b3.jpeg'),
+                  Image.asset('assets/b3.jpeg'),
                   const SizedBox(
                     width: 10,
                   ),
@@ -154,7 +154,7 @@ class AffairsMain extends StatelessWidget {
               backgroundColor: const Color(0xFF3E6BA9), // Will work
               title: Row(
                 children: [
-                  Image.asset('b3.jpeg'),
+                  Image.asset('assets/b3.jpeg'),
                   const SizedBox(
                     width: 10,
                   ),

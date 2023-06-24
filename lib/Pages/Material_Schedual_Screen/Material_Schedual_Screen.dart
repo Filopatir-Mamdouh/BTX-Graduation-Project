@@ -1,868 +1,160 @@
-import 'package:flutter/material.dart';
-import 'package:graduation_project/core/app_colors.dart';
-import 'package:graduation_project/provider/material_Schedule_provider.dart';
+import 'dart:math';
 
+import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/Material_Schedual_Screen/hours_widget_mobille.dart';
+import 'package:graduation_project/Provider/material_Schedule_provider.dart';
+import 'package:graduation_project/core/app_colors.dart';
 import 'package:provider/provider.dart';
 
-class MaterialsScheduleScreen extends StatelessWidget {
-  const MaterialsScheduleScreen({super.key});
+import 'hours_widget.dart';
+
+class MaterialTable extends StatelessWidget {
+  const MaterialTable({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<MaterialsScheduleProvider>(
-          create: (_) => MaterialsScheduleProvider(),
-        ),
-      ],
-      child: Scaffold(
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 20.0,
-              horizontal: 10.0,
+    ThemeData theme = Theme.of(context);
+    double sw = MediaQuery.of(context).size.width;
+    TextStyle dataTextStyle =
+        theme.textTheme.bodyText2!.copyWith(color: AppColors.grey);
+    return Scaffold(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 10,
             ),
-            child: Column(children: [
-              Text(
-                "جدول المواد",
-                style: TextStyle(
-                  color: AppColors.grey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
+            Text(
+              "جدول المواد",
+              style: TextStyle(
+                color: AppColors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+              ),
+            ),
+            RotatedBox(
+              quarterTurns: 1,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  top: 25,
+                  bottom: 15,
                 ),
-              ),
-              const SizedBox(
-                height: 15.0,
-              ),
-              Expanded(
-                child: RotatedBox(
-                  quarterTurns: 1,
-                  child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    decoration: BoxDecoration(
+                child: Container(
+                  alignment: Alignment.centerRight,
+                  //width: sw,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
                       border: Border.all(
-                        color: AppColors.primary,
-                        width: 12.0,
-                      ),
-                    ),
-                    child: Table(
-                      textDirection: TextDirection.rtl,
-                      defaultVerticalAlignment:
-                          TableCellVerticalAlignment.middle,
-                      border: TableBorder.all(
-                        color: AppColors.primary,
-                        width: 2.0,
-                      ),
-                      children: [
-                        TableRow(
-                          decoration: BoxDecoration(
-                            color: AppColors.primary,
-                          ),
+                          width: 10, color: const Color(0xff3E6BA9))),
+                  child: Column(
+                    children: [
+                      // !heading
+
+                      Container(
+                        decoration: BoxDecoration(
+                          color: AppColors.primary,
+                          //borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: const [
-                            Text(
-                              "اليوم",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 16.0,
-                              ),
-                            ),
-                            Text(
-                              "9-10 8-9",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 16.0,
-                              ),
-                            ),
-                            Text(
-                              "11-12  10-11",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 16.0,
-                              ),
-                            ),
-                            Text(
-                              "2-3  1-2 12-1",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 16.0,
-                              ),
-                            ),
-                            Text(
-                              "4-5  3-4",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 16.0,
-                              ),
-                            ),
+                            HoursWidget2(hours: "اليوم"),
+                            HoursWidget2(hours: "8-9"),
+                            HoursWidget2(hours: "9-10"),
+                            HoursWidget2(hours: "10-11"),
+                            HoursWidget2(hours: "11-12"),
+                            HoursWidget2(hours: "12-1"),
+                            HoursWidget2(hours: "1-2"),
+                            HoursWidget2(hours: "2-3"),
+                            HoursWidget2(hours: "3-4"),
+                            HoursWidget2(hours: "4-5"),
+                            HoursWidget2(hours: "5-6"),
                           ],
                         ),
-                        TableRow(
-                          children: [
-                            Container(
-                              margin:
-                                  const EdgeInsets.symmetric(vertical: 30.0),
-                              child: RotatedBox(
-                                quarterTurns: 1,
-                                child: Center(
-                                  child: Text(
-                                    "${MaterialsScheduleProvider().day}",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.grey,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.grey,
-                                            fontSize: 16.0,
+                      ),
+                      ChangeNotifierProvider<MaterialsTableProvider>(
+                        create: (context) => MaterialsTableProvider(),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: MaterialsTableProvider()
+                                .listOfPetrol
+                                .map(
+                                  ((element) => Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          IntrinsicHeight(
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.stretch,
+                                              children: [
+                                                Container(
+                                                  width: sw * (0.2),
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    element["day"],
+                                                    style: dataTextStyle,
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                VerticalDivider(
+                                                  color: AppColors.grey,
+                                                  thickness: 0.5,
+                                                  width: 0,
+                                                ),
+                                                for (var lecdata
+                                                    in element['lecs'])
+                                                  IntrinsicHeight(
+                                                    child: Row(
+                                                      //mainAxisSize: MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: sw *
+                                                              (int.parse(lecdata[
+                                                                      "hours"]) *
+                                                                  0.2),
+                                                          alignment:
+                                                              Alignment.center,
+                                                          child: Text(
+                                                            "${lecdata["material"]} - ${lecdata["place"]} - ${lecdata["lecturer"]} - ${lecdata["depratment"]} - ${lecdata["year"]}",
+                                                            style:
+                                                                dataTextStyle,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                        ),
+                                                        VerticalDivider(
+                                                          color: AppColors.grey,
+                                                          thickness: 1,
+                                                          width: 0,
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Divider(
-                                  color: AppColors.primary,
-                                  thickness: 2.0,
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                          Container(
+                                            width: sw * 2.2,
                                             color: AppColors.grey,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.grey,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Divider(
-                                  color: AppColors.primary,
-                                  thickness: 2.0,
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.grey,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.grey,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Divider(
-                                  color: AppColors.primary,
-                                  thickness: 2.0,
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.grey,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.grey,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Divider(
-                                  color: AppColors.primary,
-                                  thickness: 2.0,
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0),
-                                  height: 80.0,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          "${MaterialsScheduleProvider().subject}",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.grey,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().place}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().lecturer_Name}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "${MaterialsScheduleProvider().section}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              " - ",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                            Text(
-                                              "${MaterialsScheduleProvider().year}",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: AppColors.grey,
-                                                fontSize: 16.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                            height: 1,
+                                          )
+                                        ],
+                                      )),
+                                )
+                                .toList(),
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ]),
-          ),
+            ),
+          ],
         ),
       ),
     );

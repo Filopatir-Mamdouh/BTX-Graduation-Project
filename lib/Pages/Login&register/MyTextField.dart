@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:email_validator/email_validator.dart';
 
 class MyTextField extends StatelessWidget {
   final TextInputType inputType;
@@ -9,6 +10,8 @@ class MyTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool isAvailable;
   final Function(String)? onChanged;
+  final bool? autoValidate;
+  final Function(String)? validator;
 
   const MyTextField(
       {super.key,
@@ -18,7 +21,9 @@ class MyTextField extends StatelessWidget {
       required this.icon,
       required this.controller,
       required this.isAvailable,
-      this.onChanged});
+      this.onChanged,
+      this.autoValidate,
+      this.validator});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +36,6 @@ class MyTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hint,
         icon: icon,
-
         //contentPadding: ,
         enabledBorder: OutlineInputBorder(
           borderSide: Divider.createBorderSide(context),

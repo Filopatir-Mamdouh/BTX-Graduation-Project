@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/degre_scaffold.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/studentscaffold.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/syllabus/lecture.dart';
