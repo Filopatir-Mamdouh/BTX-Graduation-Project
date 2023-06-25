@@ -6,12 +6,10 @@ import 'package:graduation_project/Pages/fees_page/fees_page_responsive.dart';
 
 import '../../Provider/backend/apiprovider.dart';
 import '../../Student_material_tasble/subject_table_responsive.dart';
-import '../Documents_Request/Documents_request_responsive.dart';
 import '../Documents_Request/documents_r_stu_respo.dart';
 import '../Exams_table/Exams_table.dart';
 import '../Login&register/Login_page_responsive.dart';
 import '../home_lecturers/doctor/scanner.dart';
-import '../schedule/subject_table_responsive.dart';
 import '../students_affairs/education_data/main_screen_educationdata.dart';
 import '../students_affairs/essensial_data/main_screen_essential_data.dart';
 
@@ -132,7 +130,7 @@ class Sidemenu extends ConsumerWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           onPressed(
-                            MainScreenEducationData(),
+                            const MainScreenEducationData(),
                           );
                         },
                         style: ElevatedButton.styleFrom(

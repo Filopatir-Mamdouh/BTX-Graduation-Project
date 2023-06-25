@@ -10,11 +10,16 @@ class AffairsBodyClass extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    void onPressed(Widget page) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => page));
+    }
+
     final student = ref.watch(studentProvider);
     MediaQuery.of(context).size.width >= 650;
     return student.when(
         loading: () => const CircularProgressIndicator(),
-        error: (err, stack) => Text('Error: $err \n'),
+        error: (err, stack) => Text('Error: $err \n $stack'),
         data: (context) => Scaffold(
               body: SingleChildScrollView(
                 child: SafeArea(
@@ -74,11 +79,7 @@ class AffairsBodyClass extends ConsumerWidget {
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                              context as BuildContext,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      inquiries_responsive()));
+                          onPressed(inquiries_responsive());
                         }, //inquiries_responsive
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
@@ -126,10 +127,8 @@ class AffairsBodyClass extends ConsumerWidget {
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context as BuildContext,
-                            MaterialPageRoute(
-                                builder: (context) => MainScreenLibraryHome()),
+                          onPressed(
+                            const MainScreenLibraryHome(),
                           );
                         }, //MainScreenLibraryHome
                         style: ElevatedButton.styleFrom(

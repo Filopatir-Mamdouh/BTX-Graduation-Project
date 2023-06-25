@@ -140,7 +140,8 @@ class Team extends ChangeNotifier {
 }
 
 class ScaffoldEssensialData extends ChangeNotifier {
-  Container scaffold = Container();
+  Container _scaffold = Container();
+  Container get scaffold => _scaffold;
   bool _personality = false;
   bool _communication = false;
   bool _parents = false;
@@ -150,7 +151,7 @@ class ScaffoldEssensialData extends ChangeNotifier {
   bool get parents => _parents;
   bool get previousQualification => _previousQualification;
   personalityscaffold() {
-    scaffold = personalityScaffold;
+    _scaffold = personalityScaffold;
     _personality = true;
     _communication = false;
     _parents = false;
@@ -158,8 +159,26 @@ class ScaffoldEssensialData extends ChangeNotifier {
     notifyListeners();
   }
 
+  setscaffold(int index) {
+    switch (index) {
+      case 0:
+        _scaffold = personalityScaffold;
+        break;
+      case 1:
+        _scaffold = communicateScaffold;
+        break;
+      case 2:
+        _scaffold = parentsScaffold;
+        break;
+      case 3:
+        _scaffold = previousScaffold;
+        break;
+    }
+    notifyListeners();
+  }
+
   communicatescaffold() {
-    scaffold = communicateScaffold;
+    _scaffold = communicateScaffold;
     _communication = true;
     _personality = false;
     _parents = false;
@@ -168,7 +187,7 @@ class ScaffoldEssensialData extends ChangeNotifier {
   }
 
   parentsscaffold() {
-    scaffold = parentsScaffold;
+    _scaffold = parentsScaffold;
     _communication = false;
     _personality = false;
     _parents = true;
@@ -177,7 +196,7 @@ class ScaffoldEssensialData extends ChangeNotifier {
   }
 
   previousscaffold() {
-    scaffold = previousScaffold;
+    _scaffold = previousScaffold;
     _previousQualification = true;
     _communication = false;
     _personality = false;

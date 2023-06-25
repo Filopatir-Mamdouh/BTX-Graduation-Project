@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/constant/widgets/logout.dart';
+import 'package:graduation_project/pages/Data_Screen/Data_screen_responsive.dart';
 import 'package:graduation_project/pages/home_lecturers/doctor/attendance/main_screen_doctor.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/main_screen_educationdata.dart';
 import 'package:graduation_project/pages/students_affairs/essensial_data/main_screen_essential_data.dart';
@@ -110,7 +111,8 @@ class DrawerHome extends ConsumerWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => BasicInfoResponsive(),
+                                    builder: (context) =>
+                                        StudentsDataScreenResponsive(),
                                   ));
                               break;
                             case "النتائج الدراسية":

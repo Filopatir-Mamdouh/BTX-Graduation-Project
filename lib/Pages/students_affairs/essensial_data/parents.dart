@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:graduation_project/Provider/provider.dart';
 import 'package:graduation_project/constant/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -121,7 +120,7 @@ class Parents extends ConsumerWidget {
                         Expanded(
                             child: Center(
                                 child: Text(
-                                    "${studentModel.value?.fatherPhoneNumber}",
+                                    '${studentModel.value?.fatherPhoneNumber ?? ''}',
                                     style: TextStyle(color: color1))))
                       ],
                     ),

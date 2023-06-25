@@ -59,7 +59,9 @@ class Communicate extends ConsumerWidget {
                           Expanded(
                               child: Center(
                                   child: Text(
-                                      "${studentModel.value?.phoneNumber}",
+                                      studentModel.value?.phoneNumber
+                                              .toString() ??
+                                          '',
                                       style: TextStyle(color: color1))))
                         ],
                       ),
@@ -93,7 +95,7 @@ class Communicate extends ConsumerWidget {
                           Expanded(
                               child: Center(
                                   child: Text(
-                                      '${studentModel.value?.apartmentNumber}',
+                                      '${studentModel.value?.apartmentNumber ?? ''}',
                                       style: TextStyle(color: color1))))
                         ],
                       ),
@@ -115,7 +117,8 @@ class Communicate extends ConsumerWidget {
                           const Expanded(child: Text("الكود البريدي ")),
                           Expanded(
                               child: Center(
-                                  child: Text('${studentModel.value?.mailCode}',
+                                  child: Text(
+                                      '${studentModel.value?.mailCode ?? ''}',
                                       style: TextStyle(color: color1))))
                         ],
                       ),

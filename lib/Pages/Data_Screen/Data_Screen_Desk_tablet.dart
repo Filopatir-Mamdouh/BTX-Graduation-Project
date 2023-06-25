@@ -5,6 +5,8 @@ import 'package:graduation_project/presentation/widgets/widgets/default_drop_dow
 
 import 'package:provider/provider.dart';
 
+import '../basic_info/Basic_info_responsive.dart';
+
 class StudentsDataScreen_Desk_Tablet extends StatelessWidget {
   const StudentsDataScreen_Desk_Tablet({super.key});
 
@@ -165,140 +167,157 @@ class StudentsDataScreen_Desk_Tablet extends StatelessWidget {
                       width: 8.0,
                     ),
                   ),
-                  child: SingleChildScrollView(
-                    child: Table(
-                      textDirection: TextDirection.rtl,
-                      defaultVerticalAlignment:
-                          TableCellVerticalAlignment.middle,
-                      border: TableBorder.all(
-                        color: AppColors.primary,
-                        width: 2.0,
-                      ),
-                      children: [
-                        TableRow(
-                          decoration: BoxDecoration(
-                            color: AppColors.primary,
-                          ),
-                          children: const [
-                            Text(
-                              "الكود",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "الاسم",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "رقم البطاقة",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "التليفون",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "حالة القيد",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "المؤهل",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => BasicInfoResponsive())));
+                    },
+                    child: SingleChildScrollView(
+                      child: Table(
+                        textDirection: TextDirection.rtl,
+                        defaultVerticalAlignment:
+                            TableCellVerticalAlignment.middle,
+                        border: TableBorder.all(
+                          color: AppColors.primary,
+                          width: 2.0,
                         ),
-                        TableRow(
-                          children: [
-                            Text(
-                              "${StudentsDataProvider().code}",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: AppColors.grey,
-                                fontWeight: FontWeight.bold,
-                              ),
+                        children: [
+                          TableRow(
+                            decoration: BoxDecoration(
+                              color: AppColors.primary,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 5.0),
-                              child: Text(
-                                "${StudentsDataProvider().name}",
+                            children: const [
+                              Text(
+                                "الكود",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "الاسم",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "رقم البطاقة",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "التليفون",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "حالة القيد",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "المؤهل",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              BasicInfoResponsive()));
+                                },
+                                child: Text(
+                                  "${StudentsDataProvider().code}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: Text(
+                                  "${StudentsDataProvider().name}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: AppColors.grey,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              FittedBox(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5.0),
+                                  child: Text(
+                                    "${StudentsDataProvider().ID_Number}",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: AppColors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              FittedBox(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5.0),
+                                  child: Text(
+                                    "${StudentsDataProvider().phone_Number}",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: AppColors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "${StudentsDataProvider().Entry_Status}",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.grey,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ),
-                            FittedBox(
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5.0),
-                                child: Text(
-                                  "${StudentsDataProvider().ID_Number}",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: AppColors.grey,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              Text(
+                                "${StudentsDataProvider().Qualification}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: AppColors.grey,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ),
-                            FittedBox(
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5.0),
-                                child: Text(
-                                  "${StudentsDataProvider().phone_Number}",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: AppColors.grey,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Text(
-                              "${StudentsDataProvider().Entry_Status}",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: AppColors.grey,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "${StudentsDataProvider().Qualification}",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: AppColors.grey,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:graduation_project/constant/drawer/drawer_home.dart';
 import 'package:graduation_project/pages/Data_Screen/Data_Screen_Desk_tablet.dart';
 import 'package:graduation_project/pages/Data_Screen/students_data_screen.dart';
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
@@ -57,7 +58,7 @@ class StudentsDataScreenResponsive extends StatelessWidget {
               ),
             ),
             drawer: const Drawer(
-              child: Sidemenu(),
+              child: DrawerHome(),
             ),
           ),
         ),
@@ -93,7 +94,7 @@ class StudentsDataScreenResponsive extends StatelessWidget {
               children: [
                 const Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 7,
@@ -147,7 +148,7 @@ class StudentsDataScreenResponsive extends StatelessWidget {
               children: [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 6,

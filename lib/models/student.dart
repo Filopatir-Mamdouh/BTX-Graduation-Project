@@ -6,53 +6,53 @@ import 'package:appwrite/models.dart';
 class Student {
   final String name;
   final String englishName;
-  final int code;
+  final int? code;
   final String relegion;
   final String gender;
   final String nationality;
-  final DateTime birthDate;
+  final String birthDate;
   final String birthPlace;
   final String socialStatus;
   final String idType;
-  final int nationalId;
-  final DateTime publishDate;
+  final int? nationalId;
+  final String publishDate;
   final String publishPlace;
   final String fatherName;
   final String motherName;
   final String entryStatus;
   final String acceptanceType;
-  final int acceptanceYear;
+  final int? acceptanceYear;
   final String city;
   final String address;
-  final int homeNumber;
-  final int phoneNumber;
+  final int? homeNumber;
+  final int? phoneNumber;
   final String email;
   final String fax;
-  final int buildingNumber;
-  final int apartmentNumber;
+  final int? buildingNumber;
+  final int? apartmentNumber;
   final String mailBox;
-  final int mailCode;
+  final int? mailCode;
   final String fatherNationality;
   final String fatherCity;
   final String fatherAddress;
   final String fatherJob;
   final String fatherJobPlace;
   final String degreeOfKinship;
-  final int fatherPhoneNumber;
+  final int? fatherPhoneNumber;
   final String fatherEmail;
   final String fatherFax;
   final String qualification;
   final String place;
-  final int graduationYear;
-  final int total;
+  final int? graduationYear;
+  final int? total;
   final String percentage;
   final String faculty;
   final String depart;
   final String program;
   final String year;
-  final int studentId;
+  final int? studentId;
 
-  final Preferences prefs;
+  final Preferences? prefs;
 
   Student(
       this.name,
@@ -112,48 +112,48 @@ class Student {
       map['relegion'] as String,
       map['gender'] as String,
       map['nationality'] as String,
-      DateTime.fromMillisecondsSinceEpoch(map['birthDate'] as int),
+      map['birthDate'] as String,
       map['birthPlace'] as String,
       map['socialStatus'] as String,
       map['idType'] as String,
-      map['nationalId'] as int,
-      DateTime.fromMillisecondsSinceEpoch(map['publishDate'] as int),
+      map['nationalId'] as int?,
+      map['publishDate'] as String,
       map['publishPlace'] as String,
       map['fatherName'] as String,
       map['motherName'] as String,
       map['entryStatus'] as String,
       map['acceptanceType'] as String,
-      map['acceptanceYear'] as int,
+      map['acceptanceYear'] as int?,
       map['city'] as String,
       map['address'] as String,
-      map['homeNumber'] as int,
-      map['phoneNumber'] as int,
+      map['homeNumber'] as int?,
+      map['phoneNumber'] as int?,
       map['email'] as String,
       map['fax'] as String,
-      map['buildingNumber'] as int,
-      map['apartmentNumber'] as int,
+      map['buildingNumber'] as int?,
+      map['apartmentNumber'] as int?,
       map['mailBox'] as String,
-      map['mailCode'] as int,
+      map['mailCode'] as int?,
       map['fatherNationality'] as String,
       map['fatherCity'] as String,
       map['fatherAddress'] as String,
       map['fatherJob'] as String,
       map['fatherJobPlace'] as String,
       map['degreeOfKinship'] as String,
-      map['fatherPhoneNumber'] as int,
+      map['fatherPhoneNumber'] as int?,
       map['fatherEmail'] as String,
       map['fatherFax'] as String,
       map['qualification'] as String,
       map['place'] as String,
-      map['graduationYear'] as int,
-      map['total'] as int,
+      map['graduationYear'] as int?,
+      map['total'] as int?,
       map['percentage'] as String,
       map['faculty'] as String,
       map['depart'] as String,
       map['program'] as String,
       map['year'] as String,
-      map['studentId'] as int,
-      Preferences.fromMap(map['prefs'] as Map<String, dynamic>),
+      map['studentId'] as int?,
+      map['prefs'] as Preferences?,
     );
   }
 
@@ -161,52 +161,52 @@ class Student {
     return <String, dynamic>{
       'name': name,
       'englishName': englishName,
-      'code': code,
+      'code': code!,
       'relegion': relegion,
       'gender': gender,
       'nationality': nationality,
-      'birthDate': birthDate.millisecondsSinceEpoch,
+      'birthDate': birthDate,
       'birthPlace': birthPlace,
       'socialStatus': socialStatus,
       'idType': idType,
-      'nationalId': nationalId,
-      'publishDate': publishDate.millisecondsSinceEpoch,
+      'nationalId': nationalId!,
+      'publishDate': publishDate,
       'publishPlace': publishPlace,
       'fatherName': fatherName,
       'motherName': motherName,
       'entryStatus': entryStatus,
       'acceptanceType': acceptanceType,
-      'acceptanceYear': acceptanceYear,
+      'acceptanceYear': acceptanceYear!,
       'city': city,
       'address': address,
-      'homeNumber': homeNumber,
-      'phoneNumber': phoneNumber,
+      'homeNumber': homeNumber!,
+      'phoneNumber': phoneNumber!,
       'email': email,
       'fax': fax,
-      'buildingNumber': buildingNumber,
-      'apartmentNumber': apartmentNumber,
+      'buildingNumber': buildingNumber!,
+      'apartmentNumber': apartmentNumber!,
       'mailBox': mailBox,
-      'mailCode': mailCode,
+      'mailCode': mailCode!,
       'fatherNationality': fatherNationality,
       'fatherCity': fatherCity,
       'fatherAddress': fatherAddress,
       'fatherJob': fatherJob,
       'fatherJobPlace': fatherJobPlace,
       'degreeOfKinship': degreeOfKinship,
-      'fatherPhoneNumber': fatherPhoneNumber,
+      'fatherPhoneNumber': fatherPhoneNumber!,
       'fatherEmail': fatherEmail,
       'fatherFax': fatherFax,
       'qualification': qualification,
       'place': place,
-      'graduationYear': graduationYear,
-      'total': total,
+      'graduationYear': graduationYear!,
+      'total': total!,
       'percentage': percentage,
       'faculty': faculty,
       'depart': depart,
       'program': program,
       'year': year,
-      'studentId': studentId,
-      'prefs': prefs.toMap(),
+      'studentId': studentId!,
+      'prefs': prefs!.toMap(),
     };
   }
 
@@ -217,12 +217,12 @@ class Student {
     String? relegion,
     String? gender,
     String? nationality,
-    DateTime? birthDate,
+    String? birthDate,
     String? birthPlace,
     String? socialStatus,
     String? idType,
     int? nationalId,
-    DateTime? publishDate,
+    String? publishDate,
     String? publishPlace,
     String? fatherName,
     String? motherName,
@@ -263,7 +263,7 @@ class Student {
     return Student(
       name ?? this.name,
       englishName ?? this.englishName,
-      code ?? this.code,
+      code ?? this.code!,
       relegion ?? this.relegion,
       gender ?? this.gender,
       nationality ?? this.nationality,
@@ -271,44 +271,44 @@ class Student {
       birthPlace ?? this.birthPlace,
       socialStatus ?? this.socialStatus,
       idType ?? this.idType,
-      nationalId ?? this.nationalId,
+      nationalId ?? this.nationalId!,
       publishDate ?? this.publishDate,
       publishPlace ?? this.publishPlace,
       fatherName ?? this.fatherName,
       motherName ?? this.motherName,
       entryStatus ?? this.entryStatus,
       acceptanceType ?? this.acceptanceType,
-      acceptanceYear ?? this.acceptanceYear,
+      acceptanceYear ?? this.acceptanceYear!,
       city ?? this.city,
       address ?? this.address,
-      homeNumber ?? this.homeNumber,
-      phoneNumber ?? this.phoneNumber,
+      homeNumber ?? this.homeNumber!,
+      phoneNumber ?? this.phoneNumber!,
       email ?? this.email,
       fax ?? this.fax,
-      buildingNumber ?? this.buildingNumber,
-      apartmentNumber ?? this.apartmentNumber,
+      buildingNumber ?? this.buildingNumber!,
+      apartmentNumber ?? this.apartmentNumber!,
       mailBox ?? this.mailBox,
-      mailCode ?? this.mailCode,
+      mailCode ?? this.mailCode!,
       fatherNationality ?? this.fatherNationality,
       fatherCity ?? this.fatherCity,
       fatherAddress ?? this.fatherAddress,
       fatherJob ?? this.fatherJob,
       fatherJobPlace ?? this.fatherJobPlace,
       degreeOfKinship ?? this.degreeOfKinship,
-      fatherPhoneNumber ?? this.fatherPhoneNumber,
+      fatherPhoneNumber ?? this.fatherPhoneNumber!,
       fatherEmail ?? this.fatherEmail,
       fatherFax ?? this.fatherFax,
       qualification ?? this.qualification,
       place ?? this.place,
-      graduationYear ?? this.graduationYear,
-      total ?? this.total,
+      graduationYear ?? this.graduationYear!,
+      total ?? this.total!,
       percentage ?? this.percentage,
       faculty ?? this.faculty,
       depart ?? this.depart,
       program ?? this.program,
       year ?? this.year,
-      studentId ?? this.studentId,
-      prefs ?? this.prefs,
+      studentId ?? this.studentId!,
+      prefs ?? this.prefs!,
     );
   }
 
