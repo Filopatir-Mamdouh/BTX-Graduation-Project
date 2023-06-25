@@ -5,15 +5,25 @@ import 'package:graduation_project/Pages/chat/constants/constants.dart';
 import 'package:graduation_project/Pages/fees_page/fees_page_responsive.dart';
 
 import '../../Provider/backend/apiprovider.dart';
+import '../../Student_material_tasble/subject_table_responsive.dart';
 import '../Documents_Request/Documents_request_responsive.dart';
+import '../Documents_Request/documents_r_stu_respo.dart';
 import '../Exams_table/Exams_table.dart';
+import '../Login&register/Login_page_responsive.dart';
+import '../home_lecturers/doctor/scanner.dart';
 import '../schedule/subject_table_responsive.dart';
+import '../students_affairs/education_data/main_screen_educationdata.dart';
+import '../students_affairs/essensial_data/main_screen_essential_data.dart';
 
 class Sidemenu extends ConsumerWidget {
   const Sidemenu({super.key});
-
   @override
   Widget build(BuildContext context, ref) {
+    void onPressed(Widget page) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => page));
+    }
+
     final studentModel = ref.watch(studentProvider);
     return studentModel.when(
         loading: () => const CircularProgressIndicator(),
@@ -95,7 +105,9 @@ class Sidemenu extends ConsumerWidget {
                     SizedBox(
                       width: 150,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          onPressed(const MainScreenEssentialData());
+                        },
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
                           backgroundColor:
@@ -118,7 +130,11 @@ class Sidemenu extends ConsumerWidget {
                     SizedBox(
                       width: 150,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          onPressed(
+                            MainScreenEducationData(),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
                           backgroundColor:
@@ -138,15 +154,39 @@ class Sidemenu extends ConsumerWidget {
                     const SizedBox(
                       height: 13,
                     ),
+                    const SizedBox(
+                      height: 13,
+                    ),
                     SizedBox(
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context as BuildContext,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    StudentScheduleResponsive()),
+                          onPressed(
+                            const Scanner(),
+                          );
+                        }, //Scanner
+                        style: ElevatedButton.styleFrom(
+                          side: const BorderSide(width: 2, color: Colors.black),
+                          backgroundColor:
+                              const Color.fromARGB(255, 255, 255, 255),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 18),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(22),
+                          ),
+                        ),
+                        child: Text(
+                          "تسجيل الحضور",
+                          style: TextStyle(color: grey_text, fontSize: 17),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 150,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          onPressed(
+                            StudentScheduleResponsive2(),
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -172,11 +212,7 @@ class Sidemenu extends ConsumerWidget {
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context as BuildContext,
-                            MaterialPageRoute(
-                                builder: (context) => ExamsTablePage()),
-                          );
+                          onPressed(ExamsTablePage());
                         },
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
@@ -201,11 +237,7 @@ class Sidemenu extends ConsumerWidget {
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context as BuildContext,
-                            MaterialPageRoute(
-                                builder: (context) => fess_page_Responsive()),
-                          );
+                          onPressed(fess_page_Responsive());
                         },
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
@@ -230,12 +262,7 @@ class Sidemenu extends ConsumerWidget {
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context as BuildContext,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    Study_Result_Responsive()),
-                          );
+                          onPressed(Study_Result_Responsive());
                         },
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
@@ -260,12 +287,7 @@ class Sidemenu extends ConsumerWidget {
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context as BuildContext,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    DocumentsRequestPageResposive()),
-                          );
+                          onPressed(DocumentsRequestPageResposive_Students());
                         },
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
@@ -289,7 +311,9 @@ class Sidemenu extends ConsumerWidget {
                     SizedBox(
                       width: 150,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          onPressed(LoginPage());
+                        }, //DocumentsRequestPageResposive
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
                           backgroundColor:

@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/constant/responsive.dart';
 import 'package:graduation_project/core/app_colors.dart';
 import 'package:graduation_project/Pages/library/books_screen.dart';
+import '../../constant/drawer/library_drawer.dart';
 import '../affairs_main_page/side_menue.dart';
 
 class books_responsive extends StatelessWidget {
@@ -55,7 +56,7 @@ class books_responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Sidemenu(),
+              child: LibraryDrawer(),
             ),
           ),
         ),
@@ -91,7 +92,7 @@ class books_responsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: LibraryDrawer(),
                 ),
                 Flexible(
                   flex: 7,
@@ -143,7 +144,7 @@ class books_responsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: LibraryDrawer(),
                 ),
                 Flexible(
                   flex: 6,

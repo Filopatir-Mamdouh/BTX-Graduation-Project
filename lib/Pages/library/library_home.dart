@@ -3,6 +3,9 @@ import 'package:graduation_project/Provider/Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'available_devices_responsive.dart';
+import 'books_responsive.dart';
+
 class LibraryHome extends StatelessWidget {
   const LibraryHome({super.key});
 
@@ -62,7 +65,13 @@ class LibraryHome extends StatelessWidget {
                             : null
                         : 240,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context as BuildContext,
+                            MaterialPageRoute(
+                                builder: (context) => books_responsive()),
+                          );
+                        }, //books_responsive
                         style: size.width < 700
                             ? ElevatedButton.styleFrom(
                                 fixedSize: const Size(170, 53),
@@ -124,7 +133,14 @@ class LibraryHome extends StatelessWidget {
                             : null
                         : 240,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context as BuildContext,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Available_devices_responsive()),
+                          );
+                        }, //Available_devices_responsive
                         style: size.width < 700
                             ? ElevatedButton.styleFrom(
                                 fixedSize: const Size(170, 53),

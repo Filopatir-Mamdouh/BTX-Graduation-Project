@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/basic_info/basic_informations_screen.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/drawer_home.dart';
 import '../affairs_main_page/side_menue.dart';
 
 class BasicInfoResponsive extends StatelessWidget {
@@ -59,7 +60,7 @@ class BasicInfoResponsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Sidemenu(),
+              child: DrawerHome(),
             ),
           ),
         ),
@@ -95,7 +96,7 @@ class BasicInfoResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 7,
@@ -147,7 +148,7 @@ class BasicInfoResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 6,

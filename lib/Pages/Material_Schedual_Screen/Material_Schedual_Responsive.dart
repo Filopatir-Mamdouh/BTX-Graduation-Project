@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 
+import '../../constant/drawer/drawer_home.dart';
 import '../../constant/responsive.dart';
 import 'Material_Schedual_Desk_Tablet.dart';
 import 'Material_Schedual_Screen.dart';
@@ -53,7 +54,7 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Sidemenu(),
+              child: DrawerHome(),
             ),
           ),
         ),
@@ -80,7 +81,7 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 7,
@@ -123,7 +124,7 @@ class MaterialsScheduleScreen_Responsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 6,

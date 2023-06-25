@@ -1,11 +1,19 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import '../../Provider/backend/apiprovider.dart';
+import '../../pages/Login&register/Login_page_responsive.dart';
+import '../../pages/library/available_devices_responsive.dart';
+import '../../pages/library/books_responsive.dart';
 
 class LibraryDrawer extends ConsumerWidget {
   const LibraryDrawer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, ref) {
+    void onPressed(Widget page) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => page));
+    }
+
     final studentModel = ref.watch(studentProvider);
     Color greyText = const Color(0xFF707070);
     return studentModel.when(
@@ -78,7 +86,9 @@ class LibraryDrawer extends ConsumerWidget {
               ),
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  onPressed(books_responsive());
+                },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(170, 53),
                     shape: RoundedRectangleBorder(
@@ -99,7 +109,9 @@ class LibraryDrawer extends ConsumerWidget {
               height: 13,
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  onPressed(Available_devices_responsive());
+                },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(170, 53),
                     shape: RoundedRectangleBorder(
@@ -120,7 +132,9 @@ class LibraryDrawer extends ConsumerWidget {
               height: 13,
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  onPressed(LoginPage());
+                },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(170, 53),
                     shape: RoundedRectangleBorder(

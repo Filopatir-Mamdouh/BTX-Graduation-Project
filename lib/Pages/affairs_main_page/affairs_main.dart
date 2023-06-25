@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/constant/responsive.dart';
 import 'affairs_body_class.dart';
-import 'main_page_side_menue.dart';
+import 'side_menue.dart';
 
 class StudentAffairsMain extends StatelessWidget {
   PageController page = PageController();
@@ -54,7 +54,7 @@ class StudentAffairsMain extends StatelessWidget {
               ),
             ),
             drawer: const Drawer(
-              child: MainPageSidemenu(),
+              child: Sidemenu(),
             ),
           ),
         ),
@@ -90,7 +90,7 @@ class StudentAffairsMain extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: MainPageSidemenu(),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
@@ -142,7 +142,7 @@ class StudentAffairsMain extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: MainPageSidemenu(),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,

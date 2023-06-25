@@ -7,7 +7,7 @@ import 'package:graduation_project/Pages/Login&register/Register_responsive.dart
 import '../../Pages/home_lecturers/main_screen_lecturersbage.dart';
 import '../../constant/backend/enums.dart';
 import '../../pages/affairs_main_page/affairs_main.dart';
-import '../../pages/students_affairs/home/home_page.dart';
+import '../../pages/students_affairs/home/main_screen_home.dart';
 import '../server/get_user.dart';
 
 ///  We have created a class named [Authentication] which contains all
@@ -135,7 +135,7 @@ class Authentication {
     Roles role = await user.getRole(email);
     switch (role) {
       case Roles.affairs:
-        return const AffairsHome();
+        return const MainScreenHome();
       case Roles.students:
         return StudentAffairsMain();
       case Roles.instructors:

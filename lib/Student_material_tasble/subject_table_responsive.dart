@@ -1,14 +1,16 @@
 // ignore_for_file: prefer_const_constructors, dead_code
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/pages/Student_Attendance_Affairs/student_Attendance_Desk_tablet.dart';
-import 'package:graduation_project/pages/Student_Attendance_Affairs/students_attendance_schedule_screen.dart';
-import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
+import 'package:graduation_project/Student_material_tasble/subject_table_screen.dart';
+
+import 'package:graduation_project/pages/schedule/subject_table_screen.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
-import '../../constant/drawer/drawer_home.dart';
+import '../../constant/drawer/lecturers_drawer.dart';
 
-class student_Attendance_responsive extends StatelessWidget {
+class StudentScheduleResponsive2 extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   PageController page = PageController();
@@ -20,20 +22,20 @@ class student_Attendance_responsive extends StatelessWidget {
     return Scaffold(
       body: Responsive(
         mobile: MaterialApp(
-          title: 'Students Attendace',
-          localizationsDelegates: [
+          title: 'الجدول الدراسي',
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -45,7 +47,7 @@ class student_Attendance_responsive extends StatelessWidget {
                             color: Colors.white))),
               )
             ]),
-            body: StudentsAttendanceScheduleScreen(),
+            body: StudentSchedule2(),
             appBar: AppBar(
               backgroundColor: Color(0xFF3E6BA9), // Will work
               title: Row(
@@ -59,29 +61,27 @@ class student_Attendance_responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: DrawerHome(),
-              ),
+              child: Sidemenu(),
             ),
           ),
         ),
 
         //desktop view
         desktop: MaterialApp(
-          title: 'Study Fees',
-          localizationsDelegates: [
+          title: 'الجدول الدراسي',
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -94,18 +94,14 @@ class student_Attendance_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: DrawerHome(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    child: student_Attendance_Desk_tablet(),
-                  ),
+                  child: StudentSchedule2(),
                 ),
               ],
             ),
@@ -124,20 +120,20 @@ class student_Attendance_responsive extends StatelessWidget {
           ),
         ),
         tablet: MaterialApp(
-          title: 'Study Result',
-          localizationsDelegates: [
+          title: 'الجدول الدراسي',
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -150,18 +146,14 @@ class student_Attendance_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: DrawerHome(),
-                  ),
+                  child: Sidemenu(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: student_Attendance_Desk_tablet(),
-                  ),
+                  child: StudentSchedule2(),
                 )
               ],
             ),

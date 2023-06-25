@@ -6,6 +6,8 @@ import 'package:graduation_project/pages/Lecture_Attendance/lecturers_attendance
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/drawer_home.dart';
+
 class Lecture_attendance_responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -58,7 +60,7 @@ class Lecture_attendance_responsive extends StatelessWidget {
             ),
             drawer: Drawer(
               child: Container(
-                child: Sidemenu(),
+                child: DrawerHome(),
               ),
             ),
           ),
@@ -96,7 +98,7 @@ class Lecture_attendance_responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: Sidemenu(),
+                    child: DrawerHome(),
                   ),
                 ),
                 Flexible(
@@ -152,7 +154,7 @@ class Lecture_attendance_responsive extends StatelessWidget {
                 Flexible(
                   flex: 3,
                   child: Container(
-                    child: Sidemenu(),
+                    child: DrawerHome(),
                   ),
                 ),
                 Flexible(

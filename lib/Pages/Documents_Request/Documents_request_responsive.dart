@@ -5,6 +5,8 @@ import 'package:graduation_project/pages/Documents_Request/Documents_request_cla
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/drawer_home.dart';
+
 class DocumentsRequestPageResposive extends StatelessWidget {
   PageController page = PageController();
   late final String title;
@@ -55,7 +57,7 @@ class DocumentsRequestPageResposive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Sidemenu(),
+              child: DrawerHome(),
             ),
           ),
         ),
@@ -91,7 +93,7 @@ class DocumentsRequestPageResposive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 6,
@@ -143,7 +145,7 @@ class DocumentsRequestPageResposive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 6,

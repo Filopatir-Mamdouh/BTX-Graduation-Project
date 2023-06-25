@@ -4,6 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../../Provider/backend/apiprovider.dart';
+import '../Conversations/conversations_responsive.dart';
+import '../Student_information_screen/Student_information_Responsive.dart';
+import '../Teacher_Basic_Data/Teacher_Basic_Data_responsive.dart';
+import 'doctor/attendance/main_screen_doctor.dart';
 
 class Lecturers extends ConsumerWidget {
   const Lecturers({super.key});
@@ -62,7 +66,13 @@ class Lecturers extends ConsumerWidget {
                   Expanded(
                     flex: size.width < 945 ? 3 : 2,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context as BuildContext,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      Teacher_Basic_Data_responsive()));
+                        },
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius:
@@ -112,7 +122,13 @@ class Lecturers extends ConsumerWidget {
                   Expanded(
                     flex: size.width < 945 ? 3 : 2,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context as BuildContext,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const MainScreenDoctor()));
+                        }, //MainScreenDoctor
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius:
@@ -176,7 +192,13 @@ class Lecturers extends ConsumerWidget {
                   Expanded(
                     flex: size.width < 945 ? 3 : 2,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context as BuildContext,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      student_Information_responsive()));
+                        }, //student_Information_responsive
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius:
@@ -230,7 +252,13 @@ class Lecturers extends ConsumerWidget {
                       fit: StackFit.passthrough,
                       children: [
                         ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context as BuildContext,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ConversationsResponsive()));
+                            }, //ConversationsResponsive
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius:
@@ -241,40 +269,15 @@ class Lecturers extends ConsumerWidget {
                                     color: Colors.black87, width: 3),
                                 textStyle: const TextStyle(
                                     fontSize: 25, fontStyle: FontStyle.normal)),
-                            child: size.width < 322
-                                ? Center(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          "الردعلي",
-                                          style: TextStyle(
-                                              fontSize:
-                                                  size.width < 500 ? 15 : 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black87),
-                                        ),
-                                        Text(
-                                          "الطلبات",
-                                          style: TextStyle(
-                                              fontSize:
-                                                  size.width < 500 ? 15 : 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black87),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                : Center(
-                                    child: Text(
-                                      "المحادثة",
-                                      style: TextStyle(
-                                          fontSize: size.width < 500 ? 15 : 20,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black87),
-                                    ),
-                                  )),
+                            child: Center(
+                              child: Text(
+                                "المحادثة",
+                                style: TextStyle(
+                                    fontSize: size.width < 500 ? 15 : 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87),
+                              ),
+                            )),
                         Positioned(
                           top: 0,
                           child: Container(

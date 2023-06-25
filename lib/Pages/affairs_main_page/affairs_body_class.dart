@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/Pages/chat/constants/constants.dart';
 import '../../Provider/backend/apiprovider.dart';
-import '../library/books_responsive.dart';
+import '../inquiries/inquiries_responsive.dart';
+import '../library/main_screen_library_home.dart';
 
 class AffairsBodyClass extends ConsumerWidget {
   const AffairsBodyClass({super.key});
@@ -72,7 +73,13 @@ class AffairsBodyClass extends ConsumerWidget {
                     SizedBox(
                       width: 150,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context as BuildContext,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      inquiries_responsive()));
+                        }, //inquiries_responsive
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
                           backgroundColor:
@@ -122,9 +129,9 @@ class AffairsBodyClass extends ConsumerWidget {
                           Navigator.pushReplacement(
                             context as BuildContext,
                             MaterialPageRoute(
-                                builder: (context) => books_responsive()),
+                                builder: (context) => MainScreenLibraryHome()),
                           );
-                        },
+                        }, //MainScreenLibraryHome
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(width: 2, color: Colors.black),
                           backgroundColor:

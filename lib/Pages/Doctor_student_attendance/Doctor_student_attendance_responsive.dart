@@ -6,6 +6,8 @@ import 'package:graduation_project/pages/Doctor_student_attendance/Doctor_studen
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/lecturers_drawer.dart';
+
 class DoctorStudentAttendanceResponsive extends StatelessWidget {
   PageController page = PageController();
 
@@ -57,7 +59,7 @@ class DoctorStudentAttendanceResponsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Sidemenu(),
+              child: DrawerLecturers(),
             ),
           ),
         ),
@@ -93,7 +95,7 @@ class DoctorStudentAttendanceResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 7,
@@ -145,7 +147,7 @@ class DoctorStudentAttendanceResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 6,

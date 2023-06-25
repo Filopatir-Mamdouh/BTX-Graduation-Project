@@ -6,6 +6,7 @@ import 'package:graduation_project/Pages/library/available_devices_screen.dart';
 
 import 'package:graduation_project/core/app_colors.dart';
 
+import '../../constant/drawer/library_drawer.dart';
 import '../../constant/responsive.dart';
 
 class Available_devices_responsive extends StatelessWidget {
@@ -58,7 +59,7 @@ class Available_devices_responsive extends StatelessWidget {
               ),
             ),
             drawer: const Drawer(
-              child: Sidemenu(),
+              child: LibraryDrawer(),
             ),
           ),
         ),
@@ -95,7 +96,7 @@ class Available_devices_responsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: LibraryDrawer(),
                 ),
                 Flexible(
                   flex: 7,
@@ -148,7 +149,7 @@ class Available_devices_responsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: LibraryDrawer(),
                 ),
                 Flexible(
                   flex: 6,

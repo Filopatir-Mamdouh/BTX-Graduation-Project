@@ -5,6 +5,8 @@ import 'package:graduation_project/pages/Educational%20_Data/Educational_Data_Sc
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/drawer_home.dart';
+
 class EducationalDataResponsive extends StatelessWidget {
   PageController page = PageController();
 
@@ -56,7 +58,7 @@ class EducationalDataResponsive extends StatelessWidget {
               ),
             ),
             drawer: const Drawer(
-              child: Sidemenu(),
+              child: DrawerHome(),
             ),
           ),
         ),
@@ -92,7 +94,7 @@ class EducationalDataResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 7,
@@ -144,7 +146,7 @@ class EducationalDataResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 6,

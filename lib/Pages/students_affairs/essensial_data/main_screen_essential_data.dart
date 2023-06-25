@@ -1,6 +1,7 @@
 import 'package:graduation_project/constant/constant.dart';
 import 'package:graduation_project/constant/drawer/drawer_home.dart';
 import 'package:graduation_project/constant/responsive.dart';
+import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/pages/students_affairs/essensial_data/essential_data.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MainScreenEssentialData extends StatelessWidget {
     return Scaffold(
       drawer: Responsive.isMobile(context) || size.height < 500
           ? const Drawer(
-              child: DrawerHome(),
+              child: Sidemenu(),
             )
           : null,
       appBar: AppBar(
@@ -46,7 +47,7 @@ class MainScreenEssentialData extends StatelessWidget {
         tablet: Row(
           children: [
             if (size.height > 500 || size.width < 100)
-              const Expanded(flex: 2, child: DrawerHome()),
+              const Expanded(flex: 2, child: Sidemenu()),
             Expanded(
               flex: 5,
               child: EssentialData(),
@@ -59,7 +60,7 @@ class MainScreenEssentialData extends StatelessWidget {
             // Now there is no error if our width is less then 1340
             Expanded(
               flex: size.width > 1340 ? 2 : 2,
-              child: const DrawerHome(),
+              child: const Sidemenu(),
             ),
             Expanded(
               flex: size.width > 1340 ? 5 : 7,

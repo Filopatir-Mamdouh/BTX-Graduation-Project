@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Conversations/conversations_screen.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/lecturers_drawer.dart';
 import '../affairs_main_page/side_menue.dart';
 
 class ConversationsResponsive extends StatelessWidget {
@@ -56,7 +57,7 @@ class ConversationsResponsive extends StatelessWidget {
               ),
             ),
             drawer: const Drawer(
-              child: Sidemenu(),
+              child: DrawerLecturers(),
             ),
           ),
         ),
@@ -92,7 +93,7 @@ class ConversationsResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 7,
@@ -144,7 +145,7 @@ class ConversationsResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 6,

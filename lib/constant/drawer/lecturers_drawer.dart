@@ -1,16 +1,25 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:graduation_project/pages/home_lecturers/doctor/attendance/main_screen_doctor.dart';
-import 'package:graduation_project/pages/students_affairs/education_data/main_screen_educationdata.dart';
-import 'package:graduation_project/pages/students_affairs/essensial_data/main_screen_essential_data.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import '../../Pages/schedule/subject_table_responsive.dart';
 import '../../Provider/backend/apiprovider.dart';
+import '../../pages/Conversations/conversations_responsive.dart';
+import '../../pages/Doctor_student_attendance/Doctor_student_attendance_responsive.dart';
+import '../../pages/Student_information_screen/Student_information_Responsive.dart';
+import '../../pages/Teacher_Basic_Data/Teacher_Basic_Data_responsive.dart';
+import '../../pages/home_lecturers/doctor/add_lectures/main_screen_add_lectures.dart';
 import '../widgets/logout.dart';
 
 class DrawerLecturers extends ConsumerWidget {
   const DrawerLecturers({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, ref) {
+    void onPressed(Widget page) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => page));
+    }
+
     final insModel = ref.watch(insProvider);
     Color greyText = const Color(0xFF707070);
     Size size = MediaQuery.of(context).size;
@@ -19,7 +28,8 @@ class DrawerLecturers extends ConsumerWidget {
     List<String>? educationDetailsList = [
       "المقررات الدراسية",
       "الجدول الدراسي",
-      "الحضور"
+      "الحضور",
+      "بيانات الطلبة"
     ];
     return insModel.when(
         loading: () => const CircularProgressIndicator(),
@@ -74,7 +84,9 @@ class DrawerLecturers extends ConsumerWidget {
                   ],
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      onPressed(Teacher_Basic_Data_responsive());
+                    },
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size(170, 53),
                         shape: RoundedRectangleBorder(
@@ -95,7 +107,9 @@ class DrawerLecturers extends ConsumerWidget {
                   height: 13,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      onPressed(const MainScreenDoctor());
+                    },
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size(170, 53),
                         shape: RoundedRectangleBorder(
@@ -138,29 +152,25 @@ class DrawerLecturers extends ConsumerWidget {
                       onChanged: (String? newValue) {
                         if (newValue != dropdownValue) {
                           switch (newValue) {
+                            case "بيانات الطلبة":
+                              onPressed(
+                                student_Information_responsive(),
+                              );
+                              break;
                             case "المقررات الدراسية":
-                              Navigator.push(
-                                  context as BuildContext,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const MainScreenEducationData(),
-                                  ));
+                              onPressed(
+                                const MainScreenAddLecturers(),
+                              );
                               break;
                             case "الجدول الدراسي":
-                              Navigator.push(
-                                  context as BuildContext,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const MainScreenEssentialData(),
-                                  ));
+                              onPressed(
+                                StudentScheduleResponsive(),
+                              );
                               break;
                             case "الحضور":
-                              Navigator.push(
-                                  context as BuildContext,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const MainScreenDoctor(),
-                                  ));
+                              onPressed(
+                                DoctorStudentAttendanceResponsive(),
+                              );
                               break;
                           }
                         }
@@ -192,7 +202,9 @@ class DrawerLecturers extends ConsumerWidget {
                   fit: StackFit.passthrough,
                   children: [
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          onPressed(ConversationsResponsive());
+                        },
                         style: ElevatedButton.styleFrom(
                             fixedSize: const Size(170, 54),
                             shape: RoundedRectangleBorder(

@@ -7,6 +7,8 @@ import 'package:graduation_project/Pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/pages/schedule/subject_table_screen.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/lecturers_drawer.dart';
+
 class StudentScheduleResponsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -58,7 +60,7 @@ class StudentScheduleResponsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Sidemenu(),
+              child: DrawerLecturers(),
             ),
           ),
         ),
@@ -94,7 +96,7 @@ class StudentScheduleResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 2,
-                  child: Sidemenu(),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 7,
@@ -146,7 +148,7 @@ class StudentScheduleResponsive extends StatelessWidget {
               children: const [
                 Flexible(
                   flex: 3,
-                  child: Sidemenu(),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 6,

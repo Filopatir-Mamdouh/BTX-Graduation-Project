@@ -1,17 +1,35 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:graduation_project/constant/widgets/logout.dart';
 import 'package:graduation_project/pages/home_lecturers/doctor/attendance/main_screen_doctor.dart';
 import 'package:graduation_project/pages/students_affairs/education_data/main_screen_educationdata.dart';
 import 'package:graduation_project/pages/students_affairs/essensial_data/main_screen_essential_data.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
+import '../../Pages/Documents_Request/Documents_request_responsive.dart';
+import '../../Pages/basic_info/Basic_info_responsive.dart';
 import '../../Provider/backend/apiprovider.dart';
 import '../../Provider/provider.dart';
+import '../../pages/Educational _Data/Educational_Data_Screen_Responsive.dart';
+import '../../pages/Lecture_Attendance/Lecture_Attendance_table_responsive.dart';
+import '../../pages/Login&register/Login_page_responsive.dart';
+import '../../pages/Material_Schedual_Screen/Material_Schedual_Responsive.dart';
+import '../../pages/Student_Academiv_result_affairs/Student_Academic_Result_Responsive.dart';
+import '../../pages/Student_Attendance_Affairs/Student_Attendance_responsive.dart';
+import '../../pages/Study_fees_affairs/Affairs_Study_fees_Responsive.dart';
+import '../../pages/lecture_info/lecture_informationresponsive.dart';
+import '../../pages/students_affairs/respond_to_request/main_screen_respond_to_request.dart';
+import '../../pages/students_affairs/schedule/main_screen_table_schedule.dart';
 
 class DrawerHome extends ConsumerWidget {
   const DrawerHome({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, ref) {
+    void onPressed(Widget page) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => page));
+    }
+
     Color greyText = const Color(0xFF707070);
     Size size = MediaQuery.of(context).size;
     // ignore: prefer_typing_uninitialized_variables
@@ -42,16 +60,15 @@ class DrawerHome extends ConsumerWidget {
                 ),
                 Column(
                   children: [
+                    Text(affairmodel.value?.Name.split(' ')[0] ?? '',
+                        style: TextStyle(
+                            color: greyText,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold)),
                     Consumer(builder: (context, ref, child) {
-                      return Text(affairmodel.value?.Name.split(' ')[0] ?? '',
-                          style: TextStyle(
-                              color: greyText,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold));
-                    }),
-                    Consumer(builder: (context, ref, child) {
+                      int? n = affairmodel.value?.Name.indexOf(' ');
                       return Text(
-                          affairmodel.value?.Name.split(' ').removeAt(0) ?? '',
+                          affairmodel.value?.Name.substring(n! + 1) ?? '',
                           style: TextStyle(
                               color: greyText,
                               fontSize: 18,
@@ -93,8 +110,7 @@ class DrawerHome extends ConsumerWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        const MainScreenEducationData(),
+                                    builder: (context) => BasicInfoResponsive(),
                                   ));
                               break;
                             case "النتائج الدراسية":
@@ -102,7 +118,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEssentialData(),
+                                        Student_Academic_Result_Responsive(),
                                   ));
                               break;
                             case "نسبة الحضور":
@@ -110,7 +126,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEssentialData(),
+                                        student_Attendance_responsive(),
                                   ));
                               break;
                             case "الرسوم الدراسية":
@@ -118,7 +134,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEssentialData(),
+                                        Affairs_Study_Fees_Responsive(),
                                   ));
                               break;
                             case "استخراج مستند":
@@ -126,7 +142,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEssentialData(),
+                                        DocumentsRequestPageResposive(),
                                   ));
                               break;
                           }
@@ -185,7 +201,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEducationData(),
+                                        Lecture_information_Responsive(),
                                   ));
                               break;
                             case "الحضور":
@@ -193,7 +209,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEssentialData(),
+                                        Lecture_attendance_responsive(),
                                   ));
                               break;
                           }
@@ -252,7 +268,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEducationData(),
+                                        MaterialsScheduleScreen_Responsive(),
                                   ));
                               break;
                             case "الجدول الدراسي":
@@ -260,7 +276,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenEssentialData(),
+                                        const MainScreenTableSchedule(),
                                   ));
                               break;
                             case "الحضور":
@@ -268,7 +284,7 @@ class DrawerHome extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MainScreenDoctor(),
+                                        EducationalDataResponsive(),
                                   ));
                               break;
                           }
@@ -306,7 +322,9 @@ class DrawerHome extends ConsumerWidget {
               fit: StackFit.passthrough,
               children: [
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      onPressed(const MainScreenRespondToRequest());
+                    }, //MainScreenRespondToRequest
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size(170, 54),
                         shape: RoundedRectangleBorder(
@@ -344,24 +362,7 @@ class DrawerHome extends ConsumerWidget {
             const SizedBox(
               height: 13,
             ),
-            ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(170, 53),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25), // <-- Radius
-                    ),
-                    backgroundColor: Colors.white,
-                    side: const BorderSide(color: Colors.black87, width: 3),
-                    textStyle: const TextStyle(
-                        fontSize: 25, fontStyle: FontStyle.normal)),
-                child: Text(
-                  "تسجيل الخروج",
-                  style: TextStyle(
-                      fontSize: size.width < 500 ? 10 : 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87),
-                )),
+            const LogoutButton(),
           ],
         ),
       ),

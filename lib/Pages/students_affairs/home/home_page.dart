@@ -2,14 +2,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:graduation_project/pages/Data_Screen/Data_screen_responsive.dart';
 
 import '../../../Provider/backend/apiprovider.dart';
+import '../../Educational _Data/Educational_Data_Screen_Responsive.dart';
+import '../../lecture_info/lecture_informationresponsive.dart';
+import '../essensial_data/main_screen_essential_data.dart';
+import '../respond_to_request/main_screen_respond_to_request.dart';
 
 class AffairsHome extends ConsumerWidget {
   const AffairsHome({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
+    void onPressed(Widget page) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => page));
+    }
+
     Size size = MediaQuery.of(context).size;
     final affairmodel = ref.watch(affairsProvider);
     return affairmodel.when(
@@ -58,7 +68,9 @@ class AffairsHome extends ConsumerWidget {
                         Expanded(
                           flex: size.width < 945 ? 3 : 2,
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                onPressed(StudentsDataScreenResponsive());
+                              },
                               style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(
                                     borderRadius:
@@ -113,7 +125,9 @@ class AffairsHome extends ConsumerWidget {
                         Expanded(
                           flex: size.width < 945 ? 3 : 2,
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                onPressed(Lecture_information_Responsive());
+                              },
                               style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(
                                     borderRadius:
@@ -182,7 +196,9 @@ class AffairsHome extends ConsumerWidget {
                         Expanded(
                           flex: size.width < 945 ? 3 : 2,
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                onPressed(EducationalDataResponsive());
+                              },
                               style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(
                                     borderRadius:
@@ -241,7 +257,9 @@ class AffairsHome extends ConsumerWidget {
                             fit: StackFit.passthrough,
                             children: [
                               ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    onPressed(MainScreenRespondToRequest());
+                                  },
                                   style: ElevatedButton.styleFrom(
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(

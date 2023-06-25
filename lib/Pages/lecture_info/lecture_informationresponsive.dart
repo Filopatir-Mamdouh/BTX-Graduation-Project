@@ -5,6 +5,8 @@ import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/pages/lecture_info/lecturers_informations_screen.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/drawer_home.dart';
+
 class Lecture_information_Responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -57,7 +59,7 @@ class Lecture_information_Responsive extends StatelessWidget {
             ),
             drawer: Drawer(
               child: Container(
-                child: Sidemenu(),
+                child: DrawerHome(),
               ),
             ),
           ),
@@ -95,7 +97,7 @@ class Lecture_information_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: Sidemenu(),
+                    child: DrawerHome(),
                   ),
                 ),
                 Flexible(
@@ -151,7 +153,7 @@ class Lecture_information_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 3,
                   child: Container(
-                    child: Sidemenu(),
+                    child: DrawerHome(),
                   ),
                 ),
                 Flexible(

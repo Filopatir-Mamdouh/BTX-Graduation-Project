@@ -6,6 +6,8 @@ import 'package:graduation_project/pages/Study_fees_affairs/Affairs_Study_fees_s
 import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
+import '../../constant/drawer/drawer_home.dart';
+
 class Affairs_Study_Fees_Responsive extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -58,7 +60,7 @@ class Affairs_Study_Fees_Responsive extends StatelessWidget {
             ),
             drawer: Drawer(
               child: Container(
-                child: Sidemenu(),
+                child: DrawerHome(),
               ),
             ),
           ),
@@ -96,7 +98,7 @@ class Affairs_Study_Fees_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    child: Sidemenu(),
+                    child: DrawerHome(),
                   ),
                 ),
                 Flexible(
@@ -152,7 +154,7 @@ class Affairs_Study_Fees_Responsive extends StatelessWidget {
                 Flexible(
                   flex: 3,
                   child: Container(
-                    child: Sidemenu(),
+                    child: DrawerHome(),
                   ),
                 ),
                 Flexible(
