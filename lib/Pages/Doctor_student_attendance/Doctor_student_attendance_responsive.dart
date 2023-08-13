@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Doctor_student_attendance/Doctor_Student_Attendance_Desk_Tablet.dart';
 import 'package:graduation_project/pages/Doctor_student_attendance/Doctor_student_Attenadace.dart';
-import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
 import '../../constant/drawer/lecturers_drawer.dart';
@@ -92,7 +91,7 @@ class DoctorStudentAttendanceResponsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: const [
+              children: [
                 Flexible(
                   flex: 2,
                   child: DrawerLecturers(),
@@ -144,7 +143,7 @@ class DoctorStudentAttendanceResponsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: const [
+              children: [
                 Flexible(
                   flex: 3,
                   child: DrawerLecturers(),

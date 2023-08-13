@@ -4,33 +4,31 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graduation_project/pages/Teacher_Basic_Data/Teacher_Basic_Data.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
-import '../affairs_main_page/side_menue.dart';
+import '../../constant/drawer/lecturers_drawer.dart';
 
 class Teacher_Basic_Data_responsive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   PageController page = PageController();
   late final String title;
 
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: Responsive(
         mobile: MaterialApp(
           title: 'lecturer Basic Data',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -56,9 +54,7 @@ class Teacher_Basic_Data_responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: Sidemenu(),
-              ),
+              child: DrawerLecturers(),
             ),
           ),
         ),
@@ -66,19 +62,19 @@ class Teacher_Basic_Data_responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'lecturer Basic Data',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -91,18 +87,14 @@ class Teacher_Basic_Data_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: Sidemenu(),
-                  ),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: BasicDataScreen(),
-                  ),
+                  child: BasicDataScreen(),
                 ),
               ],
             ),
@@ -122,19 +114,19 @@ class Teacher_Basic_Data_responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'lecturer Basic Data',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -147,18 +139,14 @@ class Teacher_Basic_Data_responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: Sidemenu(),
-                  ),
+                  child: DrawerLecturers(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: BasicDataScreen(),
-                  ),
+                  child: BasicDataScreen(),
                 ),
               ],
             ),

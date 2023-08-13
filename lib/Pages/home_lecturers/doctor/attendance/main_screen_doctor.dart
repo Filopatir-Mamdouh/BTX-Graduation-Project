@@ -1,8 +1,8 @@
 import 'package:graduation_project/constant/constant.dart';
-import 'package:graduation_project/constant/drawer/drawer_home.dart';
 import 'package:graduation_project/constant/responsive.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constant/drawer/lecturers_drawer.dart';
 import 'doctor.dart';
 
 class MainScreenDoctor extends StatelessWidget {
@@ -18,7 +18,7 @@ class MainScreenDoctor extends StatelessWidget {
           ? const Padding(
               padding: EdgeInsets.all(0),
               child: Drawer(
-                child: DrawerHome(),
+                child: DrawerLecturers(),
               ),
             )
           : null,
@@ -49,7 +49,7 @@ class MainScreenDoctor extends StatelessWidget {
         tablet: Row(
           children: [
             if (size.height > 500 || size.width < 100)
-              const Expanded(flex: 2, child: DrawerHome()),
+              const Expanded(flex: 2, child: DrawerLecturers()),
             const Expanded(
               flex: 5,
               child: Doctor(),
@@ -62,7 +62,7 @@ class MainScreenDoctor extends StatelessWidget {
             // Now there is no error if our width is less then 1340
             Expanded(
               flex: size.width > 1340 ? 2 : 4,
-              child: const DrawerHome(),
+              child: const DrawerLecturers(),
             ),
             Expanded(
               flex: size.width > 1340 ? 5 : 7,

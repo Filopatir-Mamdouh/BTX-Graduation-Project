@@ -33,7 +33,7 @@ class DrawerLecturers extends ConsumerWidget {
     ];
     return insModel.when(
         loading: () => const CircularProgressIndicator(),
-        error: (err, stack) => Text('Error: $err \n'),
+        error: (err, stack) => Text('what is this?\n$err\n'),
         data: (context) {
           int? s = insModel.value?.insName.indexOf(' ');
           return SingleChildScrollView(

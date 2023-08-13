@@ -48,7 +48,7 @@ class MainScreenLecturers extends StatelessWidget {
         tablet: Row(
           children: [
             if (size.height > 500 || size.width < 100)
-              const Expanded(flex: 2, child: DrawerLecturers()),
+              Expanded(flex: 2, child: DrawerLecturers()),
             const Expanded(
               flex: 5,
               child: Lecturers(),
@@ -61,7 +61,7 @@ class MainScreenLecturers extends StatelessWidget {
             // Now there is no error if our width is less then 1340
             Expanded(
               flex: size.width > 1340 ? 2 : 4,
-              child: const DrawerLecturers(),
+              child: DrawerLecturers(),
             ),
             Expanded(
               flex: size.width > 1340 ? 5 : 7,

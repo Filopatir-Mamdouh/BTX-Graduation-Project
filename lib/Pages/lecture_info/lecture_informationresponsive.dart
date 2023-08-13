@@ -1,15 +1,12 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:graduation_project/pages/affairs_main_page/side_menue.dart';
 import 'package:graduation_project/pages/lecture_info/lecturers_informations_screen.dart';
 import 'package:graduation_project/constant/responsive.dart';
 
 import '../../constant/drawer/drawer_home.dart';
 
 class Lecture_information_Responsive extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   PageController page = PageController();
 
   late final String title;
@@ -20,19 +17,19 @@ class Lecture_information_Responsive extends StatelessWidget {
       body: Responsive(
         mobile: MaterialApp(
           title: 'Student Result',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -58,9 +55,7 @@ class Lecture_information_Responsive extends StatelessWidget {
               ),
             ),
             drawer: Drawer(
-              child: Container(
-                child: DrawerHome(),
-              ),
+              child: DrawerHome(),
             ),
           ),
         ),
@@ -68,19 +63,19 @@ class Lecture_information_Responsive extends StatelessWidget {
         //desktop view
         desktop: MaterialApp(
           title: 'Study Fees',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -93,18 +88,14 @@ class Lecture_information_Responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 2,
-                  child: Container(
-                    child: DrawerHome(),
-                  ),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    child: LecturersInformationsScreen(),
-                  ),
+                  child: LecturersInformationsScreen(),
                 ),
               ],
             ),
@@ -124,19 +115,19 @@ class Lecture_information_Responsive extends StatelessWidget {
         ),
         tablet: MaterialApp(
           title: 'Study Result',
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             // Arabic
             Locale('ar'),
           ],
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             bottomNavigationBar: Stack(fit: StackFit.passthrough, children: [
-              new Container(
+              Container(
                 height: 25,
                 color: Color(0xFF3E6BA9),
                 child: Center(
@@ -149,18 +140,14 @@ class Lecture_information_Responsive extends StatelessWidget {
               )
             ]),
             body: Row(
-              children: [
+              children: const [
                 Flexible(
                   flex: 3,
-                  child: Container(
-                    child: DrawerHome(),
-                  ),
+                  child: DrawerHome(),
                 ),
                 Flexible(
                   flex: 6,
-                  child: Container(
-                    child: LecturersInformationsScreen(),
-                  ),
+                  child: LecturersInformationsScreen(),
                 )
               ],
             ),

@@ -21,7 +21,8 @@ final affairsProvider = FutureProvider<Affairs>((ref) async {
   return Affairs.fromMap(response.first.data);
 });
 
-final insProvider = FutureProvider<Instructors>((ref) async {
+final insProvider = FutureProvider.autoDispose<Instructors>((ref) async {
+  ref.keepAlive();
   final Authentication auth = ref.watch(authProvider);
   final ApiFunctions api = ref.watch(apiProvider);
   final useremail = await auth.getAccount();
